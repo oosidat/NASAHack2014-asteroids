@@ -111,7 +111,8 @@ void setup()
     pos_bins[i-1][6] = Float.parseFloat(columns[7]);
   }
   background(background_color);
-  size(800,600);
+  //size(800,600);
+  size(600,600);
 }
 void draw(){
   background(background_color);
@@ -211,6 +212,20 @@ void draw(){
   
   cat_i++;
   
+  background(0);
+  textSize(32);
+  fill(text_color1);
+  text("Radar",10,30);
+  line(width/2,graph_margin,width/2,height-graph_margin);
+  line(graph_margin,width/2,height-graph_margin,width/2);
+  fill(0,0,0,0);
+  float circle_margin = graph_margin*2;
+  ellipse(width/2,width/2,circle_margin,circle_margin);
+  ellipse(width/2,width/2,2*circle_margin,2*circle_margin);
+  ellipse(width/2,width/2,3*circle_margin,3*circle_margin);
+  ellipse(width/2,width/2,4*circle_margin,4*circle_margin);
+  ellipse(width/2,width/2,width-2*graph_margin,width-2*graph_margin);
+  save("radar.png");
   if(cat_i>12)
   {
     stop();
