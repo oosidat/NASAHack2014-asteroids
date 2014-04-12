@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<system camdistance="3.0" name="Inner-Planets">
+	<body name="Sun" mass="1.9891e30.0" radius="0.2" inclination="0.0" color="yellow" semimajoraxis="0.0" avgspeed="0.0" />
+  	<body name="Mercury" mass="3.3022e23.0" radius="0.04" inclination="6.34" color="tan" semimajoraxis="5.7909e10.0" avgspeed="4.787e4.0" />
+	<body name="Venus" mass="4.8685e24.0" radius="0.12" inclination="2.19" color="orange" semimajoraxis="1.0821e11.0" avgspeed="3.502e4.0" />
+	<body name="Earth" mass="5.9736e24.0" radius="0.12" inclination="1.5" color="blue" semimajoraxis="1.4960e11.0" avgspeed="2.9783e4.0" />
+	<body name="Mars" mass="6.4185e23.0" radius="0.08" inclination="1.67" color="red" semimajoraxis="2.2794e11.0" avgspeed="2.4077e4.0" />
+</system>
+
