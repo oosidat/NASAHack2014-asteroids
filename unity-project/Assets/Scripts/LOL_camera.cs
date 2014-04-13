@@ -61,7 +61,7 @@ public class LOL_Camera : MonoBehaviour {
 					fuelGage fuelg = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
 					float hundredfuel = 100.0f*control.currentFuel;
 					String fuelText = "Current Charge: "+hundredfuel.ToString("0.0");
-					//GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh> ().text = auText;
+					GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh> ().text = fuelText;
 				
 
 					fuelg.changeTexture(intfuel);
