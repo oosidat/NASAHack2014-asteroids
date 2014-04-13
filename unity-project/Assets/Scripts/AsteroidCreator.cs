@@ -39,7 +39,14 @@ public class AsteroidCreator : MonoBehaviour {
 	}
 
 	public string[] GetAsteroidComposition(string key) {
-		return AsteroidCompositions[key];
+		string[] value;
+		if (AsteroidCompositions.TryGetValue(key, out value)) {
+			return value;
+		}
+		else {
+			Debug.Log ("Not Found: " + key);
+			return new string[] {};
+		}
 	}
 
 	public static Dictionary<string, float[]> AsteroidReflectance = new Dictionary<string, float[]>();
@@ -62,7 +69,14 @@ public class AsteroidCreator : MonoBehaviour {
 	}
 
 	public float[] GetAsteroidReflectance(string key) {
-		return AsteroidReflectance[key];
+		float[] value;
+		if (AsteroidReflectance.TryGetValue(key, out value)) {
+			return value;
+		}
+		else {
+			Debug.Log ("Not Found: " + key);
+			return new float[] {0,0,0};
+		}
 	}
 
 	/* Attempt to get an Asteroid Type, based on their distribution */
@@ -84,21 +98,21 @@ public class AsteroidCreator : MonoBehaviour {
 		return ((AsteroidTypes)(weights.Length - 1)).ToString ();
 	}
 
-//	public string GetAsteroidTypeByRadius(int radius) {
-//		int[] weights = AsteroidsByRadius[radius];
-//		int sum = 0;
-//		int i;
-//		for (i = 0; i < weights.Length; i++)
-//			sum += weights [i];
-//		int selection = Random.Range (0, sum);
-//		int count = 0;
-//		for (i = 0; i < weights.Length - 1; i++) {
-//			count += weights [i];
-//			if (selection < count)
-//				return ((AsteroidTypes)i).ToString ();
-//		}
-//		return ((AsteroidTypes)(weights.Length - 1)).ToString ();
-//	}
+	public string GetAsteroidTypeByRadius(int radius) {
+		int[] weights = AsteroidsByRadius[radius];
+		int sum = 0;
+		int i;
+		for (i = 0; i < weights.Length; i++)
+			sum += weights [i];
+		int selection = Random.Range (0, sum);
+		int count = 0;
+		for (i = 0; i < weights.Length - 1; i++) {
+			count += weights [i];
+			if (selection < count)
+				return ((AsteroidTypes)i).ToString ();
+		}
+		return ((AsteroidTypes)(weights.Length - 1)).ToString ();
+	}
 
 
 	public GameObject AsteroidTemplate; // a new asteroid sans the mesh
@@ -114,7 +128,7 @@ public class AsteroidCreator : MonoBehaviour {
 	void Start () {
 
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < 100; i++) {
 			GameObject asteroidGameObj = GameObject.Instantiate(Asteroids [Random.Range (0, 19)]) as GameObject;
 			
 			// create a new asteroid from the template
@@ -124,9 +138,9 @@ public class AsteroidCreator : MonoBehaviour {
 			asteroidGameObj.transform.parent = newAsteroid.transform;
 
 			newAsteroid.transform.localScale = new Vector3 (0.5f, 0.5f, 0.5f);
-			newAsteroid.transform.localPosition = new Vector3 (Random.Range(-100,100),
-			                                                   Random.Range(-100,100),
-			                                                   Random.Range(-100,100));
+
+			Vector2 belt = Random.insideUnitCircle.normalized * 1000;
+			newAsteroid.transform.localPosition = new Vector3 (belt.x, 0, belt.y);
 		}
 
 	}
