@@ -53,12 +53,17 @@ public class LOL_Camera : MonoBehaviour {
 					print("mag difference: "+magDifference);
 					// set our new position as the end goal for moving the camera
 					moveToPos = new Vector3 (hitInfo.point.x, 0.0f, hitInfo.point.z);
-					float fuelExpended = (float)magDifference*0.05f;
+					float fuelExpended = (float)magDifference*0.0005f;
 					Controls control = GameObject.Find ("Player").GetComponent<Controls>();
 					control.currentFuel = control.currentFuel-(float)fuelExpended;
-					print ("fuel expended: "+fuelExpended+"current fuel: "+control.currentFuel );
-					fuelGage fuelg = GameObject.Find ("FuelGage").GetComponent<fuelGage>();
-					int intfuel = Math.Floor(fuelg);
+					int intfuel = (int)Math.Floor(10.0f*control.currentFuel);
+					print ("fuel expended: "+fuelExpended+"current fuel: "+control.currentFuel+" fuel int: "+intfuel );
+					fuelGage fuelg = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
+					float hundredfuel = 100.0f*control.currentFuel;
+					String fuelText = "Current Charge: "+hundredfuel.ToString("0.0");
+					//GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh> ().text = auText;
+				
+
 					fuelg.changeTexture(intfuel);
 					prevx = currentX;
 					prevz = currentZ;
