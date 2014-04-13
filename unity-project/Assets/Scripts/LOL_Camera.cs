@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class LOL_Camera : MonoBehaviour {
 	
@@ -41,10 +42,18 @@ public class LOL_Camera : MonoBehaviour {
 
 				if (hitInfo.transform.tag != "MapDeadZone"){
 					Camera.main.transform.position = new Vector3(hitInfo.point.x,1,hitInfo.point.z);
+					float currentZ = hitInfo.point.z;
+					float currentX = hitInfo.point.x;//+27.0;
+					//print ()
+					double radius = Math.Sqrt(Math.Pow(currentX,2)+Math.Pow (currentZ,2));
+					double auRad = 2+(radius-45)*(3.5-2.0)/145.0;
+					String auText = "Distance: "+auRad.ToString("0.00")+" AU";
+					GameObject.FindGameObjectWithTag("distanceLabel").GetComponent<TextMesh>().text = auText;
 					//print(Mathf.Clamp(10, 1, 3));
 				}
 			}
 		}
+
 		
 		
 	}

@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71a28923048d814ba160d6ab97df0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AsteroidTemplate: {fileID: 0}
+  AsteroidTemplate: {fileID: 100000, guid: 244f6ff2726011e41a9074bfab8435cb, type: 2}
   Asteroids: []
 --- !u!1 &522570454
 GameObject:
