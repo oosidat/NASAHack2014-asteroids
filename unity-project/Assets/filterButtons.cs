@@ -47,18 +47,20 @@ public class filterButtons : MonoBehaviour {
 		GameObject [] asteroids = GameObject.FindGameObjectsWithTag ("AsteroidGameObjects");
 		for (int i=0; i<(int)asteroids.Length; i++) {
 			Asteroid asteroidtmp = asteroids[i].GetComponent<Asteroid>();
-
+			//asteroidtmp.gameObject.transform.GetChild.
 			if(mask==1)
 			{
-				asteroids[i].renderer.material.SetFloat("_Shinyness",(float)(asteroidtmp.uv*100.0));
+				print("hello uv");
+				asteroidtmp.GetComponentInChildren<Transform>().GetComponentInChildren<Transform>().GetComponentInChildren<Transform>().renderer.material.SetFloat("_Shinyness",(float)(asteroidtmp.uv*100.0));
+				Debug.Log(asteroidtmp.GetComponentInChildren<Transform>().GetComponentInChildren<Transform>().transform.position.x);
 			}
 			if(mask==2)
 			{
-				asteroids[i].renderer.material.SetFloat("_Shinyness",(float)(asteroidtmp.vis*100.0));
+				//asteroidtmp.GetComponentInChildren<Transform>().GetComponentInChildren<Transform>().renderer.material.SetFloat("_Shinyness",(float)(asteroidtmp.vis*100.0));
 			}
 			if(mask==3)
 			{
-				asteroids[i].renderer.material.SetFloat("_Shinyness",(float)(asteroidtmp.ir*100.0));
+				//asteroidtmp.GetComponentInChildren<Transform>().GetComponentInChildren<Transform>().renderer.material.SetFloat("_Shinyness",(float)(asteroidtmp.ir*100.0));
 			}
 				}
 		}
