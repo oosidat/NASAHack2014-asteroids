@@ -156,11 +156,11 @@ public class AsteroidCreator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		SpawnGameObjects(150,200,8);
-		/*SpawnGameObjects(150,300,10);
+		SpawnGameObjects(150,300,10);
 		SpawnGameObjects(150,400,11);
 		SpawnGameObjects(150,500,12);
 		SpawnGameObjects (150, 600, 13);
-		SpawnGameObjects (150, 700, 14);*/
+		SpawnGameObjects (150, 700, 14);
 	}
 	
 	// Update is called once per frame
