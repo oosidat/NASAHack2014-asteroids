@@ -3,12 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Asteroid : MonoBehaviour {
-	public string myType;
-
+	public string asteroidType;
+	public string[] composition;
 
 	void Start () {
 		AsteroidCreator creator = new AsteroidCreator ();
-		myType = creator.GetAsteroidType ();
+		asteroidType = creator.GetAsteroidType ();
+		composition = creator.GetAsteroidComposition(asteroidType);
 	}
 	
 	// Update is called once per frame

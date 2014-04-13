@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class AsteroidCreator : MonoBehaviour {
 
 	public enum AsteroidTypes {s, c, q, x, v, u, r, d, t, m, e, o, p, a};
+	public static Dictionary<string, string[]> AsteroidCompositions = new Dictionary<string, string[]>();
 
 	/* Attempt to get an Asteroid Type, based on their distribution */
 	public string GetAsteroidType() {
@@ -25,8 +26,29 @@ public class AsteroidCreator : MonoBehaviour {
 		return ((AsteroidTypes)(weights.Length - 1)).ToString ();
 	}
 
+	public string[] GetAsteroidComposition(string key) {
+		return AsteroidCompositions[key];
+	}
+
 	public GameObject AsteroidTemplate; // a new asteroid sans the mesh
 	public GameObject [] Asteroids; // all possible asteroid meshes
+
+	void Awake() {
+		AsteroidCompositions.Add("s", new string[] {"metal", "olivine", "pyroxene"});
+		AsteroidCompositions.Add("c", new string[] {"silicates", "water", "carbon"});
+		AsteroidCompositions.Add("q", new string[] {"olivine", "pyroxene", "metal"});
+		AsteroidCompositions.Add("x", new string[] {"metal"});
+		AsteroidCompositions.Add("v", new string[] {"pyroxene", "feldspar"});
+		AsteroidCompositions.Add("u", new string[] {"unknown"});
+		AsteroidCompositions.Add("r", new string[] {"pyroxene", "olivine"});
+		AsteroidCompositions.Add("d", new string[] {"silicates", "carbon"});
+		AsteroidCompositions.Add("t", new string[] {"silicates", "carbon"});
+		AsteroidCompositions.Add("m", new string[] {"metal", "enstatite"});
+		AsteroidCompositions.Add("e", new string[] {"enstatite"});
+		AsteroidCompositions.Add("o", new string[] {"silicates", "water", "carbon"});
+		AsteroidCompositions.Add("p", new string[] {"silicates", "carbon"});
+		AsteroidCompositions.Add("a", new string[] {"olivine", "metal"});
+	}
 
 	// Use this for initialization
 	void Start () {
