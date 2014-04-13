@@ -3,11 +3,14 @@ using System.Collections;
 
 public class Controls : MonoBehaviour {
 	public Transform target;
-
+	public float currentFuel;
+	public float currentMoney;
 		
 
 	// Use this for initialization
 	void Start () {
+		currentFuel = 1.0f;
+		currentMoney = 0.0f;
 		//transform.rotation = Quaternion.LookRotation(transform.position - target.position);
 	}
 	
