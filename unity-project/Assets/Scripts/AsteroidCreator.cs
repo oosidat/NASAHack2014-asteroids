@@ -114,7 +114,36 @@ public class AsteroidCreator : MonoBehaviour {
 		return ((AsteroidTypes)(weights.Length - 1)).ToString ();
 	}
 
+	public void SpawnGameObjects(int number, int radius, int au) {
+		for (int i = 0; i < number; i++) {
+			GameObject asteroidGameObj = GameObject.Instantiate(Asteroids [Random.Range (0, 19)]) as GameObject;
+			
+			// create a new asteroid from the template
+			GameObject newAsteroid = GameObject.Instantiate (AsteroidTemplate) as GameObject;
+			
+			// attach asteroid game object to the newAsteroid
+			asteroidGameObj.transform.parent = newAsteroid.transform;
+			newAsteroid.transform.localScale = new Vector3 (0.3f, 0.3f, 0.3f);
 
+			Vector2 belt = Random.insideUnitCircle.normalized * radius;
+			float variance = 20.0f;
+			newAsteroid.transform.localPosition = new Vector3 (Random.Range(belt.x-variance,belt.x+variance),
+			                                                   Random.Range(4.0f, 6.0f),
+			                                                   Random.Range(belt.y-variance, belt.y+variance)
+			                                                   );
+			// set asteoriod properties 
+			string asteroidType = GetAsteroidTypeByRadius(au);
+			float [] asteroidRefl = GetAsteroidReflectance(asteroidType);
+
+			Asteroid asteroid = newAsteroid.GetComponent<Asteroid>();
+			asteroid.SetAsteroidAttributes(asteroidType, 
+			                               GetAsteroidComposition(asteroidType),
+			                               asteroidRefl[0], 
+			                               asteroidRefl[1], 
+			                               asteroidRefl[2]);
+
+		}
+	}
 	public GameObject AsteroidTemplate; // a new asteroid sans the mesh
 	public GameObject [] Asteroids; // all possible asteroid meshes
 
@@ -126,23 +155,12 @@ public class AsteroidCreator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-
-		for (int i = 0; i < 100; i++) {
-			GameObject asteroidGameObj = GameObject.Instantiate(Asteroids [Random.Range (0, 19)]) as GameObject;
-			
-			// create a new asteroid from the template
-			GameObject newAsteroid = GameObject.Instantiate (AsteroidTemplate) as GameObject;
-			
-			// attach asteroid game object to the newAsteroid
-			asteroidGameObj.transform.parent = newAsteroid.transform;
-
-			newAsteroid.transform.localScale = new Vector3 (0.5f, 0.5f, 0.5f);
-
-			Vector2 belt = Random.insideUnitCircle.normalized * 1000;
-			newAsteroid.transform.localPosition = new Vector3 (belt.x, 0, belt.y);
-		}
-
+		SpawnGameObjects(150,200,8);
+		SpawnGameObjects(150,300,10);
+		SpawnGameObjects(150,400,11);
+		SpawnGameObjects(150,500,12);
+		SpawnGameObjects (150, 600, 13);
+		SpawnGameObjects (150, 700, 14);
 	}
 	
 	// Update is called once per frame
