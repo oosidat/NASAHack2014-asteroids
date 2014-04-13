@@ -1735,7 +1735,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 7ac337ae47eb0284fabc72367f32efe9, type: 3}
   - {fileID: 2800000, guid: e8f7aa9128a4d874caca31e52b728291, type: 3}
   - {fileID: 2800000, guid: 1c96bb99257afe0488e7665f5c6576d1, type: 3}
-  type_cycle: {fileID: 8300000, guid: c8b24129f8364e742b16a6d72c8534e0, type: 3}
+  type_cycle: {fileID: 8300000, guid: 70b0a4c4737f9c848ba78b13a109f973, type: 3}
 --- !u!23 &1052930571
 Renderer:
   m_ObjectHideFlags: 0
@@ -2351,7 +2351,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: b7d33b3f2fb9f9b47b78ef0207573145, type: 3}
   - {fileID: 2800000, guid: d0ec67b864ba8de41b0f91191c4d38ab, type: 3}
   - {fileID: 2800000, guid: 21cf8b41eeb6fad469eaeeb3eb6d453b, type: 3}
-  type_cycle: {fileID: 8300000, guid: c8b24129f8364e742b16a6d72c8534e0, type: 3}
+  type_cycle: {fileID: 8300000, guid: 70b0a4c4737f9c848ba78b13a109f973, type: 3}
 --- !u!23 &1663537601
 Renderer:
   m_ObjectHideFlags: 0
@@ -2490,6 +2490,26 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400008, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: type_cycle
+      value: 
+      objectReference: {fileID: 8300000, guid: 70b0a4c4737f9c848ba78b13a109f973, type: 3}
+    - target: {fileID: 11400006, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: type_cycle
+      value: 
+      objectReference: {fileID: 8300000, guid: 70b0a4c4737f9c848ba78b13a109f973, type: 3}
+    - target: {fileID: 8200000, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: MinDistance
+      value: 495.0495
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: filter_apply
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d112dbbf02744e42a22bafb69b38603, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dce262807684cf6409f82f9af308b216, type: 2}
   m_RootGameObject: {fileID: 558780871}
@@ -2591,7 +2611,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 04c0f47b9d59e1448986c1a09bd38ff2, type: 3}
   - {fileID: 2800000, guid: 40993e0fe4db6064f98b879fe2d96c4b, type: 3}
   - {fileID: 2800000, guid: d9eb6d40931ab8f4e8566259217ed013, type: 3}
-  filter_apply: {fileID: 0}
+  filter_apply: {fileID: 8300000, guid: 0d112dbbf02744e42a22bafb69b38603, type: 3}
   filtermask: 0
 --- !u!82 &1812241355
 AudioSource:
@@ -2602,7 +2622,7 @@ AudioSource:
   m_GameObject: {fileID: 1812241349}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 70b0a4c4737f9c848ba78b13a109f973, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2610,7 +2630,7 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 100
+  MinDistance: 495.0495
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
