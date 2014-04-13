@@ -10,9 +10,10 @@ GameObject:
   - 4: {fileID: 400000}
   - 23: {fileID: 2300000}
   - 102: {fileID: 10200000}
+  - 65: {fileID: 6500008}
   m_Layer: 11
   m_Name: MineText
-  m_TagString: distanceLabel
+  m_TagString: MineAsteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,7 +639,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -1245,6 +1246,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &6500008
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .0919922367, z: .100000001}
+  m_Center: {x: 6.19329512e-08, y: -.0459961183, z: -6.57979697e-08}
 --- !u!81 &8100000
 AudioListener:
   m_ObjectHideFlags: 1

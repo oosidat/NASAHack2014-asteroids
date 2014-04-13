@@ -35,13 +35,16 @@ public class Controls : MonoBehaviour {
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Asteroid")
 			{
 				print (hitInfo.transform.tag);
-				transform.LookAt(hitInfo.transform);
+				//transform.LookAt(hitInfo.transform);
 			}
 			//SELECT ASTEROID
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "AsteroidChild")
 			{
+				GameObject.Find ("MineText").renderer.enabled = true;
+				GameObject.Find ("MineText").collider.enabled = true;
+
 				print (hitInfo.transform.tag);
-				transform.LookAt(hitInfo.transform);
+				//transform.LookAt(hitInfo.transform);
 
 				Asteroid asteroid = hitInfo.transform.parent.parent.GetComponent<Asteroid>();
 			 //hitInfo.transform.parent.
@@ -58,9 +61,13 @@ public class Controls : MonoBehaviour {
 
 
 			//GUI BUTTONS
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Scan")
+			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "MineAsteroid")
 			{
-				print ("It's working");
+				print ("Mine Asteroid and Pay me");
+
+
+
+
 			}
 
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Scan_UV")
@@ -98,7 +105,11 @@ public class Controls : MonoBehaviour {
 				print ("It's working");
 			}
 
-
+			if ( hitInfo.transform.tag != "AsteroidChild")
+			{
+				GameObject.Find ("MineText").renderer.enabled = false;
+				GameObject.Find ("MineText").collider.enabled = false;
+			}
 
 		}
 	}
