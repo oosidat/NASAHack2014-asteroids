@@ -34,6 +34,24 @@ public class Controls : MonoBehaviour {
 				print (hitInfo.transform.tag);
 				transform.LookAt(hitInfo.transform);
 			}
+			//SELECT ASTEROID
+			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "AsteroidChild")
+			{
+				print (hitInfo.transform.tag);
+				transform.LookAt(hitInfo.transform);
+
+				Asteroid asteroid = hitInfo.transform.parent.parent.GetComponent<Asteroid>();
+			 //hitInfo.transform.parent.
+				AsteroidCreator asteroidCreator = new AsteroidCreator();
+				//Asteroid asteroid = hitInfo.parent.parent.GetComponent<Asteroid>();
+				float sum = 0;
+				foreach (string resource in asteroid.composition){
+					sum += asteroidCreator.GetResourcePrice(resource);
+				}
+				print (asteroid.asteroidType);
+				print (sum);
+			}
+
 
 
 			//GUI BUTTONS
@@ -81,4 +99,5 @@ public class Controls : MonoBehaviour {
 
 		}
 	}
+
 }

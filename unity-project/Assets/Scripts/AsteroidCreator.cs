@@ -50,6 +50,10 @@ public class AsteroidCreator : MonoBehaviour {
 		minPrice.Add("metal", 2231.25f);
 		
 	}
+
+	public float GetResourcePrice(string key) {
+		return minPrice [key];
+	}
 	
 	public string[] GetAsteroidComposition(string key) {
 		string[] value;
@@ -126,9 +130,7 @@ public class AsteroidCreator : MonoBehaviour {
 		}
 		return ((AsteroidTypes)(weights.Length - 1)).ToString ();
 	}
-	public float calculatePrice(){
-	}
-	
+
 	public void SpawnGameObjects(int number, int radius, int au) {
 		for (int i = 0; i < number; i++) {
 			GameObject asteroidGameObj = GameObject.Instantiate(Asteroids [Random.Range (0, 19)]) as GameObject;
@@ -166,6 +168,7 @@ public class AsteroidCreator : MonoBehaviour {
 		InitializeAsteroidCompositions ();
 		InitializeAsteroidReflectance ();
 		InitializeAsteroidsByRadius ();
+		InitPrices ();
 	}
 	
 	// Use this for initialization
