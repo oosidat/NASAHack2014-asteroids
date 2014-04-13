@@ -16,6 +16,6 @@ public class fuelGage : MonoBehaviour {
 
 	public void changeTexture(int value)
 	{
-
+		renderer.material.mainTexture = images[value];
 	}
 }
