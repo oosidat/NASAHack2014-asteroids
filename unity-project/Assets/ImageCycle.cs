@@ -4,6 +4,7 @@ using System.Collections;
 public class ImageCycle : MonoBehaviour {
 
 	public Texture2D[] images;
+	public AudioClip type_cycle;
 	int image_num = 0;
 
 	// Use this for initialization
@@ -20,6 +21,7 @@ public class ImageCycle : MonoBehaviour {
 							image_num = 0;		
 						}
 				renderer.material.mainTexture = images[image_num];
+				audio.PlayOneShot(type_cycle);
 			}
 
 		if (Input.GetKeyDown (KeyCode.LeftArrow))
@@ -29,8 +31,25 @@ public class ImageCycle : MonoBehaviour {
 							image_num = 12;		
 						}
 			renderer.material.mainTexture = images[image_num];
+			audio.PlayOneShot(type_cycle);	
+		}
+		if (Input.GetMouseButtonDown(0))
+		{
+			RaycastHit hitInfo = new RaycastHit();
+			//DESELECT
+			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Graphs")
+			{
+				print ("Next Image");
+				image_num++;
+				if (image_num >= images.Length) {
+					image_num = 0;		
+				}
+				renderer.material.mainTexture = images[image_num];
+				audio.PlayOneShot(type_cycle);
+			}
 		}
 
-
 	}
+
+
 }
