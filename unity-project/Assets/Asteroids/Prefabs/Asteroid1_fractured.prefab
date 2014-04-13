@@ -12,7 +12,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 54: {fileID: 5400004}
   - 64: {fileID: 6400008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid1_LOD1_shard_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ GameObject:
   - 23: {fileID: 2300002}
   - 54: {fileID: 5400008}
   - 64: {fileID: 6400012}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid1_LOD1_shard_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   - 23: {fileID: 2300004}
   - 54: {fileID: 5400016}
   - 64: {fileID: 6400002}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid1_LOD1_shard_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - 23: {fileID: 2300006}
   - 54: {fileID: 5400010}
   - 64: {fileID: 6400000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid1_LOD1_shard_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - 23: {fileID: 2300008}
   - 54: {fileID: 5400006}
   - 64: {fileID: 6400014}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid1_LOD1_shard_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - 23: {fileID: 2300010}
   - 54: {fileID: 5400012}
   - 64: {fileID: 6400010}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid1_LOD1_shard_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - 23: {fileID: 2300012}
   - 54: {fileID: 5400000}
   - 64: {fileID: 6400006}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid1_LOD1_shard_002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - 23: {fileID: 2300014}
   - 54: {fileID: 5400002}
   - 64: {fileID: 6400004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid1_LOD1_shard_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   - 23: {fileID: 2300016}
   - 54: {fileID: 5400014}
   - 64: {fileID: 6400016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid1_LOD1_shard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - 4: {fileID: 400018}
   - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid1_fractured
   m_TagString: Asteroid
   m_Icon: {fileID: 0}

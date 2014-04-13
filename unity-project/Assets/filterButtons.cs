@@ -20,21 +20,21 @@ public class filterButtons : MonoBehaviour {
 			{
 				print ("uvbutton");
 				int filtermask = 1;
-				renderer.material.mainTexture = images[1];
+				renderer.material.mainTexture = images[0];
 				audio.PlayOneShot(filter_apply);
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "visbutton")
 			{
 				print ("visbutton");
 				int filtermask = 2;
-				renderer.material.mainTexture = images[2];
+				renderer.material.mainTexture = images[1];
 				audio.PlayOneShot(filter_apply);
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "infrabutton")
 			{
 				print ("infrabutton");
 				int filtermask = 3;
-				renderer.material.mainTexture = images[3];
+				renderer.material.mainTexture = images[2];
 				audio.PlayOneShot(filter_apply);
 			}
 		}

@@ -5,6 +5,9 @@ TagManager:
   tags:
   - Graphs
   - Asteroid
+  - uvbutton
+  - visbutton
+  - infrabutton
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
