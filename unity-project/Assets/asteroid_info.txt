@@ -1,0 +1,7 @@
+Asteroid Classes
+
+Asteroids are categorized into different classes depending on colours of light reflecting off of them. Depending on the colours reflected, it is possible to guess their composition. Asteroids fall into three large categories - C (for carbonaceous objects), S (for silicaceous objects), and X (for metallic objects). The ingredients needed for life, for example water and carbon, are more likely to be found on C-type asteroids, whereas S-type objects are like rocks you would find on Earth, and X-type asteroids contain more metals like iron, or more precious metals like gold, copper, and zinc.
+
+Under these broad categories, asteroids are classified into smaller categories. There are also smaller categories of asteroids that aren't classified in any of the three main categories. 
+
+In order to figure out what asteroids will be profitable to mine, you will need to look at the ultraviolet, visible and infrared spectrums coming off of the asteroids. Certain types of asteroids are more abundant in certain radiuses, so you can also use the location of the asteroid to guess what it's made of.
