@@ -157,9 +157,10 @@ GameObject:
   - 4: {fileID: 208670907}
   - 23: {fileID: 208670909}
   - 102: {fileID: 208670908}
+  - 65: {fileID: 208670910}
   m_Layer: 11
   m_Name: MineText
-  m_TagString: distanceLabel
+  m_TagString: MineAsteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,7 +205,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 798714445}
   m_GameObject: {fileID: 208670906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -219,6 +220,18 @@ Renderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
+--- !u!65 &208670910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 208670906}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .400000006, y: .0919922367, z: .100000001}
+  m_Center: {x: 6.19329512e-08, y: -.0459961183, z: -6.57979697e-08}
 --- !u!1 &218657468
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1080,18 @@ Prefab:
     - target: {fileID: 400008, guid: dce262807684cf6409f82f9af308b216, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300028, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_TagString
+      value: MineAsteroid
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dce262807684cf6409f82f9af308b216, type: 2}
