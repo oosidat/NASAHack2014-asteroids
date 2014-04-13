@@ -20,6 +20,7 @@ public class filterButtons : MonoBehaviour {
 			{
 				print ("uvbutton");
 				int filtermask = 1;
+				applyfilter(filtermask);
 				renderer.material.mainTexture = images[0];
 				audio.PlayOneShot(filter_apply);
 			}
@@ -27,6 +28,7 @@ public class filterButtons : MonoBehaviour {
 			{
 				print ("visbutton");
 				int filtermask = 2;
+				applyfilter(filtermask);
 				renderer.material.mainTexture = images[1];
 				audio.PlayOneShot(filter_apply);
 			}
@@ -34,9 +36,31 @@ public class filterButtons : MonoBehaviour {
 			{
 				print ("infrabutton");
 				int filtermask = 3;
+				applyfilter (filtermask);
 				renderer.material.mainTexture = images[2];
 				audio.PlayOneShot(filter_apply);
 			}
 		}
 	}
+
+	void applyfilter(int mask){
+		GameObject [] asteroids = GameObject.FindGameObjectsWithTag ("AsteroidGameObjects");
+		for (int i=0; i<(int)asteroids.Length; i++) {
+			Asteroid asteroidtmp = asteroids[i].GetComponent<Asteroid>();
+
+			if(mask==1)
+			{
+				asteroids[i].renderer.material.SetFloat("_Shinyness",(float)(asteroidtmp.uv*100.0));
+			}
+			if(mask==2)
+			{
+				asteroids[i].renderer.material.SetFloat("_Shinyness",(float)(asteroidtmp.vis*100.0));
+			}
+			if(mask==3)
+			{
+				asteroids[i].renderer.material.SetFloat("_Shinyness",(float)(asteroidtmp.ir*100.0));
+			}
+				}
+		}
+	             
 }
