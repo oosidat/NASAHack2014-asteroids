@@ -128,7 +128,7 @@ public class AsteroidCreator : MonoBehaviour {
 			Vector2 belt = Random.insideUnitCircle.normalized * radius;
 			float variance = 20.0f;
 			newAsteroid.transform.localPosition = new Vector3 (Random.Range(belt.x-variance,belt.x+variance),
-			                                                   Random.Range(-10.0f, 10.0f),
+			                                                   Random.Range(-20.0f, 20.0f),
 			                                                   Random.Range(belt.y-variance, belt.y+variance)
 			                                                   );
 			// set asteoriod properties 
