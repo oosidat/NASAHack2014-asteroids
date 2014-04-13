@@ -120,7 +120,7 @@ public class AsteroidCreator : MonoBehaviour {
 			
 			// create a new asteroid from the template
 			GameObject newAsteroid = GameObject.Instantiate (AsteroidTemplate) as GameObject;
-			
+
 			// attach asteroid game object to the newAsteroid
 			asteroidGameObj.transform.parent = newAsteroid.transform;
 			newAsteroid.transform.localScale = new Vector3 (0.3f, 0.3f, 0.3f);
@@ -156,11 +156,11 @@ public class AsteroidCreator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		SpawnGameObjects(150,200,8);
-		SpawnGameObjects(150,300,10);
+		/*SpawnGameObjects(150,300,10);
 		SpawnGameObjects(150,400,11);
 		SpawnGameObjects(150,500,12);
 		SpawnGameObjects (150, 600, 13);
-		SpawnGameObjects (150, 700, 14);
+		SpawnGameObjects (150, 700, 14);*/
 	}
 	
 	// Update is called once per frame
