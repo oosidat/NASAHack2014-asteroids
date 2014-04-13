@@ -6,6 +6,7 @@ public class AsteroidCreator : MonoBehaviour {
 
 	public enum AsteroidTypes {s, c, q, x, v, u, r, d, t, m, e, o, p, a};
 	public static Dictionary<string, string[]> AsteroidCompositions = new Dictionary<string, string[]>();
+	public static Dictionary<string, float[]> AsteroidReflectance = new Dictionary<string, float[]>();
 
 	/* Attempt to get an Asteroid Type, based on their distribution */
 	public string GetAsteroidType() {
