@@ -1,16 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Controls : MonoBehaviour {
 	public Transform target;
 	public float currentFuel;
 	public float currentMoney;
-		
-
+	public float lastAstVal;
+	
+	private GameObject last_asteroid;
+	public AudioClip mine;
 	// Use this for initialization
 	void Start () {
+		
 		currentFuel = 1.0f;
 		currentMoney = 0.0f;
+		lastAstVal = 0.0f;
 		//transform.rotation = Quaternion.LookRotation(transform.position - target.position);
 	}
 	
@@ -24,8 +29,8 @@ public class Controls : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0))
 		{
 			RaycastHit hitInfo = new RaycastHit();
-
-
+			
+			
 			//DESELECT
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Untagged")
 			{
@@ -42,12 +47,12 @@ public class Controls : MonoBehaviour {
 			{
 				GameObject.Find ("MineText").renderer.enabled = true;
 				GameObject.Find ("MineText").collider.enabled = true;
-
+				
 				print (hitInfo.transform.tag);
 				//transform.LookAt(hitInfo.transform);
-
+				last_asteroid = hitInfo.transform.parent.parent.gameObject;
 				Asteroid asteroid = hitInfo.transform.parent.parent.GetComponent<Asteroid>();
-			 //hitInfo.transform.parent.
+				//hitInfo.transform.parent.
 				AsteroidCreator asteroidCreator = new AsteroidCreator();
 				//Asteroid asteroid = hitInfo.parent.parent.GetComponent<Asteroid>();
 				float sum = 0;
@@ -56,20 +61,22 @@ public class Controls : MonoBehaviour {
 				}
 				print (asteroid.asteroidType);
 				print (sum);
+				lastAstVal = sum;
 			}
-
-
-
+			
+			
+			
 			//GUI BUTTONS
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "MineAsteroid")
 			{
 				print ("Mine Asteroid and Pay me");
-
-
-
-
+				currentMoney = currentMoney+lastAstVal;
+				//String currentMoneyString = "Cash: $"+currentMoney.ToString("0.00");
+				GameObject.FindGameObjectWithTag ("CashText").GetComponent<TextMesh> ().text ="Cash: $"+currentMoney.ToString("0.00");// currentMoneyString;
+				Destroy(last_asteroid);
+				audio.PlayOneShot(mine);
 			}
-
+			
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Scan_UV")
 			{
 				print ("It's working");
@@ -82,8 +89,8 @@ public class Controls : MonoBehaviour {
 			{
 				print ("It's working");
 			}
-
-
+			
+			
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Move")
 			{
 				print ("It's working");
@@ -104,14 +111,14 @@ public class Controls : MonoBehaviour {
 			{
 				print ("It's working");
 			}
-
+			
 			if ( hitInfo.transform.tag != "AsteroidChild")
 			{
 				GameObject.Find ("MineText").renderer.enabled = false;
 				GameObject.Find ("MineText").collider.enabled = false;
 			}
-
+			
 		}
 	}
-
+	
 }

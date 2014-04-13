@@ -9,10 +9,12 @@ public class LOL_Camera : MonoBehaviour {
 
 	private bool isCurrentlyMoving = false;
 	private Vector3 moveToPos;
-
+	public float prevx;
+	public float prevz;
 	void Awake () {
 		Instance = this;
-
+		prevx = 0;
+		prevz = 0;
 		// set the initial position of the camera to match the moveToPos
 		moveToPos = Camera.main.transform.position;
 	}
@@ -45,12 +47,28 @@ public class LOL_Camera : MonoBehaviour {
 
 					double radius = Math.Sqrt (Math.Pow (currentX, 2) + Math.Pow (currentZ, 2));
 					double auRad = 2 + (radius - 45) * (3.5 - 2.0) / 145.0;
+					double magDifference = Math.Sqrt(Math.Pow (currentX-prevx,2)+Math.Pow(currentZ-prevz,2));
+
 					String auText = "Distance: " + auRad.ToString ("0.00") + " AU";
 
 					GameObject.FindGameObjectWithTag ("distanceLabel").GetComponent<TextMesh> ().text = auText;
 
 					// set our new position as the end goal for moving the camera
 					moveToPos = new Vector3 (hitInfo.point.x, 0.0f, hitInfo.point.z);
+					float fuelExpended = (float)magDifference*0.0005f;
+					Controls control = GameObject.Find ("Player").GetComponent<Controls>();
+					control.currentFuel = control.currentFuel-(float)fuelExpended;
+					print ("fuel expended: "+fuelExpended+"current fuel: "+control.currentFuel );
+					fuelGage fuelg = GameObject.Find ("FuelGage").GetComponent<fuelGage>();
+					float hundredfuel = 100.0f*control.currentFuel;
+					String fuelText = "Current Charge: "+hundredfuel.ToString("0.0");
+					int intfuel = (int)Math.Floor(control.currentFuel);
+					GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh> ().text = fuelText;
+
+
+					fuelg.changeTexture(intfuel);
+					prevx = currentX;
+					prevz = currentZ;
 				}
 			}
 		}
