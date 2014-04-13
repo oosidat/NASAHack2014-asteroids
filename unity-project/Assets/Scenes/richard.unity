@@ -86,7 +86,7 @@ GameObject:
   - 23: {fileID: 126428519}
   - 54: {fileID: 126428518}
   - 64: {fileID: 126428517}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid2_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   - 23: {fileID: 377325821}
   - 54: {fileID: 377325820}
   - 64: {fileID: 377325819}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid2_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,7 +803,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 838323574}
   - 95: {fileID: 838323575}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid2_LOD0
   m_TagString: Asteroid
   m_Icon: {fileID: 0}
@@ -1789,7 +1789,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2047395252}
   - 95: {fileID: 2047395251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Asteroid2_LOD1
   m_TagString: Asteroid
   m_Icon: {fileID: 0}
