@@ -19,17 +19,12 @@ public class Controls : MonoBehaviour {
 			//DESELECT
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Untagged")
 			{
-				print ("It's working");
+				print (hitInfo.transform.tag);
 			}
 			//SELECT ASTEROID
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Asteroid")
 			{
-				print ("It's working");
-			}
-			//SELECT ASTEROID ON MAP
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Asteroid_onmap")
-			{
-				print ("It's working");
+				print (hitInfo.transform.tag);
 			}
 
 

@@ -16,6 +16,7 @@ public class LOL_Camera : MonoBehaviour {
 		//if (Input.mousePosition.x > 230 && Input.mousePosition.y < 230 && Input.GetMouseButton(0))
 		if ( Input.GetMouseButton(0))
 		{
+			Debug.Log (Input.mousePosition.y + ":" + Input.mousePosition.x);
 			//int TerrainLayer = 1 << 8;
 			//RaycastHit hitInfo;
 			RaycastHit hitInfo = new RaycastHit();
@@ -23,7 +24,7 @@ public class LOL_Camera : MonoBehaviour {
 			if (Physics.Raycast(MapCam.ScreenPointToRay(Input.mousePosition), out hitInfo))
 			{
 				print (hitInfo.transform.tag);
-			}
+			
 
 
 			Ray ray = MapCam.ScreenPointToRay(Input.mousePosition);
@@ -32,7 +33,7 @@ public class LOL_Camera : MonoBehaviour {
 			Debug.Log("HitInfo x: " + hitInfo.point.x + " y: " + hitInfo.point.y + " z: " + hitInfo.point.z);
 			StartCoroutine(	MovePlayer(new Vector3(hitInfo.point.x,1,hitInfo.point.z)));
 			//Debug.Log(hitInfo.transform.tag);
-
+			}
 		}
 		
 		
