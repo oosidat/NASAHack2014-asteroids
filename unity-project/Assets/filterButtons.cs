@@ -46,21 +46,41 @@ public class filterButtons : MonoBehaviour {
 	void applyfilter(int mask){
 		GameObject [] asteroids = GameObject.FindGameObjectsWithTag ("AsteroidGameObjects");
 		for (int i=0; i<(int)asteroids.Length; i++) {
+
 			Asteroid asteroidtmp = asteroids[i].GetComponent<Asteroid>();
+			Transform asteroidChildTransform = asteroidtmp.transform.GetChild(0).transform.GetChild(0);
+
+			float baseColor = 0.5f;
+			float r = baseColor;
+			float g = baseColor;
+			float b = baseColor;
+			float k = 0.2f;
 
 			// update the shininess of the asteroid based on filter
 			if(mask==1)
 			{
-				asteroidtmp.transform.GetChild(0).transform.GetChild(0).renderer.material.SetFloat("_Shininess",(float)(asteroidtmp.uv*100.0));
+				// reduce g to make it a purple tint
+				//g = g - asteroidtmp.uv * k;
+
+				asteroidChildTransform.renderer.material.SetFloat("_Shininess",(float)(asteroidtmp.uv*100.0));
+				//asteroidChildTransform.renderer.material.SetColor("_Color", new Color(baseColor * k, asteroidtmp.uv, baseColor));
+				//asteroidChildTransform.renderer.material.SetColor("_SpecColor", new Color(baseColor, asteroidtmp.uv, baseColor));
 			}
 			if(mask==2)
 			{
-				asteroidtmp.transform.GetChild(0).transform.GetChild(0).renderer.material.SetFloat("_Shininess",(float)(asteroidtmp.vis*100.0));
-
+				asteroidChildTransform.renderer.material.SetFloat("_Shininess",(float)(asteroidtmp.vis*100.0));
+				//asteroidChildTransform.renderer.material.SetColor("_Color", new Color(baseColor, baseColor, baseColor));
+				//asteroidChildTransform.renderer.material.SetColor("_SpecColor", new Color(baseColor, baseColor, baseColor));
 			}
 			if(mask==3)
 			{
-				asteroidtmp.transform.GetChild(0).transform.GetChild(0).renderer.material.SetFloat("_Shininess",(float)(asteroidtmp.ir*100.0));
+				// reduce g and b to make it a red tint
+				//g = g - asteroidtmp.ir * k;
+				//b = g;
+
+				asteroidChildTransform.renderer.material.SetFloat("_Shininess",(float)(asteroidtmp.ir*100.0));
+				//asteroidChildTransform.renderer.material.SetColor("_Color", new Color(baseColor * k, asteroidtmp.ir, asteroidtmp.ir));
+				//asteroidChildTransform.renderer.material.SetColor("_SpecColor", new Color(baseColor, asteroidtmp.ir, asteroidtmp.ir));
 			}
 		}
 	}             
