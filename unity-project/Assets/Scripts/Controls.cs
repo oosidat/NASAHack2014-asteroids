@@ -11,6 +11,10 @@ public class Controls : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
+		if(Input.GetKeyDown("escape")) {//When a key is pressed down it see if it was the escape key if it was it will execute the code
+			Application.Quit(); // Quits the game
+		}
+		
 		if (Input.GetMouseButtonDown(0))
 		{
 			RaycastHit hitInfo = new RaycastHit();
