@@ -245,7 +245,7 @@ GameObject:
   - 102: {fileID: 218657470}
   m_Layer: 11
   m_Name: CashText
-  m_TagString: distanceLabel
+  m_TagString: CashText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1059,7 +1059,7 @@ GameObject:
   - 102: {fileID: 853633537}
   m_Layer: 11
   m_Name: Fuel
-  m_TagString: Untagged
+  m_TagString: fuelLabel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1715,6 +1715,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  currentFuel: 0
+  currentMoney: 0
 --- !u!114 &1309775492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2285,6 +2287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MapCam: {fileID: 2070560920}
+  prevx: 0
+  prevz: 0
 --- !u!81 &2070560917
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2471,6 +2475,14 @@ Prefab:
     - target: {fileID: 400008, guid: dce262807684cf6409f82f9af308b216, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100032, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_TagString
+      value: CashText
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_TagString
+      value: fuelLabel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dce262807684cf6409f82f9af308b216, type: 2}
