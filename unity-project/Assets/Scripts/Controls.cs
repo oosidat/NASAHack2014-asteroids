@@ -2,10 +2,13 @@
 using System.Collections;
 
 public class Controls : MonoBehaviour {
+	public Transform target;
+
+		
 
 	// Use this for initialization
 	void Start () {
-	
+		//transform.rotation = Quaternion.LookRotation(transform.position - target.position);
 	}
 	
 	// Update is called once per frame
@@ -29,6 +32,7 @@ public class Controls : MonoBehaviour {
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Asteroid")
 			{
 				print (hitInfo.transform.tag);
+				transform.LookAt(hitInfo.transform);
 			}
 
 

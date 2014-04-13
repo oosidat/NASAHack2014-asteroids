@@ -41,7 +41,7 @@ public class LOL_Camera : MonoBehaviour {
 
 				if (hitInfo.transform.tag != "MapDeadZone"){
 					Camera.main.transform.position = new Vector3(hitInfo.point.x,1,hitInfo.point.z);
-				//print(Mathf.Clamp(10, 1, 3));
+					//print(Mathf.Clamp(10, 1, 3));
 				}
 			}
 		}
