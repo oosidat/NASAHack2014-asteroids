@@ -31,6 +31,10 @@ public class AsteroidCreator : MonoBehaviour {
 		return AsteroidCompositions[key];
 	}
 
+	public float[] GetAsteroidReflectance(string key) {
+		return AsteroidReflectance[key];
+	}
+
 	public GameObject AsteroidTemplate; // a new asteroid sans the mesh
 	public GameObject [] Asteroids; // all possible asteroid meshes
 
@@ -49,6 +53,23 @@ public class AsteroidCreator : MonoBehaviour {
 		AsteroidCompositions.Add("o", new string[] {"silicates", "water", "carbon"});
 		AsteroidCompositions.Add("p", new string[] {"silicates", "carbon"});
 		AsteroidCompositions.Add("a", new string[] {"olivine", "metal"});
+
+		AsteroidReflectance.Add("s", new float[] {0.17f, 0.83f, 0.50f});
+		AsteroidReflectance.Add("c", new float[] {0.33f, 0.50f, 0.50f});
+		AsteroidReflectance.Add("q", new float[] {0.17f, 0.83f, 0.17f});
+		AsteroidReflectance.Add("x", new float[] {0.17f, 0.67f, 0.67f});
+		AsteroidReflectance.Add("v", new float[] {0.00f, 1.00f, 0.00f});
+		AsteroidReflectance.Add("u", new float[] {0.00f, 0.00f, 0.00f});
+		AsteroidReflectance.Add("r", new float[] {0.00f, 0.83f, 0.33f});
+		AsteroidReflectance.Add("d", new float[] {0.33f, 0.67f, 0.83f});
+		AsteroidReflectance.Add("t", new float[] {0.33f, 0.67f, 0.67f});
+		AsteroidReflectance.Add("m", new float[] {0.33f, 0.67f, 0.67f});
+		AsteroidReflectance.Add("e", new float[] {0.33f, 0.50f, 0.67f});
+		AsteroidReflectance.Add("o", new float[] {0.33f, 0.50f, 0.17f});
+		AsteroidReflectance.Add("p", new float[] {0.50f, 0.67f, 0.67f});
+		AsteroidReflectance.Add("a", new float[] {0.17f, 1.00f, 0.83f});
+
+
 	}
 
 	// Use this for initialization
