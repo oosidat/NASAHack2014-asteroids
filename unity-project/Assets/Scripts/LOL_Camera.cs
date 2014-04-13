@@ -14,10 +14,10 @@ public class LOL_Camera : MonoBehaviour {
 	{
 		
 		//if (Input.mousePosition.x > 230 && Input.mousePosition.y < 230 && Input.GetMouseButton(0))
-		if ( Input.GetMouseButton(0))
+		if ( Input.GetMouseButton(0) && MapCam.pixelRect.Contains(Input.mousePosition))
 		{
 			Debug.Log (Input.mousePosition.y + ":" + Input.mousePosition.x);
-			//int TerrainLayer = 1 << 8;
+			int TerrainLayer = 1 << 10;
 			//RaycastHit hitInfo;
 			RaycastHit hitInfo = new RaycastHit();
 
@@ -28,7 +28,7 @@ public class LOL_Camera : MonoBehaviour {
 
 
 			Ray ray = MapCam.ScreenPointToRay(Input.mousePosition);
-			//Physics.Raycast(ray, out hitInfo, Mathf.Infinity, TerrainLayer);
+			Physics.Raycast(ray, out hitInfo, Mathf.Infinity, TerrainLayer);
 			Debug.DrawLine(ray.origin, hitInfo.point);
 			Debug.Log("HitInfo x: " + hitInfo.point.x + " y: " + hitInfo.point.y + " z: " + hitInfo.point.z);
 			StartCoroutine(	MovePlayer(new Vector3(hitInfo.point.x,1,hitInfo.point.z)));
@@ -50,6 +50,36 @@ public class LOL_Camera : MonoBehaviour {
 				}
 	}
 
+
+	/*
+        if (player.hud.MiniMap.IsInViewport(Input.mousePosition))
+        {
+            RaycastHit hit;
+            Ray ray = player.hud.MiniMap.minimapCamera.ScreenPointToRay(Input.mousePosition);
+ 
+            // Trace ray from minimap viewport, ignoring everything except the ground
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, CustomLayerMask.Ground))
+            {
+                Vector3 miniMapPosition = hit.point;
+                Vector3 camViewCenter;
+                RaycastHit cameraView;
+                Vector3 camDestPos;
+ 
+                // Project a ray from the center of the main camera to find current world position
+                Ray cameraCenter = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+                Physics.Raycast(cameraCenter, out cameraView, Mathf.Infinity, CustomLayerMask.Ground);
+                camViewCenter = cameraView.point;
+ 
+                // Calculate change to move from current position to new minimap location                    
+                camDestPos = miniMapPosition - camViewCenter;
+                camDestPos.y = 0;           // maintain current height
+ 
+                Debug.Log("Camera: " + Camera.main.transform.position);
+                Debug.Log("Add to: " + camDestPos);
+                Camera.main.transform.position += camDestPos;
+            }                
+        }
+	 */
 
 
 	
