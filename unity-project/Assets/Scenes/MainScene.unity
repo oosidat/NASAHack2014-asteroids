@@ -1353,7 +1353,12 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 11400000, guid: c4e2503b198ac624382782958ba8ff61, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: c4e2503b198ac624382782958ba8ff61, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c4e2503b198ac624382782958ba8ff61, type: 2}
   m_RootGameObject: {fileID: 546991190}
   m_IsPrefabParent: 0
@@ -2465,16 +2470,17 @@ GameObject:
 --- !u!114 &2070560916
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: c4e2503b198ac624382782958ba8ff61,
-    type: 2}
-  m_PrefabInternal: {fileID: 912735488}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2070560915}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad5ba423808fed242983a2060d583ae4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4408dc6099bca4420a28b7d4e8b1a978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   MapCam: {fileID: 2070560920}
+  prevx: 0
+  prevz: 0
 --- !u!81 &2070560917
 AudioListener:
   m_ObjectHideFlags: 0
