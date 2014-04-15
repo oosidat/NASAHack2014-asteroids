@@ -148,6 +148,8 @@ public class AsteroidCreator : MonoBehaviour {
 			                                                   Random.Range(-10.0f, 10.0f),
 			                                                   Random.Range(belt.y-variance, belt.y+variance)
 			                                                   );
+			newAsteroid.transform.rotation = Random.rotation;
+
 			// set asteoriod properties 
 			string asteroidType = GetAsteroidTypeByRadius(au);
 			float [] asteroidRefl = GetAsteroidReflectance(asteroidType);
