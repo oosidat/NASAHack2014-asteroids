@@ -13,7 +13,7 @@ public class Controls : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-		currentFuel = 1.0f;
+		//currentFuel = 1.0f;
 		currentMoney = 0.0f;
 		lastAstVal = 0.0f;
 		//transform.rotation = Quaternion.LookRotation(transform.position - target.position);
