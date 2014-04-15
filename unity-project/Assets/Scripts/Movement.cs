@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour {
 	void LateUpdate() {
 		
 		//if (Input.mousePosition.x > 230 && Input.mousePosition.y < 230 && Input.GetMouseButton(0))
-		if (Input.GetMouseButtonUp (0) && MapCam.pixelRect.Contains (Input.mousePosition)) {
+		if (Input.GetMouseButton (0) && MapCam.pixelRect.Contains (Input.mousePosition)) {
 			
 			Debug.Log (Input.mousePosition.y + ":" + Input.mousePosition.x);
 			int TerrainLayer = 1 << 10;
