@@ -1,0 +1,134 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
+body {
+	font-family: 'Open Sans', Helvetica, Verdana, Arial, sans-serif;
+	margin: 0;
+}
+a:link, a:visited {
+	color: #bfbfbf;
+}
+a:active, a:hover {
+	color: #bfbfbf;
+}
+
+.header {
+	padding: 50px;
+	text-align: center;
+}
+
+.header p {
+	font-size: small;
+	color: #555;
+}
+/*p.header {
+	font-size: small;
+}
+p.header span {
+	font-weight: bold;
+}*/
+p.footer {
+	font-size: x-small;
+}
+div.content {
+	margin: auto;
+	width: 960px;
+	border-width: 10px;
+	border-color:#282828  ;
+	border-style:solid;
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	border-radius: 16px;
+}
+div.broken,
+div.missing {
+	margin: auto;
+	position: relative;
+	top: 50%;
+	width: 193px;
+}
+div.broken a,
+div.missing a {
+	height: 63px;
+	position: relative;
+	top: -31px;
+}
+div.broken img,
+div.missing img {
+	border-width: 0px;
+}
+div.broken {
+	display: none;
+}
+div#unityPlayer {
+	cursor: default;
+	height: 600px;
+	width: 960px;
+
+}
+
+div.description {
+	margin: auto;
+	width: 960px;
+	color: black;
+	text-align: justify;
+	color: #555;
+}
+
+div.game {
+	background-image: url(groovilicious-animated-stars-night.gif);
+	background-position: 50% 50%;
+	background-color: black;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	padding: 20px;
+	text-align: center;
+	color: white;
+}
+
+img.nasaimg {
+	margin: 0 auto;
+	display: block;
+	padding: 50px;
+}
+
+div.bubble {
+	border: 1px solid #205AA7;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	padding: 30px;
+	font-family: 'courier';
+	text-align: center;
+	color: #205AA7;
+	margin-bottom: 50px;
+
+}
+
+h1 {
+	font-family: 'Open Sans';
+	font-weight: 300;
+	font-size: 4em;
+	color: #555;
+	margin-bottom: -10px;
+	margin-top: -10px;
+}
+
+h2 {
+	color: #272727;
+	font-weight: 400;
+	font-family: "Open Sans";
+}
+
+
+footer {
+	background-color: black;
+	margin-top: 100px;
+	text-align: center;
+	padding: 20px 0 20px 0;
+}
+
+footer img {
+	width: 50px;
+	height: 50px;
+}
+
