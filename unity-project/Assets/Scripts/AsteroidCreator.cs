@@ -140,7 +140,8 @@ public class AsteroidCreator : MonoBehaviour {
 			
 			// attach asteroid game object to the newAsteroid
 			asteroidGameObj.transform.parent = newAsteroid.transform;
-			newAsteroid.transform.localScale = new Vector3 (0.3f, 0.3f, 0.3f);
+			float scale = Random.Range(0.2f, 0.5f);
+			newAsteroid.transform.localScale = new Vector3 (scale, scale, scale);
 			
 			Vector2 belt = Random.insideUnitCircle.normalized * radius;
 			float variance = 20.0f;
