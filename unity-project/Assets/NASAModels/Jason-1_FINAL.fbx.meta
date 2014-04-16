@@ -1,0 +1,115 @@
+fileFormatVersion: 2
+guid: 9d42e6e242e8ec0418806a2e28c31e93
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Jason-1_vFINAL [Black Surfaces]
+    100004: Jason-1_vFINAL [Dark Gold Surfaces]
+    100006: Jason-1_vFINAL [Dark Grey]
+    100008: Jason-1_vFINAL [Foil Color Surfaces]
+    100010: Jason-1_vFINAL [Grey Surfaces]
+    100012: Jason-1_vFINAL [Light Grey Surfaces]
+    100014: Jason-1_vFINAL [Main Body_Foil]
+    100016: Jason-1_vFINAL [Solar Panels]
+    100018: Jason-1_vFINAL [Steel Panels]
+    100020: Jason-1_vFINAL [White Surfaces]
+    100022: Jason-1_vFINAL [White Surfaces_Smooth]
+    400000: //RootNode
+    400002: Jason-1_vFINAL [Black Surfaces]
+    400004: Jason-1_vFINAL [Dark Gold Surfaces]
+    400006: Jason-1_vFINAL [Dark Grey]
+    400008: Jason-1_vFINAL [Foil Color Surfaces]
+    400010: Jason-1_vFINAL [Grey Surfaces]
+    400012: Jason-1_vFINAL [Light Grey Surfaces]
+    400014: Jason-1_vFINAL [Main Body_Foil]
+    400016: Jason-1_vFINAL [Solar Panels]
+    400018: Jason-1_vFINAL [Steel Panels]
+    400020: Jason-1_vFINAL [White Surfaces]
+    400022: Jason-1_vFINAL [White Surfaces_Smooth]
+    2300000: Jason-1_vFINAL [Black Surfaces]
+    2300002: Jason-1_vFINAL [Dark Gold Surfaces]
+    2300004: Jason-1_vFINAL [Dark Grey]
+    2300006: Jason-1_vFINAL [Foil Color Surfaces]
+    2300008: Jason-1_vFINAL [Grey Surfaces]
+    2300010: Jason-1_vFINAL [Light Grey Surfaces]
+    2300012: Jason-1_vFINAL [Main Body_Foil]
+    2300014: Jason-1_vFINAL [Solar Panels]
+    2300016: Jason-1_vFINAL [Steel Panels]
+    2300018: Jason-1_vFINAL [White Surfaces]
+    2300020: Jason-1_vFINAL [White Surfaces_Smooth]
+    3300000: Jason-1_vFINAL [Black Surfaces]
+    3300002: Jason-1_vFINAL [Dark Gold Surfaces]
+    3300004: Jason-1_vFINAL [Dark Grey]
+    3300006: Jason-1_vFINAL [Foil Color Surfaces]
+    3300008: Jason-1_vFINAL [Grey Surfaces]
+    3300010: Jason-1_vFINAL [Light Grey Surfaces]
+    3300012: Jason-1_vFINAL [Main Body_Foil]
+    3300014: Jason-1_vFINAL [Solar Panels]
+    3300016: Jason-1_vFINAL [Steel Panels]
+    3300018: Jason-1_vFINAL [White Surfaces]
+    3300020: Jason-1_vFINAL [White Surfaces_Smooth]
+    4300000: Jason-1_vFINAL [Main Body_Foil]
+    4300002: Jason-1_vFINAL [Foil Color Surfaces]
+    4300004: Jason-1_vFINAL [White Surfaces]
+    4300006: Jason-1_vFINAL [Black Surfaces]
+    4300008: Jason-1_vFINAL [Grey Surfaces]
+    4300010: Jason-1_vFINAL [White Surfaces_Smooth]
+    4300012: Jason-1_vFINAL [Dark Gold Surfaces]
+    4300014: Jason-1_vFINAL [Solar Panels]
+    4300016: Jason-1_vFINAL [Steel Panels]
+    4300018: Jason-1_vFINAL [Light Grey Surfaces]
+    4300020: Jason-1_vFINAL [Dark Grey]
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
