@@ -48,17 +48,24 @@ public class Movement : MonoBehaviour {
 					double radius = Math.Sqrt (Math.Pow (currentX, 2) + Math.Pow (currentZ, 2));
 					double auRad = 2 + (radius - 45) * (3.5 - 2.0) / 145.0;
 					String auText = "Distance: " + auRad.ToString ("0.00") + " AU";
+
 					double magDifference = Math.Sqrt(Math.Pow (currentX-prevx,2)+Math.Pow (currentZ-prevz,2));
+
 					GameObject.FindGameObjectWithTag ("distanceLabel").GetComponent<TextMesh> ().text = auText;
 					print("mag difference: "+magDifference);
+
 					// set our new position as the end goal for moving the camera
 					moveToPos = new Vector3 (hitInfo.point.x, 0.0f, hitInfo.point.z);
 
 					float fuelExpended = (float)magDifference*0.0005f;
+
 					Controls control = GameObject.Find ("Player").GetComponent<Controls>();
 					control.currentFuel = control.currentFuel-(float)fuelExpended;
-					int intfuel = (int)Math.Floor(10.0f*control.currentFuel);
-					print ("fuel expended: "+fuelExpended+"current fuel: "+control.currentFuel+" fuel int: "+intfuel );
+
+					int intfuel = (int)Math.Floor(control.currentFuel/10.0f);
+
+					print ("fuel expended: "+fuelExpended+"; current fuel: "+control.currentFuel+"; fuel int: "+intfuel );
+
 					fuelGage fuelg = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
 					float hundredfuel = 100.0f*control.currentFuel;
 					String fuelText = "Current Charge: "+hundredfuel.ToString("0.0");
