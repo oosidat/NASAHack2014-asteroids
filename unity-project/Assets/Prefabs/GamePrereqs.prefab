@@ -186,7 +186,7 @@ Camera:
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: .672999978
+    x: .699999988
     y: .0160000008
     width: .140000001
     height: .245000005
