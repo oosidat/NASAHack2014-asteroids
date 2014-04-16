@@ -5,7 +5,7 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   AndroidProfiler: 0
-  defaultScreenOrientation: 0
+  defaultScreenOrientation: 3
   targetDevice: 2
   targetGlesGraphics: 1
   targetResolution: 0
@@ -73,7 +73,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  iPhoneBundleIdentifier: com.Company.ProductName
+  iPhoneBundleIdentifier: com.Company.ProductName34234
   productGUID: ec24cceb0504eac48b2c4c4fb5e6d43b
   iPhoneBundleVersion: 1.0
   AndroidBundleVersionCode: 1
@@ -191,10 +191,10 @@ PlayerSettings:
   blackberryMicrophonePermissions: 0
   blackberryGamepadSupport: 0
   blackberryBuildId: 0
-  blackberryLandscapeSplashScreen: {fileID: 0}
-  blackberryPortraitSplashScreen: {fileID: 0}
-  blackberrySquareSplashScreen: {fileID: 2800000, guid: 18524aa6de70ebc4faca4c2e93372035,
+  blackberryLandscapeSplashScreen: {fileID: 2800000, guid: adb26c69d7234134d9de042a3c74a38a,
     type: 3}
+  blackberryPortraitSplashScreen: {fileID: 0}
+  blackberrySquareSplashScreen: {fileID: 0}
   tizenProductDescription: 
   tizenProductURL: 
   tizenCertificatePath: 
