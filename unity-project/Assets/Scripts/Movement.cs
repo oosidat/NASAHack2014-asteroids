@@ -22,7 +22,7 @@ public class Movement : MonoBehaviour {
 	void LateUpdate() {
 		
 		//if (Input.mousePosition.x > 230 && Input.mousePosition.y < 230 && Input.GetMouseButton(0))
-		if (Input.GetMouseButtonUp (0) && MapCam.pixelRect.Contains (Input.mousePosition)) {
+		if (Input.GetMouseButton (0) && MapCam.pixelRect.Contains (Input.mousePosition)) {
 			
 			Debug.Log (Input.mousePosition.y + ":" + Input.mousePosition.x);
 			int TerrainLayer = 1 << 10;
@@ -53,6 +53,7 @@ public class Movement : MonoBehaviour {
 					print("mag difference: "+magDifference);
 					// set our new position as the end goal for moving the camera
 					moveToPos = new Vector3 (hitInfo.point.x, 0.0f, hitInfo.point.z);
+
 					float fuelExpended = (float)magDifference*0.0005f;
 					Controls control = GameObject.Find ("Player").GetComponent<Controls>();
 					control.currentFuel = control.currentFuel-(float)fuelExpended;
