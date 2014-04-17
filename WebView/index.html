@@ -3,7 +3,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>Rocks! Lasers! Profit!</title>
-		<script type='text/javascript' src='jquery.min.js'></script>
+		<link rel="stylesheet" type="text/css" href="stylesheets/web.css">
+		<script type='text/javascript' src='scripts/jquery.min.js'></script>
 		<script type="text/javascript">
 		<!--
 		var unityObjectUrl = "UnityObject2.js";
@@ -22,7 +23,10 @@
 			};
 			var u = new UnityObject2(config);
 			
-			jQuery(function() {
+			function startGame(){
+
+				$('#webplayer-placeholder').hide();
+				$('#unityPlayer').show();
 
 				var $missingScreen = jQuery("#unityPlayer").find(".missing");
 				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
@@ -57,10 +61,9 @@
 					}
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "Web.unity3d");
-			});
+			};
 		-->
 		</script>
-		<link rel="stylesheet" type="text/css" href="web.css">
 	</head>
 	<body>
 		<div class="header">
@@ -70,7 +73,10 @@
 		
 		<div class="game">
 			<div class="content">
-				<div id="unityPlayer">
+				<div class="webplayer-placeholder" id="webplayer-placeholder">
+					<input type="button" value="Start Game" onclick="startGame();" />
+				</div>
+				<div id="unityPlayer" style="display: none;">
 					<div class="missing">
 						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
 							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
@@ -81,8 +87,7 @@
 			<p class="footer">Download for <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Windows</a> | <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Linux</a> | <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Mac</a></p>
 		</div>
 		<div class="description">
-			<img class="nasaimg" src="nasa2.png">
-
+			<img class="nasaimg" src="images/nasa2.png">
 			<div class="bubble">Hello Drone 34659786, NASA Mission Control welcomes you to your first day on the job! <br>Your task is to make as much money for our business partners as possible and saving the earth from errant asteroids before your energy runs out. 
 			</div>
 			
@@ -101,8 +106,8 @@
 		</div>
 
 		<footer>
-			<a href="https://github.com/oosidat/NASAHack2014-asteroids"><img src="github-icon.png" title="Visit project on GitHub"></a>
-			<p>Hosting Space donated by <a href="http://bvisualdesign.ca">Bvisual Design</a></p>
+			<a href="https://github.com/oosidat/NASAHack2014-asteroids"><img src="images/github-icon.png" title="Visit project on GitHub"></a>
+			<p>Hosting Space donated by <a target="_blank" href="http://bvisualdesign.ca">Bvisual Design</a></p>
 		</footer>
 	</body>
 </html>
