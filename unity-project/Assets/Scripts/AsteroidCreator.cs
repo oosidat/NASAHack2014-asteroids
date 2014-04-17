@@ -10,44 +10,54 @@ public class AsteroidCreator : MonoBehaviour {
 	
 	
 	public void InitializeAsteroidsByRadius() {
-		AsteroidsByRadius.Add(8, new int[] {2842, 447, 895, 132, 368, 0, 79, 26, 26, 13, 0, 26, 13, 3});
-		AsteroidsByRadius.Add(9, new int[] {2368, 522, 746, 175, 307, 0, 66, 31, 31, 18, 0, 31, 15, 4});
-		AsteroidsByRadius.Add(10, new int[] {24, 12, 24, 4, 24, 0, 24, 12, 12, 4, 0, 12, 12, 4});
-		AsteroidsByRadius.Add(11, new int[] {18, 15, 18, 4, 18, 0, 18, 15, 15, 4, 0, 15, 15, 4});
-		AsteroidsByRadius.Add(12, new int[] {13, 18, 13, 6, 13, 0, 13, 18, 18, 6, 1, 18, 18, 6});
-		AsteroidsByRadius.Add(13, new int[] {14, 20, 14, 5, 14, 0, 14, 20, 20, 5, 1, 20, 20, 5});
-		AsteroidsByRadius.Add(14, new int[] {3, 29, 3, 5, 3, 0, 3, 29, 29, 5, 2, 29, 29, 5});
+
+		AsteroidsByRadius.Clear ();
+
+		AsteroidsByRadius[8] = new int[] {2842, 447, 895, 132, 368, 0, 79, 26, 26, 13, 0, 26, 13, 3};
+		AsteroidsByRadius[9] = new int[] {2368, 522, 746, 175, 307, 0, 66, 31, 31, 18, 0, 31, 15, 4};
+		AsteroidsByRadius[10] = new int[] {24, 12, 24, 4, 24, 0, 24, 12, 12, 4, 0, 12, 12, 4};
+		AsteroidsByRadius[11] = new int[] {18, 15, 18, 4, 18, 0, 18, 15, 15, 4, 0, 15, 15, 4};
+		AsteroidsByRadius[12] = new int[] {13, 18, 13, 6, 13, 0, 13, 18, 18, 6, 1, 18, 18, 6};
+		AsteroidsByRadius[13] = new int[] {14, 20, 14, 5, 14, 0, 14, 20, 20, 5, 1, 20, 20, 5};
+		AsteroidsByRadius[14] = new int[] {3, 29, 3, 5, 3, 0, 3, 29, 29, 5, 2, 29, 29, 5};
 	}
 	
 	public static Dictionary<string, string[]> AsteroidCompositions = new Dictionary<string, string[]>();
 	
 	public void InitializeAsteroidCompositions() {
-		AsteroidCompositions.Add("s", new string[] {"metal", "olivine", "pyroxene"});
-		AsteroidCompositions.Add("c", new string[] {"silicates", "water", "carbon"});
-		AsteroidCompositions.Add("q", new string[] {"olivine", "pyroxene", "metal"});
-		AsteroidCompositions.Add("x", new string[] {"metal"});
-		AsteroidCompositions.Add("v", new string[] {"pyroxene", "feldspar"});
-		AsteroidCompositions.Add("u", new string[] {"unknown"});
-		AsteroidCompositions.Add("r", new string[] {"pyroxene", "olivine"});
-		AsteroidCompositions.Add("d", new string[] {"silicates", "carbon"});
-		AsteroidCompositions.Add("t", new string[] {"silicates", "carbon"});
-		AsteroidCompositions.Add("m", new string[] {"metal", "enstatite"});
-		AsteroidCompositions.Add("e", new string[] {"enstatite"});
-		AsteroidCompositions.Add("o", new string[] {"silicates", "water", "carbon"});
-		AsteroidCompositions.Add("p", new string[] {"silicates", "carbon"});
-		AsteroidCompositions.Add("a", new string[] {"olivine", "metal"});
+
+		AsteroidCompositions.Clear ();
+
+		AsteroidCompositions["s"] = new string[] {"metal", "olivine", "pyroxene"};
+		AsteroidCompositions["c"] = new string[] {"silicates", "water", "carbon"};
+		AsteroidCompositions["q"] = new string[] {"olivine", "pyroxene", "metal"};
+		AsteroidCompositions["x"] = new string[] {"metal"};
+		AsteroidCompositions["v"] = new string[] {"pyroxene", "feldspar"};
+		AsteroidCompositions["u"] = new string[] {"unknown"};
+		AsteroidCompositions["r"] = new string[] {"pyroxene", "olivine"};
+		AsteroidCompositions["d"] = new string[] {"silicates", "carbon"};
+		AsteroidCompositions["t"] = new string[] {"silicates", "carbon"};
+		AsteroidCompositions["m"] = new string[] {"metal", "enstatite"};
+		AsteroidCompositions["e"] = new string[] {"enstatite"};
+		AsteroidCompositions["o"] = new string[] {"silicates", "water", "carbon"};
+		AsteroidCompositions["p"] = new string[] {"silicates", "carbon"};
+		AsteroidCompositions["a"] = new string[] {"olivine", "metal"};
 	}
+
 	public static Dictionary<string,float> minPrice = new Dictionary<string,float >();
 	
 	public void InitPrices(){
-		minPrice.Add("feldspar", 60.9f);
-		minPrice.Add("olivine", 314.84f);
-		minPrice.Add("pyroxene", 314.84f);
-		minPrice.Add("enstatite", 314.84f);
-		minPrice.Add("carbon", 0.0f);
-		minPrice.Add("silicates", 34.81f);
-		minPrice.Add("water", 0.0011f);
-		minPrice.Add("metal", 2231.25f);
+
+		minPrice.Clear ();
+
+		minPrice["feldspar"] = 60.9f;
+		minPrice["olivine"] = 314.84f;
+		minPrice["pyroxene"] = 314.84f;
+		minPrice["enstatite"] =314.84f;
+		minPrice["carbon"] = 0.0f;
+		minPrice["silicates"] = 34.81f;
+		minPrice["water"] = 0.0011f;
+		minPrice["metal"] = 2231.25f;
 		
 	}
 
@@ -69,20 +79,23 @@ public class AsteroidCreator : MonoBehaviour {
 	public static Dictionary<string, float[]> AsteroidReflectance = new Dictionary<string, float[]>();
 	
 	public void InitializeAsteroidReflectance() {
-		AsteroidReflectance.Add("s", new float[] {0.17f, 0.83f, 0.50f});
-		AsteroidReflectance.Add("c", new float[] {0.33f, 0.50f, 0.50f});
-		AsteroidReflectance.Add("q", new float[] {0.17f, 0.83f, 0.17f});
-		AsteroidReflectance.Add("x", new float[] {0.17f, 0.67f, 0.67f});
-		AsteroidReflectance.Add("v", new float[] {0.00f, 1.00f, 0.00f});
-		AsteroidReflectance.Add("u", new float[] {0.00f, 0.00f, 0.00f});
-		AsteroidReflectance.Add("r", new float[] {0.00f, 0.83f, 0.33f});
-		AsteroidReflectance.Add("d", new float[] {0.33f, 0.67f, 0.83f});
-		AsteroidReflectance.Add("t", new float[] {0.33f, 0.67f, 0.67f});
-		AsteroidReflectance.Add("m", new float[] {0.33f, 0.67f, 0.67f});
-		AsteroidReflectance.Add("e", new float[] {0.33f, 0.50f, 0.67f});
-		AsteroidReflectance.Add("o", new float[] {0.33f, 0.50f, 0.17f});
-		AsteroidReflectance.Add("p", new float[] {0.50f, 0.67f, 0.67f});
-		AsteroidReflectance.Add("a", new float[] {0.17f, 1.00f, 0.83f});
+
+		AsteroidReflectance.Clear ();
+
+		AsteroidReflectance["s"] = new float[] {0.17f, 0.83f, 0.50f};
+		AsteroidReflectance["c"] = new float[] {0.33f, 0.50f, 0.50f};
+		AsteroidReflectance["q"] = new float[] {0.17f, 0.83f, 0.17f};
+		AsteroidReflectance["x"] = new float[] {0.17f, 0.67f, 0.67f};
+		AsteroidReflectance["v"] = new float[] {0.00f, 1.00f, 0.00f};
+		AsteroidReflectance["u"] = new float[] {0.00f, 0.00f, 0.00f};
+		AsteroidReflectance["r"] = new float[] {0.00f, 0.83f, 0.33f};
+		AsteroidReflectance["d"] = new float[] {0.33f, 0.67f, 0.83f};
+		AsteroidReflectance["t"] = new float[] {0.33f, 0.67f, 0.67f};
+		AsteroidReflectance["m"] = new float[] {0.33f, 0.67f, 0.67f};
+		AsteroidReflectance["e"] = new float[] {0.33f, 0.50f, 0.67f};
+		AsteroidReflectance["o"] = new float[] {0.33f, 0.50f, 0.17f};
+		AsteroidReflectance["p"] = new float[] {0.50f, 0.67f, 0.67f};
+		AsteroidReflectance["a"] = new float[] {0.17f, 1.00f, 0.83f};
 	}
 	
 	public float[] GetAsteroidReflectance(string key) {
