@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: d713a5aae231bcf43ae7f0c25af66ae5
+=======
+guid: 12b84a65f39bb43469e9809034acd4a5
+>>>>>>> 7d63a2b... Apply textures to the low-LOD asteroids. Thanks so much to Gargore for the
 TextureImporter:
   serializedVersion: 2
   mipmaps:
