@@ -17,7 +17,7 @@ public class fuelGage : MonoBehaviour {
 	public void changeTexture(int value)
 	{
 
-		if (value < 0) {
+		if (value <= 0) {
 			value = 0;
 			GameObject.Find ("GameOver").renderer.enabled=true;
 			GameObject.Find ("GameOver").collider.enabled=true;

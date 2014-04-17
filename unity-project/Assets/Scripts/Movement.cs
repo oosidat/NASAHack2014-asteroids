@@ -10,6 +10,8 @@ public class Movement : MonoBehaviour {
 	public float prevz;
 	private bool isCurrentlyMoving = false;
 	private Vector3 moveToPos;
+	private float fuelTankCapacity;
+	private Controls control;
 	
 	void Awake () {
 		Instance = this;
@@ -17,6 +19,8 @@ public class Movement : MonoBehaviour {
 		prevz = 0;
 		// set the initial position of the camera to match the moveToPos
 		moveToPos = Camera.main.transform.position;
+		control = GameObject.Find ("Player").GetComponent<Controls>();
+		fuelTankCapacity = control.currentFuel;
 	}
 	
 	void LateUpdate() {
@@ -57,22 +61,12 @@ public class Movement : MonoBehaviour {
 					// set our new position as the end goal for moving the camera
 					moveToPos = new Vector3 (hitInfo.point.x, 0.0f, hitInfo.point.z);
 
-					float fuelExpended = (float)magDifference*0.0005f;
+					fuelReduction(0.005f, magDifference, fuelTankCapacity);
 
-					Controls control = GameObject.Find ("Player").GetComponent<Controls>();
-					control.currentFuel = control.currentFuel-(float)fuelExpended;
-
-					int intfuel = (int)Math.Floor(control.currentFuel/10.0f);
-
-					print ("fuel expended: "+fuelExpended+"; current fuel: "+control.currentFuel+"; fuel int: "+intfuel );
-
-					fuelGage fuelg = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
-					float hundredfuel = 100.0f*control.currentFuel;
+					float hundredfuel = 100.0f*control.currentFuel; /* Might need to fix this too... */
 					String fuelText = "Current Charge: "+hundredfuel.ToString("0.0");
 					//GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh> ().text = auText;
-					
-					
-					fuelg.changeTexture(intfuel);
+
 					prevx = currentX;
 					prevz = currentZ;
 				}
@@ -87,6 +81,25 @@ public class Movement : MonoBehaviour {
 	void MoveCamera(Vector3 targetPosition) {
 		float step = 3.0f * Time.deltaTime;
 		Camera.main.transform.position = Vector3.Lerp (Camera.main.transform.position, targetPosition, step);		
+	}
+
+	void fuelReduction(float burnRate, double distance, float startingFuel) {
+		float fuelUsed = (float)distance * burnRate;
+		control.currentFuel = control.currentFuel - fuelUsed;
+
+		float fuelRatio = control.currentFuel / startingFuel;
+		float mulipliedByNumberOfBlocks = 10 * fuelRatio;
+		double roundUp = Math.Ceiling (mulipliedByNumberOfBlocks);
+
+		int fuelGaugeBlocks = (int)roundUp;
+
+		print ("StartingFuel: " + startingFuel);
+		print ("CurrentFuel: " + control.currentFuel);
+		print ("fuelUsed: " + fuelUsed);
+		print ("fuelGaugeBlocks: " + fuelGaugeBlocks);
+
+		fuelGage fuelGauge = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
+		fuelGauge.changeTexture(fuelGaugeBlocks);
 	}
 	
 	
