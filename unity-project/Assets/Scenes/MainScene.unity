@@ -1147,7 +1147,7 @@ MeshCollider:
   m_PrefabInternal: {fileID: 1623914334}
   m_GameObject: {fileID: 790602447}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
@@ -1791,7 +1791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  currentFuel: 100
+  currentFuel: 10
   currentMoney: 0
   lastAstVal: 0
   mine: {fileID: 8300000, guid: b5fa1fec3532e524a885138629270a87, type: 3}
@@ -2033,6 +2033,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: dce262807684cf6409f82f9af308b216, type: 2}
       propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: alert
+      value: 
+      objectReference: {fileID: 8300000, guid: a543f9e5180f4894fb023106a76108da, type: 3}
+    - target: {fileID: 11400004, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: currentFuel
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
