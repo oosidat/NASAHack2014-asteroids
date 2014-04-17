@@ -1791,7 +1791,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  currentFuel: 10
+  currentFuel: 100
+  fuelBurnRate: .00499999989
   currentMoney: 0
   lastAstVal: 0
   mine: {fileID: 8300000, guid: b5fa1fec3532e524a885138629270a87, type: 3}
@@ -2041,7 +2042,7 @@ Prefab:
       objectReference: {fileID: 8300000, guid: a543f9e5180f4894fb023106a76108da, type: 3}
     - target: {fileID: 11400004, guid: dce262807684cf6409f82f9af308b216, type: 2}
       propertyPath: currentFuel
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6400000, guid: dce262807684cf6409f82f9af308b216, type: 2}
       propertyPath: m_IsTrigger

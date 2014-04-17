@@ -5,6 +5,7 @@ using System;
 public class Controls : MonoBehaviour {
 	public Transform target;
 	public float currentFuel;
+	public float fuelBurnRate;
 	public float currentMoney;
 	public float lastAstVal;
 	

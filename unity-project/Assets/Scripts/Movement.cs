@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour {
 	private Vector3 moveToPos;
 	private float fuelTankCapacity;
 	private Controls control;
+	private float fuelBurnRate;
 	
 	void Awake () {
 		Instance = this;
@@ -21,6 +22,10 @@ public class Movement : MonoBehaviour {
 		moveToPos = Camera.main.transform.position;
 		control = GameObject.Find ("Player").GetComponent<Controls>();
 		fuelTankCapacity = control.currentFuel;
+		fuelBurnRate = control.fuelBurnRate;
+		if (fuelBurnRate <= 0 || fuelBurnRate == null) {
+			fuelBurnRate = 0.005f;
+		}
 	}
 	
 	void LateUpdate() {
@@ -61,7 +66,7 @@ public class Movement : MonoBehaviour {
 					// set our new position as the end goal for moving the camera
 					moveToPos = new Vector3 (hitInfo.point.x, 0.0f, hitInfo.point.z);
 
-					fuelReduction(0.005f, magDifference, fuelTankCapacity);
+					fuelReduction(fuelBurnRate, magDifference, fuelTankCapacity);
 
 					float hundredfuel = 100.0f*control.currentFuel; /* Might need to fix this too... */
 					String fuelText = "Current Charge: "+hundredfuel.ToString("0.0");
