@@ -107,9 +107,9 @@ public class Controls : MonoBehaviour {
 			{
 				print ("It's working");
 			}
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "PrevSpec")
+			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "GameOverClick")
 			{
-				print ("It's working");
+				Application.LoadLevel(Application.loadedLevel);
 			}
 			
 			if ( hitInfo.transform.tag != "AsteroidChild")
