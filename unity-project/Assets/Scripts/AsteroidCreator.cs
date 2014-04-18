@@ -189,7 +189,7 @@ public class AsteroidCreator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		int numAsteroidsToSpawn = 50;
+		int numAsteroidsToSpawn = 150;
 
 		SpawnGameObjects(numAsteroidsToSpawn, 200, 8);
 		SpawnGameObjects(numAsteroidsToSpawn, 300, 10);

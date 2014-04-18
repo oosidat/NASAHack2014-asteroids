@@ -81,14 +81,12 @@ public class filterButtons : MonoBehaviour {
 			} else {
 				shininess = 1.0f;
 			}
-			Debug.Log ("S:" + shininess);
 			asteroidChildTransform.renderer.material.SetFloat("_Shininess", shininess);
 
 			// apply colour
 			if (!changeColor) {
 				color = 1.0f;
 			}
-			Debug.Log ("C:" + color);
 			asteroidChildTransform.renderer.material.SetColor("_Color", new Color(color, color, color));
 		}
 	}             
