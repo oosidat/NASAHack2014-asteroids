@@ -113,7 +113,7 @@ MeshCollider:
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 1
-  m_Mesh: {fileID: 4300114, guid: 29f42584c1f8b0a48ba99f965bace9db, type: 3}
+  m_Mesh: {fileID: 4300108, guid: 29f42584c1f8b0a48ba99f965bace9db, type: 3}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2

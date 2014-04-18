@@ -31,8 +31,7 @@ public class Controls : MonoBehaviour {
 			Application.Quit(); // Quits the game
 		}
 		
-		if (Input.GetMouseButtonUp(0))
-		{
+		if (Input.GetMouseButtonUp(0)){
 			if (last_asteroid_go){
 				last_asteroid_go.renderer.material.shader = shader1;
 			}
@@ -43,19 +42,16 @@ public class Controls : MonoBehaviour {
 			//DESELECT
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, click_range)){
 
-				if (hitInfo.transform.tag == "Untagged")
-				{
+			//	if (hitInfo.transform.tag == "Untagged"){
 					//print (hitInfo.transform.tag);
-				}
+				//}
 				//SELECT ASTEROID
-				else if (hitInfo.transform.tag == "Asteroid")
-				{
+				//else if (hitInfo.transform.tag == "Asteroid"){
 					//print (hitInfo.transform.tag);
 					//transform.LookAt(hitInfo.transform);
-				}
+				//}
 				//Select ASTEROID
-				else if (hitInfo.transform.tag == "AsteroidChild")
-				{
+				if (hitInfo.transform.tag == "AsteroidChild"){
 					GameObject.Find ("MineText").renderer.enabled = true;
 					GameObject.Find ("MineText").collider.enabled = true;
 					GameObject.Find ("MineButton").renderer.enabled = true;
@@ -91,8 +87,7 @@ public class Controls : MonoBehaviour {
 				
 				
 				//MINE BUTTON
-				else if (hitInfo.transform.tag == "MineAsteroid")
-				{
+				else if (hitInfo.transform.tag == "MineAsteroid"){
 
 					currentMoney = currentMoney+lastAstVal;
 					currentFuel -= 5f;
@@ -118,25 +113,26 @@ public class Controls : MonoBehaviour {
 					last_asteroid = null;
 
 					audio.PlayOneShot(mine);
+					DeselectMine();
 				}
 				
 
-				else if (hitInfo.transform.tag == "GameOverClick")
-				{
+				else if (hitInfo.transform.tag == "GameOverClick")	{
 					GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Loading...";
 					Application.LoadLevel(Application.loadedLevel);
 				}
-				else
-				{
+				else{
 					DeselectMine();
 				}
 
 				//if ( hitInfo.transform && hitInfo.transform.tag != "AsteroidChild" || hitInfo.transform == null)
-				if ( hitInfo.transform == null)
-				{
+				if ( hitInfo.transform == null)	{
 					DeselectMine();
 				}
 				
+			}
+			else{
+				DeselectMine();
 			}
 		}
 	}
