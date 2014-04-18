@@ -16,9 +16,9 @@ a:active, a:hover {
 	text-align: center;
 }
 
-.header p {
-	font-size: small;
-	color: #555;
+.webplayer-placeholder p {
+	color: #dddddd;
+	font-size: x-small;
 }
 /*p.header {
 	font-size: small;
