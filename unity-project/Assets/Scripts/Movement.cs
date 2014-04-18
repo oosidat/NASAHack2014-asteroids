@@ -79,7 +79,9 @@ public class Movement : MonoBehaviour {
 		}
 		
 		if (Camera.main.transform.position != moveToPos) {
-			MoveCamera (moveToPos);
+			MoveCamera(moveToPos);
+			CameraRotation();
+
 		}
 	}
 	
@@ -106,38 +108,10 @@ public class Movement : MonoBehaviour {
 		fuelGage fuelGauge = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
 		fuelGauge.changeTexture(fuelGaugeBlocks);
 	}
-	
-	
-	/*
-        if (player.hud.MiniMap.IsInViewport(Input.mousePosition))
-        {
-            RaycastHit hit;
-            Ray ray = player.hud.MiniMap.minimapCamera.ScreenPointToRay(Input.mousePosition);
- 
-            // Trace ray from minimap viewport, ignoring everything except the ground
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, CustomLayerMask.Ground))
-            {
-                Vector3 miniMapPosition = hit.point;
-                Vector3 camViewCenter;
-                RaycastHit cameraView;
-                Vector3 camDestPos;
- 
-                // Project a ray from the center of the main camera to find current world position
-                Ray cameraCenter = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-                Physics.Raycast(cameraCenter, out cameraView, Mathf.Infinity, CustomLayerMask.Ground);
-                camViewCenter = cameraView.point;
- 
-                // Calculate change to move from current position to new minimap location                    
-                camDestPos = miniMapPosition - camViewCenter;
-                camDestPos.y = 0;           // maintain current height
- 
-                Debug.Log("Camera: " + Camera.main.transform.position);
-                Debug.Log("Add to: " + camDestPos);
-                Camera.main.transform.position += camDestPos;
-            }                
-        }
-	 */
-	
-	
-	
+
+	void CameraRotation() {
+		/* Look at center, then reverse */
+		Camera.main.transform.LookAt(new Vector3(0,0,0));
+		Camera.main.transform.rotation *= Quaternion.Euler(0, 180, 0);
+	}
 }
