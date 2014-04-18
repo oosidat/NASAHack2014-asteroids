@@ -2270,6 +2270,8 @@ MonoBehaviour:
   fuelBurnRate: .00499999989
   currentMoney: 0
   lastAstVal: 0
+  shader1: {fileID: 4, guid: 0000000000000000f000000000000000, type: 0}
+  shader2: {fileID: 4800000, guid: df3aa34b0b079b947b1f80ee8e20cc5e, type: 3}
   mine: {fileID: 8300000, guid: b5fa1fec3532e524a885138629270a87, type: 3}
 --- !u!114 &1309775492
 MonoBehaviour:

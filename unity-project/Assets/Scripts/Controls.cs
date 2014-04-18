@@ -8,8 +8,11 @@ public class Controls : MonoBehaviour {
 	public float fuelBurnRate;
 	public float currentMoney;
 	public float lastAstVal;
-	
+	public Shader shader1 = Shader.Find("Bumped Specular");
+	public Shader shader2 = Shader.Find("Outlined/Gem");
+	public Shader shader3 = Shader.Find("Transparent Effects/CheapForcefield");
 	private GameObject last_asteroid;
+	private GameObject last_asteroid_go;
 	public AudioClip mine;
 	// Use this for initialization
 	void Start () {
@@ -27,8 +30,11 @@ public class Controls : MonoBehaviour {
 			Application.Quit(); // Quits the game
 		}
 		
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonUp(0))
 		{
+			if (last_asteroid_go){
+				last_asteroid_go.renderer.material.shader = shader1;
+			}
 			RaycastHit hitInfo = new RaycastHit();
 			
 			
@@ -49,10 +55,20 @@ public class Controls : MonoBehaviour {
 				GameObject.Find ("MineText").renderer.enabled = true;
 				GameObject.Find ("MineText").collider.enabled = true;
 				GameObject.Find ("MineButton").renderer.enabled = true;
-				
+
+
+
 				//print (hitInfo.transform.tag);
 				//transform.LookAt(hitInfo.transform);
+				//hitInfo.transform.renderer.material.shader.
+
+
+				hitInfo.transform.gameObject.renderer.material.shader = shader2;
+				hitInfo.transform.gameObject.renderer.material.SetColor("_OutlineColor", Color.cyan);
+
+
 				last_asteroid = hitInfo.transform.parent.parent.gameObject;
+				last_asteroid_go = hitInfo.transform.gameObject;
 				Asteroid asteroid = hitInfo.transform.parent.parent.GetComponent<Asteroid>();
 				//hitInfo.transform.parent.
 				AsteroidCreator asteroidCreator = new AsteroidCreator();
@@ -72,11 +88,11 @@ public class Controls : MonoBehaviour {
 			//GUI BUTTONS
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "MineAsteroid")
 			{
-				//print ("Mine Asteroid and Pay me");
+
 				currentMoney = currentMoney+lastAstVal;
 				currentFuel -= 5f;
 				print ("current fuel: "+currentFuel);
-				//print ()
+
 				float mulipliedByNumberOfBlocks = currentFuel/10.0f;
 				double roundUp = Math.Ceiling (mulipliedByNumberOfBlocks);
 				
@@ -88,7 +104,16 @@ public class Controls : MonoBehaviour {
 				GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh>().text = fuelText;
 				//String currentMoneyString = "Cash: $"+currentMoney.ToString("0.00");
 				GameObject.FindGameObjectWithTag ("CashText").GetComponent<TextMesh> ().text ="Cash: $"+currentMoney.ToString("0.00");// currentMoneyString;
-				Destroy(last_asteroid);
+
+				//Destroy(last_asteroid);
+				last_asteroid_go.renderer.material.shader = shader3;
+				last_asteroid.gameObject.tag = "Untagged";
+				last_asteroid_go.gameObject.tag = "Untagged";
+				last_asteroid_go = null;
+				last_asteroid = null;
+
+
+
 				audio.PlayOneShot(mine);
 			}
 			
