@@ -110,6 +110,7 @@ public class Controls : MonoBehaviour {
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "GameOverClick")
 			{
+				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Loading...";
 				Application.LoadLevel(Application.loadedLevel);
 			}
 			
