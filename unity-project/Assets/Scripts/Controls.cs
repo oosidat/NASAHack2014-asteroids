@@ -61,6 +61,7 @@ public class Controls : MonoBehaviour {
 				foreach (string resource in asteroid.composition){
 					sum += asteroidCreator.GetResourcePrice(resource);
 				}
+
 				//print (asteroid.asteroidType);
 				//print (sum);
 				lastAstVal = sum;
@@ -73,6 +74,18 @@ public class Controls : MonoBehaviour {
 			{
 				//print ("Mine Asteroid and Pay me");
 				currentMoney = currentMoney+lastAstVal;
+				currentFuel -= 5f;
+				print ("current fuel: "+currentFuel);
+				//print ()
+				float mulipliedByNumberOfBlocks = currentFuel/10.0f;
+				double roundUp = Math.Ceiling (mulipliedByNumberOfBlocks);
+				
+				int fuelGaugeBlocks = (int)roundUp;
+				fuelGage fuelGauge = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
+				fuelGauge.changeTexture(fuelGaugeBlocks);
+				
+				String fuelText = "Current Charge: "+ string.Format("{0:f1}", currentFuel);
+				GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh>().text = fuelText;
 				//String currentMoneyString = "Cash: $"+currentMoney.ToString("0.00");
 				GameObject.FindGameObjectWithTag ("CashText").GetComponent<TextMesh> ().text ="Cash: $"+currentMoney.ToString("0.00");// currentMoneyString;
 				Destroy(last_asteroid);
