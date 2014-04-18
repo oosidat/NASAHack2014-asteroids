@@ -10,33 +10,30 @@ public class filterButtons : MonoBehaviour {
 	public bool changeColor = true;
 	public bool changeShininess = true;
 
-	private enum spectra {
+	public enum spectra {
 		uv,
 		vis,
 		ir
 	};
 
 	void Start () {
-	
+
 	}
 
 	void Update () {
 		if (Input.GetMouseButtonDown(0)) {
 			RaycastHit hitInfo = new RaycastHit();
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "uvbutton") {
-				Debug.Log ("uvbutton");
 				applyFilter((int) spectra.uv);
 				renderer.material.mainTexture = images[0];
 				audio.PlayOneShot(filter_apply);
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "visbutton") {
-				Debug.Log ("visbutton");
 				applyFilter((int) spectra.vis);
 				renderer.material.mainTexture = images[1];
 				audio.PlayOneShot(filter_apply);
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "infrabutton") {
-				Debug.Log ("infrabutton");
 				applyFilter ((int) spectra.ir);
 				renderer.material.mainTexture = images[2];
 				audio.PlayOneShot(filter_apply);
@@ -44,7 +41,7 @@ public class filterButtons : MonoBehaviour {
 		}
 	}
 
-	void applyFilter(int mask) {
+	public void applyFilter(int mask) {
 
 		GameObject [] asteroids = GameObject.FindGameObjectsWithTag ("AsteroidGameObjects");
 		int numAsteroids = (int)asteroids.Length;
