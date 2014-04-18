@@ -137,7 +137,7 @@ footer img {
 	height: 50px;
 }
 
-footer p {
+footer p, footer a {
 	font-size: small;
 	color: white;
 	font-family: 'Open Sans';
