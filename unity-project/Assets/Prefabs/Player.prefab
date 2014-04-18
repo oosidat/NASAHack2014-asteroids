@@ -2548,7 +2548,7 @@ MonoBehaviour:
   shader1: {fileID: 4, guid: 0000000000000000f000000000000000, type: 0}
   shader2: {fileID: 4800000, guid: df3aa34b0b079b947b1f80ee8e20cc5e, type: 3}
   shader3: {fileID: 4800000, guid: 3f6cb05413bfd2e42b196fad7e842eeb, type: 3}
-  mine: {fileID: 8300000, guid: b5fa1fec3532e524a885138629270a87, type: 3}
+  mine: {fileID: 8300000, guid: 195da4fd087c92e4f86d8bc8cd8bbd75, type: 3}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
