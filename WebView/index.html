@@ -6,14 +6,6 @@
 		<link rel="stylesheet" type="text/css" href="stylesheets/web.css">
 		<script type='text/javascript' src='scripts/jquery.min.js'></script>
 		<script type='text/javascript' src='scripts/googleanalytics.js'></script>
-		<script>
-		var myIp;
-		function ip_callback(o) {
-		    myIp = o.host;
-		}
-		</script>
-		<script src="http://smart-ip.net/geoip-json?callback=ip_callback"></script>
-		<script>$(document).ready(function() {$('#droneID').html(myIp.split('.').join(""));});</script>
 		<script type="text/javascript">
 		<!--
 		var unityObjectUrl = "UnityObject2.js";
