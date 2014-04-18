@@ -68,10 +68,6 @@ public class Movement : MonoBehaviour {
 
 					fuelReduction(fuelBurnRate, magDifference, fuelTankCapacity);
 
-					float hundredfuel = 100.0f*control.currentFuel; /* Might need to fix this too... */
-					String fuelText = "Current Charge: "+hundredfuel.ToString("0.0");
-					//GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh> ().text = auText;
-
 					prevx = currentX;
 					prevz = currentZ;
 				}
@@ -107,6 +103,9 @@ public class Movement : MonoBehaviour {
 
 		fuelGage fuelGauge = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
 		fuelGauge.changeTexture(fuelGaugeBlocks);
+
+		String fuelText = "Current Charge: "+ string.Format("{0:f1}", control.currentFuel);
+		GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh>().text = fuelText;
 	}
 
 	void CameraRotation() {
