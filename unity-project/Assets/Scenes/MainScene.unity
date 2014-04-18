@@ -2650,6 +2650,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2300046, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dce262807684cf6409f82f9af308b216, type: 2}
   m_RootGameObject: {fileID: 1309775489}
@@ -2913,7 +2917,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 1632715504}
   m_GameObject: {fileID: 1797863041}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
