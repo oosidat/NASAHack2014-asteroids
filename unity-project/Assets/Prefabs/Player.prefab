@@ -11,7 +11,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 102: {fileID: 10200000}
   - 65: {fileID: 6500008}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: MineText
   m_TagString: MineAsteroid
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   - 64: {fileID: 6400010}
   - 23: {fileID: 2300020}
   - 82: {fileID: 8200004}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   - 4: {fileID: 400040}
   - 23: {fileID: 2300036}
   - 102: {fileID: 10200016}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   - 33: {fileID: 3300020}
   - 64: {fileID: 6400018}
   - 23: {fileID: 2300038}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: GameOver
   m_TagString: GameOverClick
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - 33: {fileID: 3300028}
   - 64: {fileID: 6400026}
   - 23: {fileID: 2300046}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TutorialBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   - 4: {fileID: 400054}
   - 23: {fileID: 2300050}
   - 102: {fileID: 10200018}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TutorialText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   - 23: {fileID: 2300052}
   - 82: {fileID: 8200012}
   - 114: {fileID: 11400012}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tutorial
   m_TagString: TutorialClick
   m_Icon: {fileID: 0}
@@ -1841,8 +1841,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100030}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -2165,7 +2165,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .50999999
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2549,6 +2549,7 @@ MonoBehaviour:
   shader2: {fileID: 4800000, guid: df3aa34b0b079b947b1f80ee8e20cc5e, type: 3}
   shader3: {fileID: 4800000, guid: 3f6cb05413bfd2e42b196fad7e842eeb, type: 3}
   mine: {fileID: 8300000, guid: 195da4fd087c92e4f86d8bc8cd8bbd75, type: 3}
+  click_range: 200
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

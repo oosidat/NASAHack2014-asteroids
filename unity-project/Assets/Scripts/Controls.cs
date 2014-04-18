@@ -14,6 +14,7 @@ public class Controls : MonoBehaviour {
 	private GameObject last_asteroid;
 	private GameObject last_asteroid_go;
 	public AudioClip mine;
+	public float click_range;
 	// Use this for initialization
 	void Start () {
 		
@@ -35,22 +36,23 @@ public class Controls : MonoBehaviour {
 			if (last_asteroid_go){
 				last_asteroid_go.renderer.material.shader = shader1;
 			}
+			//DeselectMine();
 			RaycastHit hitInfo = new RaycastHit();
 			
 			
 			//DESELECT
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Untagged")
+			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, click_range) && hitInfo.transform.tag == "Untagged")
 			{
 				//print (hitInfo.transform.tag);
 			}
 			//SELECT ASTEROID
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Asteroid")
+			else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, click_range) && hitInfo.transform.tag == "Asteroid")
 			{
 				//print (hitInfo.transform.tag);
 				//transform.LookAt(hitInfo.transform);
 			}
-			//SELECT ASTEROID
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "AsteroidChild")
+			//Select ASTEROID
+			else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, click_range) && hitInfo.transform.tag == "AsteroidChild")
 			{
 				GameObject.Find ("MineText").renderer.enabled = true;
 				GameObject.Find ("MineText").collider.enabled = true;
@@ -69,10 +71,11 @@ public class Controls : MonoBehaviour {
 
 				last_asteroid = hitInfo.transform.parent.parent.gameObject;
 				last_asteroid_go = hitInfo.transform.gameObject;
+
 				Asteroid asteroid = hitInfo.transform.parent.parent.GetComponent<Asteroid>();
-				//hitInfo.transform.parent.
 				AsteroidCreator asteroidCreator = new AsteroidCreator();
-				//Asteroid asteroid = hitInfo.parent.parent.GetComponent<Asteroid>();
+
+
 				float sum = 0;
 				foreach (string resource in asteroid.composition){
 					sum += asteroidCreator.GetResourcePrice(resource);
@@ -85,8 +88,8 @@ public class Controls : MonoBehaviour {
 			
 			
 			
-			//GUI BUTTONS
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "MineAsteroid")
+			//MINE BUTTON
+			else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "MineAsteroid")
 			{
 
 				currentMoney = currentMoney+lastAstVal;
@@ -107,8 +110,8 @@ public class Controls : MonoBehaviour {
 
 				//Destroy(last_asteroid);
 				last_asteroid_go.renderer.material.shader = shader3;
-				last_asteroid.gameObject.tag = "Untagged";
-				last_asteroid_go.gameObject.tag = "Untagged";
+				last_asteroid.gameObject.tag = "OldAsteroid";
+				last_asteroid_go.gameObject.tag = "OldAsteroid";
 				last_asteroid_go = null;
 				last_asteroid = null;
 
@@ -116,20 +119,29 @@ public class Controls : MonoBehaviour {
 			}
 			
 
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "GameOverClick")
+			else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "GameOverClick")
 			{
 				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Loading...";
 				Application.LoadLevel(Application.loadedLevel);
 			}
-			
-			if ( hitInfo.transform & hitInfo.transform.tag != "AsteroidChild")
+			else
 			{
-				GameObject.Find ("MineText").renderer.enabled = false;
-				GameObject.Find ("MineText").collider.enabled = false;
-				GameObject.Find ("MineButton").renderer.enabled = false;
+				DeselectMine();
+			}
+
+			if ( hitInfo.transform & hitInfo.transform.tag != "AsteroidChild" || hitInfo.transform == null)
+			{
+				DeselectMine();
 			}
 			
 		}
+	}
+
+	void DeselectMine(){
+		GameObject.Find ("MineText").renderer.enabled = false;
+		GameObject.Find ("MineText").collider.enabled = false;
+		GameObject.Find ("MineButton").renderer.enabled = false;
+
 	}
 	
 }
