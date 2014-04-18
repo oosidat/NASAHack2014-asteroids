@@ -7,7 +7,8 @@ public class AsteroidCreator : MonoBehaviour {
 	public enum AsteroidTypes {s, c, q, x, v, u, r, d, t, m, e, o, p, a};
 	
 	public static Dictionary<int, int[]> AsteroidsByRadius = new Dictionary<int, int[]>();
-	
+
+	public GameObject UiFilterButtons;
 	
 	public void InitializeAsteroidsByRadius() {
 
@@ -71,7 +72,7 @@ public class AsteroidCreator : MonoBehaviour {
 			return value;
 		}
 		else {
-			Debug.Log ("Not Found: " + key);
+			//Debug.Log ("Not Found: " + key);
 			return new string[] {};
 		}
 	}
@@ -103,7 +104,7 @@ public class AsteroidCreator : MonoBehaviour {
 		if (AsteroidReflectance.TryGetValue(key, out value)) {
 			return value;
 		} else {
-			Debug.Log ("Not Found: " + key);
+			//Debug.Log ("Not Found: " + key);
 			return new float[] {0, 0, 0};
 		}
 	}
@@ -189,7 +190,7 @@ public class AsteroidCreator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		int numAsteroidsToSpawn = 150;
+		int numAsteroidsToSpawn = 75;
 
 		SpawnGameObjects(numAsteroidsToSpawn, 200, 8);
 		SpawnGameObjects(numAsteroidsToSpawn, 300, 10);
@@ -197,6 +198,9 @@ public class AsteroidCreator : MonoBehaviour {
 		SpawnGameObjects(numAsteroidsToSpawn, 500, 12);
 		SpawnGameObjects (numAsteroidsToSpawn, 600, 13);
 		SpawnGameObjects (numAsteroidsToSpawn, 700, 14);
+
+		// apply default (vis) filter
+		UiFilterButtons.GetComponent<filterButtons> ().applyFilter (1);
 	}
 	
 	// Update is called once per frame

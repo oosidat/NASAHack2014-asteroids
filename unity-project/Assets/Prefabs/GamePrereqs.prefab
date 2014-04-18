@@ -296,7 +296,7 @@ Light:
   serializedVersion: 3
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1.41999996
+  m_Intensity: .75
   m_Range: 1000
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -346,6 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71a28923048d814ba160d6ab97df0f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UiFilterButtons: {fileID: 0}
   AsteroidTemplate: {fileID: 100000, guid: 244f6ff2726011e41a9074bfab8435cb, type: 2}
   Asteroids:
   - {fileID: 100000, guid: ca0fb80d2e54f314f9c0617fe83261f9, type: 2}

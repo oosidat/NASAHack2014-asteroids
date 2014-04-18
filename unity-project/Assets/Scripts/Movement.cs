@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour {
 		//if (Input.mousePosition.x > 230 && Input.mousePosition.y < 230 && Input.GetMouseButton(0))
 		if (Input.GetMouseButton (0) && MapCam.pixelRect.Contains (Input.mousePosition)) {
 			
-			Debug.Log (Input.mousePosition.y + ":" + Input.mousePosition.x);
+			//debug.Log (Input.mousePosition.y + ":" + Input.mousePosition.x);
 			int TerrainLayer = 1 << 10;
 			
 			//RaycastHit hitInfo;
@@ -41,13 +41,13 @@ public class Movement : MonoBehaviour {
 			
 			if (Physics.Raycast (MapCam.ScreenPointToRay (Input.mousePosition), out hitInfo)) {
 				
-				print (hitInfo.transform.tag);
+				//print (hitInfo.transform.tag);
 				
 				Ray ray = MapCam.ScreenPointToRay (Input.mousePosition);
 				Physics.Raycast (ray, out hitInfo, Mathf.Infinity, TerrainLayer);
 				
-				Debug.DrawLine (ray.origin, hitInfo.point);
-				Debug.Log ("HitInfo x: " + hitInfo.point.x + " y: " + hitInfo.point.y + " z: " + hitInfo.point.z);
+				//debug.DrawLine (ray.origin, hitInfo.point);
+				//debug.Log ("HitInfo x: " + hitInfo.point.x + " y: " + hitInfo.point.y + " z: " + hitInfo.point.z);
 				
 				if (hitInfo.transform.tag != "MapDeadZone") {
 					
@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour {
 					double magDifference = Math.Sqrt(Math.Pow (currentX-prevx,2)+Math.Pow (currentZ-prevz,2));
 
 					GameObject.FindGameObjectWithTag ("distanceLabel").GetComponent<TextMesh> ().text = auText;
-					print("mag difference: "+magDifference);
+					//print("mag difference: "+magDifference);
 
 					// set our new position as the end goal for moving the camera
 					moveToPos = new Vector3 (hitInfo.point.x, 0.0f, hitInfo.point.z);
@@ -96,10 +96,10 @@ public class Movement : MonoBehaviour {
 
 		int fuelGaugeBlocks = (int)roundUp;
 
-		print ("StartingFuel: " + startingFuel);
-		print ("CurrentFuel: " + control.currentFuel);
-		print ("fuelUsed: " + fuelUsed);
-		print ("fuelGaugeBlocks: " + fuelGaugeBlocks);
+		//print ("StartingFuel: " + startingFuel);
+		//print ("CurrentFuel: " + control.currentFuel);
+		//print ("fuelUsed: " + fuelUsed);
+		//print ("fuelGaugeBlocks: " + fuelGaugeBlocks);
 
 		fuelGage fuelGauge = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
 		fuelGauge.changeTexture(fuelGaugeBlocks);

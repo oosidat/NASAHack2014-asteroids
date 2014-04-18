@@ -35,12 +35,12 @@ public class Controls : MonoBehaviour {
 			//DESELECT
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Untagged")
 			{
-				print (hitInfo.transform.tag);
+				//print (hitInfo.transform.tag);
 			}
 			//SELECT ASTEROID
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Asteroid")
 			{
-				print (hitInfo.transform.tag);
+				//print (hitInfo.transform.tag);
 				//transform.LookAt(hitInfo.transform);
 			}
 			//SELECT ASTEROID
@@ -50,7 +50,7 @@ public class Controls : MonoBehaviour {
 				GameObject.Find ("MineText").collider.enabled = true;
 				GameObject.Find ("MineButton").renderer.enabled = true;
 				
-				print (hitInfo.transform.tag);
+				//print (hitInfo.transform.tag);
 				//transform.LookAt(hitInfo.transform);
 				last_asteroid = hitInfo.transform.parent.parent.gameObject;
 				Asteroid asteroid = hitInfo.transform.parent.parent.GetComponent<Asteroid>();
@@ -61,8 +61,8 @@ public class Controls : MonoBehaviour {
 				foreach (string resource in asteroid.composition){
 					sum += asteroidCreator.GetResourcePrice(resource);
 				}
-				print (asteroid.asteroidType);
-				print (sum);
+				//print (asteroid.asteroidType);
+				//print (sum);
 				lastAstVal = sum;
 			}
 			
@@ -71,7 +71,7 @@ public class Controls : MonoBehaviour {
 			//GUI BUTTONS
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "MineAsteroid")
 			{
-				print ("Mine Asteroid and Pay me");
+				//print ("Mine Asteroid and Pay me");
 				currentMoney = currentMoney+lastAstVal;
 				//String currentMoneyString = "Cash: $"+currentMoney.ToString("0.00");
 				GameObject.FindGameObjectWithTag ("CashText").GetComponent<TextMesh> ().text ="Cash: $"+currentMoney.ToString("0.00");// currentMoneyString;
@@ -81,33 +81,33 @@ public class Controls : MonoBehaviour {
 			
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Scan_UV")
 			{
-				print ("It's working");
+				//print ("It's working");
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Scan_IR")
 			{
-				print ("It's working");
+				//print ("It's working");
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Scan_VISIBLE")
 			{
-				print ("It's working");
+				//print ("It's working");
 			}
 			
 			
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Move")
 			{
-				print ("It's working");
+				//print ("It's working");
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Destroy")
 			{
-				print ("It's working");
+				//print ("It's working");
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Capture")
 			{
-				print ("It's working");
+				//print ("It's working");
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "NextSpec")
 			{
-				print ("It's working");
+				//print ("It's working");
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "GameOverClick")
 			{
