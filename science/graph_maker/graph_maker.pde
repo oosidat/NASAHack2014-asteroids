@@ -5,7 +5,12 @@ String lines[];
 String cats[]; 
 float vals[][];
 int cat_i;
-float graph_height = 500;
+float graph_height = 370;//500;
+int text_height = 142;
+int text_height3 = 87;
+int text_height4 = 54;
+int text_height2 = 88;
+float text_scaling_1 =0.85;
 float graph_width = 700;
 float graph_margin = 20;
 float line_width = 3;
@@ -111,18 +116,17 @@ void setup()
     pos_bins[i-1][6] = Float.parseFloat(columns[7]);
   }
   background(background_color);
-  //size(800,600);
-  size(600,600);
+  size(800,600);
+  //size(600,600);
 }
 void draw(){
   background(background_color);
-  textSize(32);
+  textSize((int)(text_height3*text_scaling_1));
   fill(text_color1);
   String graph_title = cats[cat_i].toUpperCase()+"-type";
-  text(graph_title,10,30);
-  textSize(28);
-  fill(text_color2);
-  String ingred_list = "May contain: "+ingredients_names[ingredients[cat_i][0]];
+  
+  
+  String ingred_list =ingredients_names[ingredients[cat_i][0]];
   if(ingredients[cat_i][1]!=-1)
   {
     ingred_list = ingred_list+", "+ingredients_names[ingredients[cat_i][1]];
@@ -131,7 +135,11 @@ void draw(){
   {
     ingred_list = ingred_list+", "+ingredients_names[ingredients[cat_i][2]];
   }
-  text(ingred_list,150,30);
+  text(ingred_list,10,text_height3);
+  textSize(text_height4);
+  fill(text_color2);
+  
+  text("Spectrum",10,text_height);
 
   stroke(text_color1);
   
@@ -157,20 +165,20 @@ void draw(){
     }
     //print(x+" "+yprev+" "+ynext+"\n");
     stroke(red_grad[(int)x],green_grad[(int)x],blue_grad[(int)x],alpha_grad[(int)x]);
-    line(x+graph_margin,graph_height+40-yprev,x+graph_margin,graph_height+40);
+    line(x+graph_margin,graph_height+text_height-yprev,x+graph_margin,graph_height+text_height);
     stroke(text_color1);
-    line(x+graph_margin,graph_height+40-yprev,x+1+graph_margin,graph_height+40-ynext);
+    line(x+graph_margin,graph_height+text_height-yprev,x+1+graph_margin,graph_height+text_height-ynext);
     
     yprev= ynext;
   }
     strokeWeight(line_width);
-  line(20,40,20,40+graph_height);
-  line(20,40+graph_height,20+graph_width,40+graph_height);
-  textSize(28);
+  line(20,text_height,20,text_height+graph_height);
+  line(20,text_height+graph_height,20+graph_width,text_height+graph_height);
+  textSize((int)(text_height2*text_scaling_1));
   fill(text_color2);
-  text("UV",graph_margin,graph_height+70);
-  text("Vis",graph_margin+graph_width/2.0,graph_height+70);
-  text("IR",-graph_margin+graph_width,graph_height+70);
+  text("UV",graph_margin,graph_height+text_height2+text_height-graph_margin);
+  text("Vis",graph_margin+graph_width/2.0,graph_height+text_height2+text_height-graph_margin);
+  text("IR",-graph_margin+graph_width,graph_height+text_height2+text_height-graph_margin);
   smooth();
   String filename = graph_title+".png";
   save(filename);
@@ -178,14 +186,14 @@ void draw(){
   
   
   background(background_color);
-  textSize(32);
+  textSize((int)(text_height3*text_scaling_1));
   fill(text_color1);
-  
-  text(graph_title,10,30);
-  textSize(28);
+  text(graph_title,10,text_height3);
+  text( "May contain: ",400,text_height3);
+  textSize(text_height4);
   fill(text_color2);
   
-  text(ingred_list,150,30);
+  text("Distance",graph_margin,text_height);
 
   stroke(text_color1);
   
@@ -196,22 +204,22 @@ void draw(){
     stroke(text_color1);
     fill(text_color2);
     float bin_height = graph_height*(pos_bins[cat_i][i])/0.7;
-    rect(i*bin_width+graph_margin,graph_height+40-bin_height,bin_width,bin_height);
+    rect(i*bin_width+graph_margin,graph_height+text_height-bin_height,bin_width,bin_height);
   }
-  line(20,40,20,40+graph_height);
-  line(20,40+graph_height,20+graph_width,40+graph_height);
-  textSize(28);
+  line(20,text_height,20,text_height+graph_height);
+  line(20,text_height+graph_height,20+graph_width,text_height+graph_height);
+  textSize((int)(text_height2*text_scaling_1));
   fill(text_color2);
-  text("2 AU",graph_margin,graph_height+70);
-  text("2.75 AU",-graph_margin+graph_width/2.0,graph_height+70);
-  text("3.5 AU",-3*graph_margin+graph_width,graph_height+70);
+  text("2",graph_margin,graph_height+text_height+text_height2-graph_margin);
+  text("2.75",-5.5*graph_margin+graph_width/2.0,graph_height+text_height+text_height2-graph_margin);
+  text("3.5 AU",-7*graph_margin+graph_width,graph_height+text_height+text_height2-graph_margin);
   smooth();
   
   String filename2 = "pos_"+graph_title+".png";
   save(filename2);
   
   cat_i++;
-  
+  /*
   background(0);
   textSize(32);
   fill(text_color1);
@@ -225,7 +233,7 @@ void draw(){
   ellipse(width/2,width/2,3*circle_margin,3*circle_margin);
   ellipse(width/2,width/2,4*circle_margin,4*circle_margin);
   ellipse(width/2,width/2,width-2*graph_margin,width-2*graph_margin);
-  save("radar.png");
+  save("radar.png");*/
   if(cat_i>12)
   {
     stop();

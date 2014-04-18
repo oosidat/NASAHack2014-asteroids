@@ -102,10 +102,9 @@ public class AsteroidCreator : MonoBehaviour {
 		float[] value;
 		if (AsteroidReflectance.TryGetValue(key, out value)) {
 			return value;
-		}
-		else {
+		} else {
 			Debug.Log ("Not Found: " + key);
-			return new float[] {0,0,0};
+			return new float[] {0, 0, 0};
 		}
 	}
 	
@@ -189,12 +188,15 @@ public class AsteroidCreator : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		SpawnGameObjects(150,200,8);
-		SpawnGameObjects(150,300,10);
-		SpawnGameObjects(150,400,11);
-		SpawnGameObjects(150,500,12);
-		SpawnGameObjects (150, 600, 13);
-		SpawnGameObjects (150, 700, 14);
+
+		int numAsteroidsToSpawn = 150;
+
+		SpawnGameObjects(numAsteroidsToSpawn, 200, 8);
+		SpawnGameObjects(numAsteroidsToSpawn, 300, 10);
+		SpawnGameObjects(numAsteroidsToSpawn, 400, 11);
+		SpawnGameObjects(numAsteroidsToSpawn, 500, 12);
+		SpawnGameObjects (numAsteroidsToSpawn, 600, 13);
+		SpawnGameObjects (numAsteroidsToSpawn, 700, 14);
 	}
 	
 	// Update is called once per frame
