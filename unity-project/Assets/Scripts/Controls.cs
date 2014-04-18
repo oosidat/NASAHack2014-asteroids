@@ -36,104 +36,108 @@ public class Controls : MonoBehaviour {
 			if (last_asteroid_go){
 				last_asteroid_go.renderer.material.shader = shader1;
 			}
-			//DeselectMine();
+	
 			RaycastHit hitInfo = new RaycastHit();
-			
+	
 			
 			//DESELECT
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, click_range) && hitInfo.transform.tag == "Untagged")
-			{
-				//print (hitInfo.transform.tag);
-			}
-			//SELECT ASTEROID
-			else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, click_range) && hitInfo.transform.tag == "Asteroid")
-			{
-				//print (hitInfo.transform.tag);
-				//transform.LookAt(hitInfo.transform);
-			}
-			//Select ASTEROID
-			else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, click_range) && hitInfo.transform.tag == "AsteroidChild")
-			{
-				GameObject.Find ("MineText").renderer.enabled = true;
-				GameObject.Find ("MineText").collider.enabled = true;
-				GameObject.Find ("MineButton").renderer.enabled = true;
+			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, click_range)){
+
+				if (hitInfo.transform.tag == "Untagged")
+				{
+					//print (hitInfo.transform.tag);
+				}
+				//SELECT ASTEROID
+				else if (hitInfo.transform.tag == "Asteroid")
+				{
+					//print (hitInfo.transform.tag);
+					//transform.LookAt(hitInfo.transform);
+				}
+				//Select ASTEROID
+				else if (hitInfo.transform.tag == "AsteroidChild")
+				{
+					GameObject.Find ("MineText").renderer.enabled = true;
+					GameObject.Find ("MineText").collider.enabled = true;
+					GameObject.Find ("MineButton").renderer.enabled = true;
 
 
 
-				//print (hitInfo.transform.tag);
-				//transform.LookAt(hitInfo.transform);
-				//hitInfo.transform.renderer.material.shader.
+					//print (hitInfo.transform.tag);
+					//transform.LookAt(hitInfo.transform);
+					//hitInfo.transform.renderer.material.shader.
 
 
-				hitInfo.transform.gameObject.renderer.material.shader = shader2;
-				hitInfo.transform.gameObject.renderer.material.SetColor("_OutlineColor", Color.cyan);
+					hitInfo.transform.gameObject.renderer.material.shader = shader2;
+					hitInfo.transform.gameObject.renderer.material.SetColor("_OutlineColor", Color.cyan);
 
 
-				last_asteroid = hitInfo.transform.parent.parent.gameObject;
-				last_asteroid_go = hitInfo.transform.gameObject;
+					last_asteroid = hitInfo.transform.parent.parent.gameObject;
+					last_asteroid_go = hitInfo.transform.gameObject;
 
-				Asteroid asteroid = hitInfo.transform.parent.parent.GetComponent<Asteroid>();
-				AsteroidCreator asteroidCreator = new AsteroidCreator();
+					Asteroid asteroid = hitInfo.transform.parent.parent.GetComponent<Asteroid>();
+					AsteroidCreator asteroidCreator = new AsteroidCreator();
 
 
-				float sum = 0;
-				foreach (string resource in asteroid.composition){
-					sum += asteroidCreator.GetResourcePrice(resource);
+					float sum = 0;
+					foreach (string resource in asteroid.composition){
+						sum += asteroidCreator.GetResourcePrice(resource);
+					}
+
+					//print (asteroid.asteroidType);
+					//print (sum);
+					lastAstVal = sum;
+				}
+				
+				
+				
+				//MINE BUTTON
+				else if (hitInfo.transform.tag == "MineAsteroid")
+				{
+
+					currentMoney = currentMoney+lastAstVal;
+					currentFuel -= 5f;
+					print ("current fuel: "+currentFuel);
+
+					float mulipliedByNumberOfBlocks = currentFuel/10.0f;
+					double roundUp = Math.Ceiling (mulipliedByNumberOfBlocks);
+					
+					int fuelGaugeBlocks = (int)roundUp;
+					fuelGage fuelGauge = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
+					fuelGauge.changeTexture(fuelGaugeBlocks);
+					
+					String fuelText = "Current Charge: "+ string.Format("{0:f1}", currentFuel);
+					GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh>().text = fuelText;
+					//String currentMoneyString = "Cash: $"+currentMoney.ToString("0.00");
+					GameObject.FindGameObjectWithTag ("CashText").GetComponent<TextMesh> ().text ="Cash: $"+currentMoney.ToString("0.00");// currentMoneyString;
+
+					//Destroy(last_asteroid);
+					last_asteroid_go.renderer.material.shader = shader3;
+					last_asteroid.gameObject.tag = "OldAsteroid";
+					last_asteroid_go.gameObject.tag = "OldAsteroid";
+					last_asteroid_go = null;
+					last_asteroid = null;
+
+					audio.PlayOneShot(mine);
+				}
+				
+
+				else if (hitInfo.transform.tag == "GameOverClick")
+				{
+					GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Loading...";
+					Application.LoadLevel(Application.loadedLevel);
+				}
+				else
+				{
+					DeselectMine();
 				}
 
-				//print (asteroid.asteroidType);
-				//print (sum);
-				lastAstVal = sum;
-			}
-			
-			
-			
-			//MINE BUTTON
-			else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "MineAsteroid")
-			{
-
-				currentMoney = currentMoney+lastAstVal;
-				currentFuel -= 5f;
-				print ("current fuel: "+currentFuel);
-
-				float mulipliedByNumberOfBlocks = currentFuel/10.0f;
-				double roundUp = Math.Ceiling (mulipliedByNumberOfBlocks);
+				//if ( hitInfo.transform && hitInfo.transform.tag != "AsteroidChild" || hitInfo.transform == null)
+				if ( hitInfo.transform == null)
+				{
+					DeselectMine();
+				}
 				
-				int fuelGaugeBlocks = (int)roundUp;
-				fuelGage fuelGauge = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
-				fuelGauge.changeTexture(fuelGaugeBlocks);
-				
-				String fuelText = "Current Charge: "+ string.Format("{0:f1}", currentFuel);
-				GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh>().text = fuelText;
-				//String currentMoneyString = "Cash: $"+currentMoney.ToString("0.00");
-				GameObject.FindGameObjectWithTag ("CashText").GetComponent<TextMesh> ().text ="Cash: $"+currentMoney.ToString("0.00");// currentMoneyString;
-
-				//Destroy(last_asteroid);
-				last_asteroid_go.renderer.material.shader = shader3;
-				last_asteroid.gameObject.tag = "OldAsteroid";
-				last_asteroid_go.gameObject.tag = "OldAsteroid";
-				last_asteroid_go = null;
-				last_asteroid = null;
-
-				audio.PlayOneShot(mine);
 			}
-			
-
-			else if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "GameOverClick")
-			{
-				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Loading...";
-				Application.LoadLevel(Application.loadedLevel);
-			}
-			else
-			{
-				DeselectMine();
-			}
-
-			if ( hitInfo.transform & hitInfo.transform.tag != "AsteroidChild" || hitInfo.transform == null)
-			{
-				DeselectMine();
-			}
-			
 		}
 	}
 
