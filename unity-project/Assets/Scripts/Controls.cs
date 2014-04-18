@@ -112,41 +112,10 @@ public class Controls : MonoBehaviour {
 				last_asteroid_go = null;
 				last_asteroid = null;
 
-
-
 				audio.PlayOneShot(mine);
 			}
 			
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Scan_UV")
-			{
-				//print ("It's working");
-			}
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Scan_IR")
-			{
-				//print ("It's working");
-			}
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Scan_VISIBLE")
-			{
-				//print ("It's working");
-			}
-			
-			
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Move")
-			{
-				//print ("It's working");
-			}
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Destroy")
-			{
-				//print ("It's working");
-			}
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "Capture")
-			{
-				//print ("It's working");
-			}
-			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "NextSpec")
-			{
-				//print ("It's working");
-			}
+
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "GameOverClick")
 			{
 				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Loading...";
