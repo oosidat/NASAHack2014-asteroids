@@ -153,7 +153,7 @@ public class Controls : MonoBehaviour {
 				Application.LoadLevel(Application.loadedLevel);
 			}
 			
-			if ( hitInfo.transform.tag != "AsteroidChild")
+			if ( hitInfo.transform & hitInfo.transform.tag != "AsteroidChild")
 			{
 				GameObject.Find ("MineText").renderer.enabled = false;
 				GameObject.Find ("MineText").collider.enabled = false;
