@@ -48,6 +48,7 @@ public class Controls : MonoBehaviour {
 			{
 				GameObject.Find ("MineText").renderer.enabled = true;
 				GameObject.Find ("MineText").collider.enabled = true;
+				GameObject.Find ("MineButton").renderer.enabled = true;
 				
 				print (hitInfo.transform.tag);
 				//transform.LookAt(hitInfo.transform);
@@ -110,6 +111,7 @@ public class Controls : MonoBehaviour {
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "GameOverClick")
 			{
+				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Loading...";
 				Application.LoadLevel(Application.loadedLevel);
 			}
 			
@@ -117,6 +119,7 @@ public class Controls : MonoBehaviour {
 			{
 				GameObject.Find ("MineText").renderer.enabled = false;
 				GameObject.Find ("MineText").collider.enabled = false;
+				GameObject.Find ("MineButton").renderer.enabled = false;
 			}
 			
 		}

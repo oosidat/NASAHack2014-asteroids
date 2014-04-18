@@ -21,6 +21,7 @@ public class fuelGage : MonoBehaviour {
 			value = 0;
 			GameObject.Find ("GameOver").renderer.enabled=true;
 			GameObject.Find ("GameOver").collider.enabled=true;
+			GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Game Over";
 			GameObject.Find ("GameOverText").renderer.enabled=true;
 
 				}
