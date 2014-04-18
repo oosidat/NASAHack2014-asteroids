@@ -2129,6 +2129,9 @@ MonoBehaviour:
   - {fileID: 2800000, guid: d9eb6d40931ab8f4e8566259217ed013, type: 3}
   filter_apply: {fileID: 8300000, guid: 0d112dbbf02744e42a22bafb69b38603, type: 3}
   filtermask: 0
+  k: 1
+  changeColor: 1
+  changeShininess: 1
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
