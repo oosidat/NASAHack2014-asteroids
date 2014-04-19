@@ -47,7 +47,8 @@ public class Movement : MonoBehaviour {
 				Ray ray = MapCam.ScreenPointToRay (Input.mousePosition);
 				Physics.Raycast (ray, out hitInfo, Mathf.Infinity, TerrainLayer);
 				
-				//debug.DrawLine (ray.origin, hitInfo.point);
+				Debug.DrawLine (ray.origin, hitInfo.point);
+
 				//debug.Log ("HitInfo x: " + hitInfo.point.x + " y: " + hitInfo.point.y + " z: " + hitInfo.point.z);
 				
 				if (hitInfo.transform.tag != "MapDeadZone") {
