@@ -102,9 +102,10 @@ GameObject:
   - 33: {fileID: 3300002}
   - 64: {fileID: 6400002}
   - 23: {fileID: 2300006}
+  - 65: {fileID: 6500010}
   m_Layer: 11
   m_Name: Radar
-  m_TagString: Untagged
+  m_TagString: Radar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +141,7 @@ GameObject:
   - 23: {fileID: 2300010}
   m_Layer: 11
   m_Name: Border
-  m_TagString: Untagged
+  m_TagString: Border
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1778,7 +1779,7 @@ MeshCollider:
   m_GameObject: {fileID: 100010}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
@@ -2051,6 +2052,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .460000008, y: .270000011, z: .100000001}
   m_Center: {x: 6.19329512e-08, y: -.0799999982, z: -6.57979697e-08}
+--- !u!65 &6500010
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100010}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.0000086, y: 1.79999995, z: 10.0000048}
+  m_Center: {x: 9.53674316e-07, y: 0, z: 0}
 --- !u!81 &8100000
 AudioListener:
   m_ObjectHideFlags: 1
@@ -2131,7 +2144,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 100
   MaxDistance: 500
   Pan2D: 0
@@ -2189,7 +2202,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 100
   MaxDistance: 500
   Pan2D: 0
@@ -2305,7 +2318,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 100
   MaxDistance: 500
   Pan2D: 0
@@ -2479,7 +2492,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 100
   MaxDistance: 500
   Pan2D: 0
