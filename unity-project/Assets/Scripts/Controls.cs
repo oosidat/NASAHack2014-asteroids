@@ -6,7 +6,7 @@ public class Controls : MonoBehaviour {
 
 	//Color c1 = Color.red;
 	//Color c2 = Color.red;
-	Color laserColor1 = new Color(1, 0, 0, 0.4f);	
+	Color laserColor1 = new Color(1, 0, 0, 0.5f);	
 	Color laserColor2 = new Color(1, .17f, .17f, 0.4f);	
 	LineRenderer lineRenderer;
 	public Transform Laser;
@@ -200,7 +200,7 @@ public class Controls : MonoBehaviour {
 
 	IEnumerator asteroid_fade(float strength_start, GameObject asteroidmined){
 		for (int i = 0; i < 50; i++){
-			strength_start=strength_start - .1f;
+			strength_start=strength_start - .2f;
 			asteroidmined.renderer.material.SetFloat("_Strength", strength_start);
 			yield return null;
 		}
