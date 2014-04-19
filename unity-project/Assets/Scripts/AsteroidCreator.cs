@@ -9,7 +9,7 @@ public class AsteroidCreator : MonoBehaviour {
 	public static Dictionary<int, int[]> AsteroidsByRadius = new Dictionary<int, int[]>();
 
 	public GameObject UiFilterButtons;
-	
+	public int numAsteroidsToSpawn = 75;
 	public void InitializeAsteroidsByRadius() {
 
 		AsteroidsByRadius.Clear ();
@@ -190,7 +190,7 @@ public class AsteroidCreator : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		int numAsteroidsToSpawn = 75;
+
 
 		SpawnGameObjects(numAsteroidsToSpawn, 200, 8);
 		SpawnGameObjects(numAsteroidsToSpawn, 300, 10);
