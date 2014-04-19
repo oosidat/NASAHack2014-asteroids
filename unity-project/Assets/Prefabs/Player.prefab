@@ -2752,8 +2752,8 @@ MonoBehaviour:
   shader3: {fileID: 4800000, guid: 3f6cb05413bfd2e42b196fad7e842eeb, type: 3}
   mine: {fileID: 8300000, guid: 195da4fd087c92e4f86d8bc8cd8bbd75, type: 3}
   asteroidselect: {fileID: 0}
-  noselect: {fileID: 0}
-  select: {fileID: 0}
+  noselect: {fileID: 8300000, guid: 651f79fcd284a1c4384cb7c51f098d90, type: 3}
+  select: {fileID: 8300000, guid: 51560e758cc93bf468c034536310fc5d, type: 3}
   click_range: 150
   lastMined: 
 --- !u!114 &11400006
