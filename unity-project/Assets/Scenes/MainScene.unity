@@ -1079,6 +1079,68 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1947970871}
   m_GameObject: {fileID: 625825057}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &683265513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+  m_PrefabInternal: {fileID: 1291677401}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 683265515}
+  - 120: {fileID: 683265514}
+  m_Layer: 0
+  m_Name: laser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!120 &683265514
+LineRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 12000000, guid: 25b4a08aa03fe9f408b952549e90623e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1291677401}
+  m_GameObject: {fileID: 683265513}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 2100000, guid: bb6a987bdff52214a9f75a029a0e773f, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 1}
+  m_Parameters:
+    startWidth: 1
+    endWidth: 1
+    m_StartColor:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_EndColor:
+      serializedVersion: 2
+      rgba: 4294967295
+  m_UseWorldSpace: 1
+--- !u!4 &683265515
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+  m_PrefabInternal: {fileID: 1291677401}
+  m_GameObject: {fileID: 683265513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -6.10351562e-05}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &709111160
 GameObject:
   m_ObjectHideFlags: 0
@@ -2220,6 +2282,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1947970871}
   m_GameObject: {fileID: 1285625490}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1291677401
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -6.10351562e-05
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+  m_RootGameObject: {fileID: 683265513}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1309775489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,6 +2371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91fd8ac2f55bd114ea75d6d600984a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _line: {fileID: 0}
   target: {fileID: 0}
   currentFuel: 100
   fuelBurnRate: .00499999989
@@ -2278,6 +2381,7 @@ MonoBehaviour:
   shader2: {fileID: 4800000, guid: df3aa34b0b079b947b1f80ee8e20cc5e, type: 3}
   shader3: {fileID: 4800000, guid: 3f6cb05413bfd2e42b196fad7e842eeb, type: 3}
   mine: {fileID: 8300000, guid: 195da4fd087c92e4f86d8bc8cd8bbd75, type: 3}
+  asteroidselect: {fileID: 0}
   click_range: 400
 --- !u!114 &1309775492
 MonoBehaviour:

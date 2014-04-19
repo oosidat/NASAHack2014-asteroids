@@ -14,6 +14,7 @@ public class Controls : MonoBehaviour {
 	private GameObject last_asteroid;
 	private GameObject last_asteroid_go;
 	public AudioClip mine;
+	public AudioClip asteroidselect;
 	public float click_range;
 	// Use this for initialization
 	void Start () {
@@ -41,7 +42,7 @@ public class Controls : MonoBehaviour {
 			
 			//DESELECT
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, click_range)){
-
+				Debug.DrawRay(transform.position, hitInfo.transform.position, Color.red, 5F);
 			//	if (hitInfo.transform.tag == "Untagged"){
 					//print (hitInfo.transform.tag);
 				//}
