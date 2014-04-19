@@ -18,8 +18,9 @@ public class Laser : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
-		lineRenderer.SetPosition(1, hitInfo.point);
-		lineRenderer.SetPosition(2, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+	//	lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+	//	lineRenderer.SetPosition(1, hitInfo.point);
+	//	lineRenderer.SetPosition(2, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+	
 	}
 }

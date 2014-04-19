@@ -3,6 +3,9 @@ using System.Collections;
 using System;
 
 public class Controls : MonoBehaviour {
+
+
+
 	public Transform target;
 	public float currentFuel;
 	public float fuelBurnRate;
@@ -18,7 +21,8 @@ public class Controls : MonoBehaviour {
 	public float click_range;
 	// Use this for initialization
 	void Start () {
-		
+
+
 		//currentFuel = 1.0f;
 		currentMoney = 0.0f;
 		lastAstVal = 0.0f;
@@ -28,11 +32,14 @@ public class Controls : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
 	{
+
+
 		if(Input.GetKeyDown("escape")) {//When a key is pressed down it see if it was the escape key if it was it will execute the code
 			Application.Quit(); // Quits the game
 		}
 		
 		if (Input.GetMouseButtonUp(0)){
+
 			if (last_asteroid_go){
 				last_asteroid_go.renderer.material.shader = shader1;
 			}
@@ -42,17 +49,15 @@ public class Controls : MonoBehaviour {
 			
 			//DESELECT
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, click_range)){
+
+
+
 				Debug.DrawRay(transform.position, hitInfo.transform.position, Color.red, 5F);
-			//	if (hitInfo.transform.tag == "Untagged"){
-					//print (hitInfo.transform.tag);
-				//}
-				//SELECT ASTEROID
-				//else if (hitInfo.transform.tag == "Asteroid"){
-					//print (hitInfo.transform.tag);
-					//transform.LookAt(hitInfo.transform);
-				//}
+
 				//Select ASTEROID
 				if (hitInfo.transform.tag == "AsteroidChild"){
+
+
 					GameObject.Find ("MineText").renderer.enabled = true;
 					GameObject.Find ("MineText").collider.enabled = true;
 					GameObject.Find ("MineButton").renderer.enabled = true;
@@ -136,6 +141,7 @@ public class Controls : MonoBehaviour {
 				DeselectMine();
 			}
 		}
+
 	}
 
 	void DeselectMine(){
