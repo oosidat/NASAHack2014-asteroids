@@ -662,7 +662,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 66.2326355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400006}
@@ -3007,8 +3007,8 @@ MonoBehaviour:
   - "By applying different filters, you can detect the reflectance of \r\nasteroids
     across the spectrum. You can compare the reflectance \r\nto visualized data on
     screen of known asteroid types."
-  - "The distance graph shows you where you or most likely to find \r\ndifferent asteroid
-    types."
+  - "The distance graph shows you where you are most likely to find \r\ndifferent
+    asteroid types."
   - "The spectrum graph shows you which parts of the colour spectrum\r\nan asteroid
     type will reflect."
   - "Using the Radar you can travel to different parts of the asteroid \r\nbelt by
