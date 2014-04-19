@@ -4,7 +4,9 @@ using System;
 
 public class Controls : MonoBehaviour {
 
-
+	Color c1 = Color.red;
+	Color c2 = Color.red;
+	LineRenderer lineRenderer;
 
 	public Transform target;
 	public float currentFuel;
@@ -22,9 +24,19 @@ public class Controls : MonoBehaviour {
 	public AudioClip select;
 	public float click_range;
 	public String lastMined;
+
+	//Lasers
+
+
 	// Use this for initialization
 	void Start () {
-
+		//Lasers
+		lineRenderer = gameObject.AddComponent<LineRenderer>();
+		lineRenderer.material = new Material (Shader.Find("Particles/Additive"));
+		lineRenderer.SetColors(c1, c2);
+		lineRenderer.SetWidth(.2f,.2f);
+		lineRenderer.SetVertexCount(2);
+		//Lasers
 
 		//currentFuel = 1.0f;
 		currentMoney = 0.0f;
@@ -101,6 +113,11 @@ public class Controls : MonoBehaviour {
 				//MINE BUTTON
 				else if (hitInfo.transform.tag == "MineAsteroid"){
 
+					//Lasers
+					lineRenderer.enabled=true;
+					lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+					lineRenderer.SetPosition(1, last_asteroid_go.transform.position);
+					StartCoroutine(laser_die());
 					currentMoney = currentMoney+lastAstVal;
 					currentFuel -= 5f;
 					print ("current fuel: "+currentFuel);
@@ -162,6 +179,12 @@ public class Controls : MonoBehaviour {
 		GameObject.Find ("MineText").renderer.enabled = false;
 		GameObject.Find ("MineText").collider.enabled = false;
 		GameObject.Find ("MineButton").renderer.enabled = false;
+	}
+
+	IEnumerator laser_die(){
+		yield return new WaitForSeconds(.5f);
+		lineRenderer.enabled = false;
+
 	}
 
 }
