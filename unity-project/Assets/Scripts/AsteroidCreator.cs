@@ -199,13 +199,22 @@ public class AsteroidCreator : MonoBehaviour {
 		SpawnGameObjects(numAsteroidsToSpawn, 500, 12);
 		SpawnGameObjects (numAsteroidsToSpawn, 600, 13);
 		SpawnGameObjects (numAsteroidsToSpawn, 700, 14);*/
-
+		/*
 		SpawnGameObjects(numAsteroidsToSpawn, 200, 8);
 		SpawnGameObjects(numAsteroidsToSpawn, 225, 10);
 		SpawnGameObjects(numAsteroidsToSpawn, 340, 11);
 		SpawnGameObjects(numAsteroidsToSpawn, 400, 12);
 		SpawnGameObjects (numAsteroidsToSpawn, 500, 13);
 		SpawnGameObjects (numAsteroidsToSpawn, 600, 14);
+		*/
+		SpawnGameObjects( 10,200, 8);
+		SpawnGameObjects( 300,250, 9);
+		SpawnGameObjects(50,300, 10);
+		SpawnGameObjects(340,350, 11);
+		SpawnGameObjects(50, 400,12);
+		SpawnGameObjects (150,450, 13);
+		SpawnGameObjects (10,500, 14);
+
 
 		// apply default (vis) filter
 		UiFilterButtons.GetComponent<filterButtons> ().applyFilter (1);
