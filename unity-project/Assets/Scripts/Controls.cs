@@ -6,7 +6,8 @@ public class Controls : MonoBehaviour {
 
 	//Color c1 = Color.red;
 	//Color c2 = Color.red;
-	Color laserColor = new Color(1, 0, 0, 0.3f);	
+	Color laserColor1 = new Color(1, 0, 0, 0.4f);	
+	Color laserColor2 = new Color(1, .17f, .17f, 0.4f);	
 	LineRenderer lineRenderer;
 	public Transform Laser;
 
@@ -36,7 +37,7 @@ public class Controls : MonoBehaviour {
 		//Lasers
 		lineRenderer = gameObject.AddComponent<LineRenderer>();
 		lineRenderer.material = new Material (Shader.Find("Particles/Additive"));
-		lineRenderer.SetColors(laserColor, laserColor);
+		lineRenderer.SetColors(laserColor1, laserColor1);
 		lineRenderer.SetWidth(.3f,.2f);
 		lineRenderer.SetVertexCount(2);
 		//Lasers
