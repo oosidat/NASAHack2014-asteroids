@@ -55,7 +55,7 @@ public class Controls : MonoBehaviour {
 
 
 
-				Debug.DrawRay(transform.position, hitInfo.transform.position, Color.red, 5F);
+				Debug.DrawRay(Camera.main.transform.position, hitInfo.transform.position, Color.red, 5F);
 				Debug.Log (hitInfo.transform.tag);
 				//Select ASTEROID
 				if (hitInfo.transform.tag == "AsteroidChild"){
