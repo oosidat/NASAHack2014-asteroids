@@ -15,6 +15,7 @@ public class Controls : MonoBehaviour {
 	private GameObject last_asteroid_go;
 	public AudioClip mine;
 	public float click_range;
+	public String lastMined;
 	// Use this for initialization
 	void Start () {
 		
@@ -82,11 +83,8 @@ public class Controls : MonoBehaviour {
 					//print (asteroid.asteroidType);
 					//print (sum);
 					lastAstVal = sum;
-					String composition = String.Join(", ", asteroid.composition);
+					lastMined = "Last mined: type " + asteroid.asteroidType + ", containing " + String.Join(", ", asteroid.composition);
 
-
-					GameObject.FindGameObjectWithTag ("AsteroidText").GetComponent<TextMesh>().text = composition;
-					GameObject.Find ("AsteroidText").renderer.enabled = true;
 				}
 				
 				
@@ -109,6 +107,8 @@ public class Controls : MonoBehaviour {
 					GameObject.FindGameObjectWithTag ("fuelLabel").GetComponent<TextMesh>().text = fuelText;
 					//String currentMoneyString = "Cash: $"+currentMoney.ToString("0.00");
 					GameObject.FindGameObjectWithTag ("CashText").GetComponent<TextMesh> ().text ="Cash: $"+currentMoney.ToString("0.00");// currentMoneyString;
+
+					GameObject.FindGameObjectWithTag ("AsteroidText").GetComponent<TextMesh>().text = lastMined;
 
 					//Destroy(last_asteroid);
 					last_asteroid_go.renderer.material.shader = shader3;
@@ -146,9 +146,6 @@ public class Controls : MonoBehaviour {
 		GameObject.Find ("MineText").renderer.enabled = false;
 		GameObject.Find ("MineText").collider.enabled = false;
 		GameObject.Find ("MineButton").renderer.enabled = false;
-
-		GameObject.Find ("AsteroidText").renderer.enabled = false;
-
 	}
 	
 }

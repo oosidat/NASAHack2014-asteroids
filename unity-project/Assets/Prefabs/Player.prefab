@@ -771,8 +771,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100032}
   m_LocalRotation: {x: 0, y: -.707106829, z: .707106829, w: 0}
-  m_LocalPosition: {x: 4.25454569, y: .623581409, z: -3.0361681}
-  m_LocalScale: {x: 10, y: 50, z: 10}
+  m_LocalPosition: {x: 4.80000019, y: .623581409, z: -3.0361681}
+  m_LocalScale: {x: 6.5, y: 50, z: 10}
   m_Children: []
   m_Father: {fileID: 400034}
 --- !u!4 &400034
@@ -782,8 +782,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100034}
   m_LocalRotation: {x: 0, y: .707106829, z: -.707106829, w: 0}
-  m_LocalPosition: {x: -.0788654238, y: .488088012, z: -0}
-  m_LocalScale: {x: .0989999995, y: .100000001, z: .0199999996}
+  m_LocalPosition: {x: 1.86000001, y: .488088012, z: -0}
+  m_LocalScale: {x: .146400005, y: .100000001, z: .0199999996}
   m_Children:
   - {fileID: 400032}
   m_Father: {fileID: 400006}
@@ -2592,7 +2592,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100032}
-  m_Text: 'Cash: 0'
+  m_Text: 'Last Mined: ??? '
   m_OffsetZ: 0
   m_CharacterSize: .0199999996
   m_LineSpacing: 1
@@ -2751,6 +2751,7 @@ MonoBehaviour:
   shader3: {fileID: 4800000, guid: 3f6cb05413bfd2e42b196fad7e842eeb, type: 3}
   mine: {fileID: 8300000, guid: 195da4fd087c92e4f86d8bc8cd8bbd75, type: 3}
   click_range: 400
+  lastMined: 
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
