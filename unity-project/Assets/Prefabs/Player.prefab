@@ -1978,7 +1978,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .400000006, y: .180000007, z: .100000001}
+  m_Size: {x: .460000008, y: .270000011, z: .100000001}
   m_Center: {x: 6.19329512e-08, y: -.0799999982, z: -6.57979697e-08}
 --- !u!81 &8100000
 AudioListener:
@@ -2752,6 +2752,8 @@ MonoBehaviour:
   shader3: {fileID: 4800000, guid: 3f6cb05413bfd2e42b196fad7e842eeb, type: 3}
   mine: {fileID: 8300000, guid: 195da4fd087c92e4f86d8bc8cd8bbd75, type: 3}
   asteroidselect: {fileID: 0}
+  noselect: {fileID: 0}
+  select: {fileID: 0}
   click_range: 150
   lastMined: 
 --- !u!114 &11400006

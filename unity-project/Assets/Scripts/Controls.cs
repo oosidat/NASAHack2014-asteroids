@@ -18,6 +18,8 @@ public class Controls : MonoBehaviour {
 	private GameObject last_asteroid_go;
 	public AudioClip mine;
 	public AudioClip asteroidselect;
+	public AudioClip noselect;
+	public AudioClip select;
 	public float click_range;
 	public String lastMined;
 	// Use this for initialization
@@ -57,7 +59,7 @@ public class Controls : MonoBehaviour {
 
 				//Select ASTEROID
 				if (hitInfo.transform.tag == "AsteroidChild"){
-
+					audio.PlayOneShot(select);
 
 					GameObject.Find ("MineText").renderer.enabled = true;
 					GameObject.Find ("MineText").collider.enabled = true;
@@ -122,6 +124,8 @@ public class Controls : MonoBehaviour {
 					last_asteroid_go.renderer.material.shader = shader3;
 					last_asteroid.gameObject.tag = "OldAsteroid";
 					last_asteroid_go.gameObject.tag = "OldAsteroid";
+					last_asteroid_go.collider.enabled = false;
+					last_asteroid_go.rigidbody.isKinematic = true;
 					last_asteroid_go = null;
 					last_asteroid = null;
 
@@ -135,17 +139,20 @@ public class Controls : MonoBehaviour {
 					Application.LoadLevel(Application.loadedLevel);
 				}
 				else{
+
 					DeselectMine();
 				}
 
 				//if ( hitInfo.transform && hitInfo.transform.tag != "AsteroidChild" || hitInfo.transform == null)
 				if ( hitInfo.transform == null)	{
 					DeselectMine();
+
 				}
 				
 			}
 			else{
 				DeselectMine();
+				audio.PlayOneShot(noselect);
 			}
 		}
 
