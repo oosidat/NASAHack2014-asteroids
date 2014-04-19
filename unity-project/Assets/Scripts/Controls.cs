@@ -150,6 +150,9 @@ public class Controls : MonoBehaviour {
 					last_asteroid_go.gameObject.tag = "OldAsteroid";
 					last_asteroid_go.collider.enabled = false;
 					last_asteroid_go.rigidbody.isKinematic = true;
+					last_asteroid_go.renderer.material.SetFloat("_Strength", 3f);
+					float strength_start=last_asteroid_go.renderer.material.GetFloat("_Strength");
+					StartCoroutine(asteroid_fade(strength_start, last_asteroid_go));
 					last_asteroid_go = null;
 					last_asteroid = null;
 
@@ -192,6 +195,15 @@ public class Controls : MonoBehaviour {
 	IEnumerator laser_die(){
 		yield return new WaitForSeconds(.3f);
 		lineRenderer.enabled = false;
+
+	}
+
+	IEnumerator asteroid_fade(float strength_start, GameObject asteroidmined){
+		for (int i = 0; i < 50; i++){
+			strength_start=strength_start - .1f;
+			asteroidmined.renderer.material.SetFloat("_Strength", strength_start);
+			yield return null;
+		}
 
 	}
 
