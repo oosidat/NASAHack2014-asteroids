@@ -2426,6 +2426,46 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1985408750}
   m_GameObject: {fileID: 1285625490}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1291677401
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -6.10351562e-05
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 25b4a08aa03fe9f408b952549e90623e, type: 2}
+  m_RootGameObject: {fileID: 683265513}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &1309775489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2475,6 +2515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91fd8ac2f55bd114ea75d6d600984a8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _line: {fileID: 0}
   target: {fileID: 0}
   currentFuel: 100
   fuelBurnRate: .00499999989
@@ -2484,6 +2525,7 @@ MonoBehaviour:
   shader2: {fileID: 4800000, guid: df3aa34b0b079b947b1f80ee8e20cc5e, type: 3}
   shader3: {fileID: 4800000, guid: 3f6cb05413bfd2e42b196fad7e842eeb, type: 3}
   mine: {fileID: 8300000, guid: 195da4fd087c92e4f86d8bc8cd8bbd75, type: 3}
+  asteroidselect: {fileID: 0}
   click_range: 400
   lastMined: 
 --- !u!114 &1309775492
