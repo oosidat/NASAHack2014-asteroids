@@ -14,7 +14,7 @@ TagManager:
   - MapDeadZone
   - AsteroidGameObjects
   - distanceLabel
-  - 
+  - AsteroidText
   - AsteroidChild
   - MineAsteroid
   - CashText
