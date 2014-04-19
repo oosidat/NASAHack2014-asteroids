@@ -1,0 +1,104 @@
+Initialize engine version: 4.3.2f1 (0517a5ae8669)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvd3dum.dll 9.18.13.2641]
+    Renderer: NVIDIA GeForce GTX 770
+    Vendor:   NVIDIA
+    VRAM:     4028 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 RAWZ=0 NULL=1 RESZ=0 SlowINTZ=0
+Begin MonoManager ReloadAssembly
+Platform assembly: Z:\Development\NASAHack_Master\NASAHack2014-asteroids\Binaries\Windows\v0.8\RocksLasersProfit_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading Z:\Development\NASAHack_Master\NASAHack2014-asteroids\Binaries\Windows\v0.8\RocksLasersProfit_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: Z:\Development\NASAHack_Master\NASAHack2014-asteroids\Binaries\Windows\v0.8\RocksLasersProfit_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading Z:\Development\NASAHack_Master\NASAHack2014-asteroids\Binaries\Windows\v0.8\RocksLasersProfit_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: Z:\Development\NASAHack_Master\NASAHack2014-asteroids\Binaries\Windows\v0.8\RocksLasersProfit_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading Z:\Development\NASAHack_Master\NASAHack2014-asteroids\Binaries\Windows\v0.8\RocksLasersProfit_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: Z:\Development\NASAHack_Master\NASAHack2014-asteroids\Binaries\Windows\v0.8\RocksLasersProfit_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading Z:\Development\NASAHack_Master\NASAHack2014-asteroids\Binaries\Windows\v0.8\RocksLasersProfit_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+- Completed reload, in  0.134 seconds
+<RI> Initializing input.
+<RI> Input initialized.
+desktop: 1680x1050 120Hz; virtual: 1680x1050 at 0,0
+NullReferenceException
+  at (wrapper managed-to-native) UnityEngine.Material:Internal_CreateWithShader (UnityEngine.Material,UnityEngine.Shader)
+  at UnityEngine.Material..ctor (UnityEngine.Shader shader) [0x00000] in <filename unknown>:0 
+  at Laser_anim.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Clicking through help screen
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Clicking through help screen
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Clicking through help screen
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Clicking through help screen
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Clicking through help screen
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Clicking through help screen
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[System.String,System.Single].get_Item (System.String key) [0x00000] in <filename unknown>:0 
+  at AsteroidCreator.GetResourcePrice (System.String key) [0x00000] in <filename unknown>:0 
+  at Controls.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+current fuel: 78.80589
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+current fuel: 73.80589
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[System.String,System.Single].get_Item (System.String key) [0x00000] in <filename unknown>:0 
+  at AsteroidCreator.GetResourcePrice (System.String key) [0x00000] in <filename unknown>:0 
+  at Controls.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+current fuel: 68.80589
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+current fuel: 63.80589
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[System.String,System.Single].get_Item (System.String key) [0x00000] in <filename unknown>:0 
+  at AsteroidCreator.GetResourcePrice (System.String key) [0x00000] in <filename unknown>:0 
+  at Controls.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+current fuel: 58.80589
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+KeyNotFoundException: The given key was not present in the dictionary.
+  at System.Collections.Generic.Dictionary`2[System.String,System.Single].get_Item (System.String key) [0x00000] in <filename unknown>:0 
+  at AsteroidCreator.GetResourcePrice (System.String key) [0x00000] in <filename unknown>:0 
+  at Controls.Update () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+current fuel: 53.80589
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+

@@ -333,7 +333,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .400000006, y: .180000007, z: .100000001}
+  m_Size: {x: .460000008, y: .270000011, z: .100000001}
   m_Center: {x: 6.19329512e-08, y: -.0799999982, z: -6.57979697e-08}
 --- !u!102 &79721706
 TextMesh:
@@ -8435,6 +8435,14 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6500008, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Size.y
+      value: .270000011
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500008, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Size.x
+      value: .460000008
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dce262807684cf6409f82f9af308b216, type: 2}
   m_RootGameObject: {fileID: 776378313}
@@ -8699,6 +8707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UiFilterButtons: {fileID: 606835800}
+  numAsteroidsToSpawn: 150
   AsteroidTemplate: {fileID: 100000, guid: 244f6ff2726011e41a9074bfab8435cb, type: 2}
   Asteroids:
   - {fileID: 100000, guid: ca0fb80d2e54f314f9c0617fe83261f9, type: 2}
@@ -11250,7 +11259,7 @@ Renderer:
     type: 2}
   m_PrefabInternal: {fileID: 1422667821}
   m_GameObject: {fileID: 1794385623}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -12061,8 +12070,9 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 1422667821}
   m_GameObject: {fileID: 1876060752}
-  m_Text: "Asset Market:\r\nFeldspar: 60.9$\r\nOlivine: 314.84$\r\nPyroxene: 314.84$\r\nEnstatite:
-    314.84$\r\nCarbon: 0$\r\nSilicates: 34.81$\r\nWater: 0.0011$\r\nMetals: 2231.25$"
+  m_Text: "Asset Market:\r\nFeldspar:      $60.9\r\nOlivine:     $314.84\r\nPyroxene:
+    $314.84\r\nEnstatite:  $314.84\r\nCarbon:        $0.00\r\nSilicates:     $34.81\r\nMetals:
+    \   $2231.25\r\nWater:       $0.0011"
   m_OffsetZ: 0
   m_CharacterSize: .0199999996
   m_LineSpacing: 1

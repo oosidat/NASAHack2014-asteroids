@@ -2507,8 +2507,9 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100016}
-  m_Text: "Asset Market:\r\nFeldspar: 60.9$\r\nOlivine: 314.84$\r\nPyroxene: 314.84$\r\nEnstatite:
-    314.84$\r\nCarbon: 0$\r\nSilicates: 34.81$\r\nWater: 0.0011$\r\nMetals: 2231.25$"
+  m_Text: "Asset Market:\r\nFeldspar:      $60.9\r\nOlivine:     $314.84\r\nPyroxene:
+    $314.84\r\nEnstatite:  $314.84\r\nCarbon:        $0.00\r\nSilicates:     $34.81\r\nMetals:
+    \   $2231.25\r\nWater:       $0.0011"
   m_OffsetZ: 0
   m_CharacterSize: .0199999996
   m_LineSpacing: 1
