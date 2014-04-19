@@ -82,6 +82,11 @@ public class Controls : MonoBehaviour {
 					//print (asteroid.asteroidType);
 					//print (sum);
 					lastAstVal = sum;
+
+
+					GameObject.FindGameObjectWithTag ("AsteroidText").GetComponent<TextMesh>().text = "YOLO";
+					GameObject.Find ("AsteroidText").renderer.enabled = true;
+					GameObject.Find ("AsteroidText").collider.enabled = true;
 				}
 				
 				
@@ -141,6 +146,9 @@ public class Controls : MonoBehaviour {
 		GameObject.Find ("MineText").renderer.enabled = false;
 		GameObject.Find ("MineText").collider.enabled = false;
 		GameObject.Find ("MineButton").renderer.enabled = false;
+
+		GameObject.Find ("AsteroidText").renderer.enabled = false;
+		GameObject.Find ("AsteroidText").collider.enabled = false;
 
 	}
 	
