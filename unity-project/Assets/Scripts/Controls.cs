@@ -200,7 +200,7 @@ public class Controls : MonoBehaviour {
 
 	IEnumerator asteroid_fade(float strength_start, GameObject asteroidmined){
 		for (int i = 0; i < 50; i++){
-			strength_start=strength_start - .2f;
+			strength_start=strength_start - .15f;
 			asteroidmined.renderer.material.SetFloat("_Strength", strength_start);
 			yield return null;
 		}
