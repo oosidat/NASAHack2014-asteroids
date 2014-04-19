@@ -89,7 +89,7 @@ public class Controls : MonoBehaviour {
 					//print (asteroid.asteroidType);
 					//print (sum);
 					lastAstVal = sum;
-					lastMined = "Last mined: type " + asteroid.asteroidType + ", containing " + String.Join(", ", asteroid.composition);
+					lastMined = "Last mined: type " + asteroid.asteroidType.ToUpper() + ", containing " + String.Join(", ", asteroid.composition);
 
 				}
 				
