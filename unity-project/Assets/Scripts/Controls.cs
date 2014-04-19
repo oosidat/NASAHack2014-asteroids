@@ -86,7 +86,6 @@ public class Controls : MonoBehaviour {
 					float sum = 0;
 					for (int i = 0; i < (asteroid.composition).Length; i++) {
 						sum += asteroidCreator.GetResourcePrice(asteroid.composition[i]);
-						asteroid.composition[i] = UppercaseFirst(asteroid.composition[i]);
 					}
 
 					//print (asteroid.asteroidType);
@@ -164,11 +163,4 @@ public class Controls : MonoBehaviour {
 		GameObject.Find ("MineButton").renderer.enabled = false;
 	}
 
-	public string UppercaseFirst(string s)
-	{
-		char[] a = s.ToCharArray();
-		a[0] = char.ToUpper(a[0]);
-		return new string(a);
-	}
-	
 }

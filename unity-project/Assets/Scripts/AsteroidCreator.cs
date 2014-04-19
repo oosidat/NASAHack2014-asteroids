@@ -29,20 +29,20 @@ public class AsteroidCreator : MonoBehaviour {
 
 		AsteroidCompositions.Clear ();
 
-		AsteroidCompositions["s"] = new string[] {"metal", "olivine", "pyroxene"};
-		AsteroidCompositions["c"] = new string[] {"silicates", "water", "carbon"};
-		AsteroidCompositions["q"] = new string[] {"olivine", "pyroxene", "metal"};
-		AsteroidCompositions["x"] = new string[] {"metal"};
-		AsteroidCompositions["v"] = new string[] {"pyroxene", "feldspar"};
-		AsteroidCompositions["u"] = new string[] {"unknown"};
-		AsteroidCompositions["r"] = new string[] {"pyroxene", "olivine"};
-		AsteroidCompositions["d"] = new string[] {"silicates", "carbon"};
-		AsteroidCompositions["t"] = new string[] {"silicates", "carbon"};
-		AsteroidCompositions["m"] = new string[] {"metal", "enstatite"};
-		AsteroidCompositions["e"] = new string[] {"enstatite"};
-		AsteroidCompositions["o"] = new string[] {"silicates", "water", "carbon"};
-		AsteroidCompositions["p"] = new string[] {"silicates", "carbon"};
-		AsteroidCompositions["a"] = new string[] {"olivine", "metal"};
+		AsteroidCompositions["s"] = new string[] {"Metal", "Olivine", "Pyroxene"};
+		AsteroidCompositions["c"] = new string[] {"Silicates", "Water", "Carbon"};
+		AsteroidCompositions["q"] = new string[] {"Olivine", "Pyroxene", "Metal"};
+		AsteroidCompositions["x"] = new string[] {"Metal"};
+		AsteroidCompositions["v"] = new string[] {"Pyroxene", "Feldspar"};
+		AsteroidCompositions["u"] = new string[] {"Unknown"};
+		AsteroidCompositions["r"] = new string[] {"Pyroxene", "Olivine"};
+		AsteroidCompositions["d"] = new string[] {"Silicates", "Carbon"};
+		AsteroidCompositions["t"] = new string[] {"Silicates", "Carbon"};
+		AsteroidCompositions["m"] = new string[] {"Metal", "Enstatite"};
+		AsteroidCompositions["e"] = new string[] {"Enstatite"};
+		AsteroidCompositions["o"] = new string[] {"Silicates", "Water", "Carbon"};
+		AsteroidCompositions["p"] = new string[] {"Silicates", "Carbon"};
+		AsteroidCompositions["a"] = new string[] {"Olivine", "Metal"};
 	}
 
 	public static Dictionary<string,float> minPrice = new Dictionary<string,float >();
@@ -51,14 +51,15 @@ public class AsteroidCreator : MonoBehaviour {
 
 		minPrice.Clear ();
 
-		minPrice["feldspar"] = 60.9f;
-		minPrice["olivine"] = 314.84f;
-		minPrice["pyroxene"] = 314.84f;
-		minPrice["enstatite"] =314.84f;
-		minPrice["carbon"] = 0.0f;
-		minPrice["silicates"] = 34.81f;
-		minPrice["water"] = 0.0011f;
-		minPrice["metal"] = 2231.25f;
+		minPrice["Feldspar"] = 60.9f;
+		minPrice["Olivine"] = 314.84f;
+		minPrice["Pyroxene"] = 314.84f;
+		minPrice["Enstatite"] =314.84f;
+		minPrice["Carbon"] = 0.0f;
+		minPrice["Silicates"] = 34.81f;
+		minPrice["Water"] = 0.0011f;
+		minPrice["Metal"] = 2231.25f;
+		minPrice ["Unknown"] = 0.0f;
 		
 	}
 
