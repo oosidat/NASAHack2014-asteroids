@@ -4,9 +4,11 @@ using System;
 
 public class Controls : MonoBehaviour {
 
-	Color c1 = Color.red;
-	Color c2 = Color.red;
+	//Color c1 = Color.red;
+	//Color c2 = Color.red;
+	Color laserColor = new Color(1, 0, 0, 0.3f);	
 	LineRenderer lineRenderer;
+	public Transform Laser;
 
 	public Transform target;
 	public float currentFuel;
@@ -23,6 +25,7 @@ public class Controls : MonoBehaviour {
 	public AudioClip noselect;
 	public AudioClip select;
 	public float click_range;
+
 	public String lastMined;
 
 	//Lasers
@@ -33,8 +36,8 @@ public class Controls : MonoBehaviour {
 		//Lasers
 		lineRenderer = gameObject.AddComponent<LineRenderer>();
 		lineRenderer.material = new Material (Shader.Find("Particles/Additive"));
-		lineRenderer.SetColors(c1, c2);
-		lineRenderer.SetWidth(.2f,.2f);
+		lineRenderer.SetColors(laserColor, laserColor);
+		lineRenderer.SetWidth(.3f,.2f);
 		lineRenderer.SetVertexCount(2);
 		//Lasers
 
@@ -115,9 +118,11 @@ public class Controls : MonoBehaviour {
 
 					//Lasers
 					lineRenderer.enabled=true;
-					lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+					//lineRenderer.SetPosition(0, new Vector3(transform.position.x, transform.position.y - 2, transform.position.z));
+					lineRenderer.SetPosition(0, new Vector3(Laser.position.x,Laser.position.y,Laser.position.z));
 					lineRenderer.SetPosition(1, last_asteroid_go.transform.position);
 					StartCoroutine(laser_die());
+
 					currentMoney = currentMoney+lastAstVal;
 					currentFuel -= 5f;
 					print ("current fuel: "+currentFuel);
