@@ -82,14 +82,16 @@ public class Controls : MonoBehaviour {
 
 
 					float sum = 0;
-					foreach (string resource in asteroid.composition){
-						sum += asteroidCreator.GetResourcePrice(resource);
+					for (int i = 0; i < (asteroid.composition).Length; i++) {
+						sum += asteroidCreator.GetResourcePrice(asteroid.composition[i]);
+						asteroid.composition[i] = UppercaseFirst(asteroid.composition[i]);
 					}
 
 					//print (asteroid.asteroidType);
 					//print (sum);
 					lastAstVal = sum;
-					lastMined = "Last mined: type " + asteroid.asteroidType.ToUpper() + ", containing " + String.Join(", ", asteroid.composition);
+
+					lastMined = "Last mined: Type " + asteroid.asteroidType.ToUpper() + ", containing " + String.Join(", ", asteroid.composition);
 
 				}
 				
@@ -153,6 +155,13 @@ public class Controls : MonoBehaviour {
 		GameObject.Find ("MineText").renderer.enabled = false;
 		GameObject.Find ("MineText").collider.enabled = false;
 		GameObject.Find ("MineButton").renderer.enabled = false;
+	}
+
+	public string UppercaseFirst(string s)
+	{
+		char[] a = s.ToCharArray();
+		a[0] = char.ToUpper(a[0]);
+		return new string(a);
 	}
 	
 }
