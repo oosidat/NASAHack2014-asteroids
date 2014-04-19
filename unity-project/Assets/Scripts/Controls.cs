@@ -41,7 +41,7 @@ public class Controls : MonoBehaviour {
 			Application.Quit(); // Quits the game
 		}
 		
-		if (Input.GetMouseButtonUp(0)){
+		if (Input.GetMouseButtonDown(0)){
 
 			if (last_asteroid_go){
 				last_asteroid_go.renderer.material.shader = shader1;
@@ -56,7 +56,7 @@ public class Controls : MonoBehaviour {
 
 
 				Debug.DrawRay(transform.position, hitInfo.transform.position, Color.red, 5F);
-
+				Debug.Log (hitInfo.transform.tag);
 				//Select ASTEROID
 				if (hitInfo.transform.tag == "AsteroidChild"){
 					audio.PlayOneShot(select);
@@ -152,6 +152,7 @@ public class Controls : MonoBehaviour {
 			else{
 				DeselectMine();
 				audio.PlayOneShot(noselect);
+				Debug.Log ("No Hit");
 			}
 		}
 
