@@ -29,8 +29,9 @@ public class Laser_anim : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (counter < dist){
-			counter += .1f / lineDrawSpeed;
-			//counter += .1f;
+			//counter += .1f / lineDrawSpeed;
+			counter += 1f;
+			Debug.Log(counter +":"+ dist);
 			float x = Mathf.Lerp(0, dist, counter);
 
 			Vector3 pointA = origin.position;
@@ -40,9 +41,11 @@ public class Laser_anim : MonoBehaviour {
 			Vector3 pointAlongLine = x * Vector3.Normalize(pointB - pointA) + pointA;
 
 			lineRenderer.SetPosition(1, pointAlongLine);
-
+			Debug.Log("STILL BELOW");
 		}
-		else{
+		else if (counter >= dist) {
+			Debug.Log("COUNTER");
+			gameObject.GetComponent<LineRenderer>().enabled = false;
 			lineRenderer.enabled = false;
 		}
 	
