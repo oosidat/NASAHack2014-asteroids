@@ -10,6 +10,7 @@ public class Controls : MonoBehaviour {
 	Color laserColor2 = new Color(1, .17f, .17f, 0.4f);	
 	LineRenderer lineRenderer;
 	public Transform Laser;
+	public Material laserMat;
 
 	public Transform target;
 	public float currentFuel;
@@ -36,9 +37,10 @@ public class Controls : MonoBehaviour {
 	void Start () {
 		//Lasers
 		lineRenderer = gameObject.AddComponent<LineRenderer>();
-		lineRenderer.material = new Material (Shader.Find("Particles/Additive"));
+		//lineRenderer.material = new Material (Shader.Find("Particles/Additive"));
+		lineRenderer.material = laserMat;
 		lineRenderer.SetColors(laserColor1, laserColor1);
-		lineRenderer.SetWidth(.3f,.2f);
+		lineRenderer.SetWidth(.3f,.1f);
 		lineRenderer.SetVertexCount(2);
 		//Lasers
 
@@ -188,7 +190,7 @@ public class Controls : MonoBehaviour {
 	}
 
 	IEnumerator laser_die(){
-		yield return new WaitForSeconds(.5f);
+		yield return new WaitForSeconds(.3f);
 		lineRenderer.enabled = false;
 
 	}
