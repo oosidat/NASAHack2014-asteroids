@@ -13,7 +13,8 @@ public class Movement : MonoBehaviour {
 	private float fuelTankCapacity;
 	private Controls control;
 	private float fuelBurnRate;
-	
+	public float movementSpeed = 3.0f;
+
 	void Awake () {
 		Instance = this;
 		prevx = 0;
@@ -82,7 +83,7 @@ public class Movement : MonoBehaviour {
 	}
 	
 	void MoveCamera(Vector3 targetPosition) {
-		float step = 3.0f * Time.deltaTime;
+		float step = movementSpeed * Time.deltaTime;
 		Camera.main.transform.position = Vector3.Lerp (Camera.main.transform.position, targetPosition, step);		
 	}
 
