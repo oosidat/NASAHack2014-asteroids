@@ -5,15 +5,15 @@ String lines[];
 String cats[]; 
 float vals[][];
 int cat_i;
-float graph_height = 370;//500;
+float graph_height = 370;
 int text_height = 142;
 int text_height3 = 87;
 int text_height4 = 54;
 int text_height2 = 88;
 float text_scaling_1 =0.85;
-float graph_width = 700;
+float graph_width = 700;//*1.28;
 float graph_margin = 20;
-float line_width = 3;
+float line_width = 4;
 int alpha_grad[] = new int[int(graph_width)];
 int red_grad[] = new int[int(graph_width)];
 int blue_grad[] = new int[int(graph_width)];
@@ -26,6 +26,22 @@ String pos_lines[];
 float pos_bins[][];
 void setup()
 {
+  background(background_color);
+  //size(1024,768);
+  size(800,600);
+  if(width==1024)
+  {
+    graph_height = (int)(graph_height*1.28);
+    text_height = (int)(142*1.28);
+    text_height3 = (int)(87*1.28);
+    text_height4 = (int)(54*1.28);
+    text_height2 = (int)(88*1.28);
+    //text_scaling_1 =text_scaling_1*1.28;
+    //graph_width = graph_width*1.28;
+    graph_margin = graph_margin*1.28;
+    line_width = line_width*1.28;
+  }
+  //size(800,600);
   rainbow[0] = color(145,57,250);
   rainbow[1] = color(57,70,250);
   rainbow[2] = color(29, 204,31);
@@ -115,8 +131,7 @@ void setup()
     pos_bins[i-1][5] = Float.parseFloat(columns[6]);
     pos_bins[i-1][6] = Float.parseFloat(columns[7]);
   }
-  background(background_color);
-  size(800,600);
+  
   //size(600,600);
 }
 void draw(){
