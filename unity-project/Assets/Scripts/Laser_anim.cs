@@ -12,7 +12,7 @@ public class Laser_anim : MonoBehaviour {
 	private float counter;
 	private float dist;
 
-	public float lineDrawSpeed = 6f;
+	public float lineDrawSpeed = 100f;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +22,7 @@ public class Laser_anim : MonoBehaviour {
 		lineRenderer.SetColors(c1, c2);
 		lineRenderer.SetWidth(.2f,.2f);
 		lineRenderer.SetVertexCount(2);
-		lineRenderer.SetPosition(0, origin.position);
+		lineRenderer.SetPosition(0, new Vector3(origin.position.x, origin.position.y -2 , origin.position.z));
 		dist = Vector3.Distance(origin.position, destination.position);
 	}
 	
@@ -30,6 +30,7 @@ public class Laser_anim : MonoBehaviour {
 	void Update () {
 		if (counter < dist){
 			counter += .1f / lineDrawSpeed;
+			//counter += .1f;
 			float x = Mathf.Lerp(0, dist, counter);
 
 			Vector3 pointA = origin.position;
@@ -40,6 +41,9 @@ public class Laser_anim : MonoBehaviour {
 
 			lineRenderer.SetPosition(1, pointAlongLine);
 
+		}
+		else{
+			lineRenderer.enabled = false;
 		}
 	
 	}
