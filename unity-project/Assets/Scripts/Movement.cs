@@ -55,7 +55,7 @@ public class Movement : MonoBehaviour {
 					float currentX = hitInfo.point.x;//+27.0;
 					
 					double radius = Math.Sqrt (Math.Pow (currentX, 2) + Math.Pow (currentZ, 2));
-					double auRad = 2 + (radius - 45) * (3.5 - 2.0) / 145.0;
+					double auRad = 2 + (radius - 45) * (3.5 - 2.0) / 450.0;
 					String auText = "Distance: " + auRad.ToString ("0.00") + " AU";
 
 					double magDifference = Math.Sqrt(Math.Pow (currentX-prevx,2)+Math.Pow (currentZ-prevz,2));

@@ -412,7 +412,7 @@ GameObject:
   - 33: {fileID: 3300022}
   - 64: {fileID: 6400020}
   - 23: {fileID: 2300040}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MineButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
