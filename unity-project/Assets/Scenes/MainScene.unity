@@ -3751,7 +3751,7 @@ TextMesh:
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4294937344
 --- !u!23 &587780055
 Renderer:
   m_ObjectHideFlags: 0
@@ -8150,6 +8150,14 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 10200016, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4294937344
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200024, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Color.rgba
+      value: 4293360989
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dce262807684cf6409f82f9af308b216, type: 2}
   m_RootGameObject: {fileID: 1309775489}
@@ -9467,7 +9475,7 @@ TextMesh:
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4293360989
 --- !u!23 &1339478607
 Renderer:
   m_ObjectHideFlags: 0
