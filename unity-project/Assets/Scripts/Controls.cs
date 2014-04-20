@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using System;
 
 public class Controls : MonoBehaviour {
@@ -27,7 +28,7 @@ public class Controls : MonoBehaviour {
 	public AudioClip noselect;
 	public AudioClip select;
 	public float click_range;
-
+	public List<string> minedElements;
 	public String lastMined;
 
 	//Lasers
@@ -48,6 +49,8 @@ public class Controls : MonoBehaviour {
 		currentMoney = 0.0f;
 		lastAstVal = 0.0f;
 		//transform.rotation = Quaternion.LookRotation(transform.position - target.position);
+
+		minedElements = new List<string>();
 	}
 	
 	// Update is called once per frame
@@ -104,6 +107,7 @@ public class Controls : MonoBehaviour {
 					float sum = 0;
 					for (int i = 0; i < (asteroid.composition).Length; i++) {
 						sum += asteroidCreator.GetResourcePrice(asteroid.composition[i]);
+						minedElements.Add(asteroid.composition[i]);
 					}
 
 					//print (asteroid.asteroidType);
@@ -163,6 +167,8 @@ public class Controls : MonoBehaviour {
 				
 
 				else if (hitInfo.transform.tag == "GameOverClick")	{
+
+
 					GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="\n   Loading...";
 					Application.LoadLevel(Application.loadedLevel);
 				}
