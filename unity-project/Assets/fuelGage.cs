@@ -68,6 +68,7 @@ public class fuelGage : MonoBehaviour {
 			else {
 				PlayerPrefs.SetInt("highscorePos"+i,score);
 				newscore = 0;
+				return;
 				///newName = "";
 			}
 		}
