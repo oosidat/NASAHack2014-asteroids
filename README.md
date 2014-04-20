@@ -15,6 +15,9 @@ Project Wiki
 ------------
 https://github.com/oosidat/NASAHack2014-asteroids/wiki
 
+Milestones
+----------
+https://github.com/oosidat/NASAHack2014-asteroids/issues/milestones
 
 Screenshot:
 -----------
