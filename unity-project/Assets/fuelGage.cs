@@ -38,7 +38,7 @@ public class fuelGage : MonoBehaviour {
 						.Select(g => g.Key)
 						.FirstOrDefault();
 
-				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Congratulations!\n\nYou mined $"+score;
+				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Congratulations!\n\nYou earned $"+score;
 				GameObject.Find ("GameOverText").renderer.enabled=true;
 
 				controls.minedElements.Clear();
@@ -51,7 +51,7 @@ public class fuelGage : MonoBehaviour {
 					highscores += i+1 + ":  $" + PlayerPrefs.GetInt("highscorePos"+i) + "\n";
 				}
 
-				GameObject.Find ("HighScoreText").GetComponent<TextMesh>().text="High Scores:\n" + highscores;
+				GameObject.Find ("HighScoreText").GetComponent<TextMesh>().text="Most common resource mined was "+mostCommonValue+"\n\nHigh Scores\n" + highscores;
 				GameObject.Find ("HighScoreText").renderer.enabled=true;
 				gameover = 1;	
 			}
