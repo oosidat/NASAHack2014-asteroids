@@ -8323,7 +8323,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 495.0495
   MaxDistance: 500
   Pan2D: 0
@@ -12631,6 +12631,10 @@ Prefab:
     - target: {fileID: 400008, guid: dce262807684cf6409f82f9af308b216, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: DopplerLevel
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dce262807684cf6409f82f9af308b216, type: 2}
