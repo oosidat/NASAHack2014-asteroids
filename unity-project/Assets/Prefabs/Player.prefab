@@ -378,7 +378,7 @@ GameObject:
   - 23: {fileID: 2300036}
   - 102: {fileID: 10200016}
   m_Layer: 11
-  m_Name: GameOverText
+  m_Name: HighScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -596,6 +596,23 @@ GameObject:
   - 23: {fileID: 2300060}
   m_Layer: 0
   m_Name: Laser
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100066
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400066}
+  - 23: {fileID: 2300062}
+  - 102: {fileID: 10200022}
+  m_Layer: 11
+  m_Name: GameOverText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -854,7 +871,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100040}
   m_LocalRotation: {x: 3.09086232e-08, y: -.707106829, z: .707106829, w: -3.09086232e-08}
-  m_LocalPosition: {x: -.0233682506, y: .0444152132, z: -.224832311}
+  m_LocalPosition: {x: .0209220257, y: .195961699, z: -.333565384}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400042}
@@ -868,6 +885,7 @@ Transform:
   m_LocalPosition: {x: 3.22913465e-08, y: -1.1920929e-07, z: 1.99093699}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 400066}
   - {fileID: 400040}
   m_Father: {fileID: 400008}
 --- !u!4 &400044
@@ -996,6 +1014,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400008}
+--- !u!4 &400066
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100066}
+  m_LocalRotation: {x: 3.09086232e-08, y: -.707106829, z: .707106829, w: -3.09086232e-08}
+  m_LocalPosition: {x: .0209222957, y: .195961609, z: -1.02979469}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400042}
 --- !u!20 &2000000
 Camera:
   m_ObjectHideFlags: 1
@@ -1668,6 +1697,27 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!23 &2300062
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100066}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2789,14 +2839,14 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100040}
-  m_Text: Game Over
+  m_Text: "High Scores:\r\n\r\n1.  $503020\r\n2.  $3049\r\n3.  $39490"
   m_OffsetZ: 0
-  m_CharacterSize: .0700000003
+  m_CharacterSize: .0199999996
   m_LineSpacing: 1
   m_Anchor: 1
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 60
+  m_FontSize: 40
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
@@ -2845,6 +2895,27 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4293752714
+--- !u!102 &10200022
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100066}
+  m_Text: "Congratulations!\r\n\r\nYou mined $2000"
+  m_OffsetZ: 0
+  m_CharacterSize: .0450000018
+  m_LineSpacing: .899999976
+  m_Anchor: 1
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 40
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2868,6 +2939,10 @@ MonoBehaviour:
   - {fileID: 2800000, guid: f92c15072c6f3094db8db50c47f03dc2, type: 3}
   - {fileID: 2800000, guid: e8b077b5e283d55459a275805288fd38, type: 3}
   - {fileID: 2800000, guid: de5d827843782ee4595ccc132ac392eb, type: 3}
+  highscorePos: 
+  highscores: 
+  score: 0
+  temp: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

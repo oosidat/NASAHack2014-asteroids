@@ -132,6 +132,7 @@ public class Controls : MonoBehaviour {
 
 					float mulipliedByNumberOfBlocks = currentFuel/10.0f;
 					double roundUp = Math.Ceiling (mulipliedByNumberOfBlocks);
+
 					
 					int fuelGaugeBlocks = (int)roundUp;
 					fuelGage fuelGauge = GameObject.Find ("FuelCell").GetComponent<fuelGage>();
