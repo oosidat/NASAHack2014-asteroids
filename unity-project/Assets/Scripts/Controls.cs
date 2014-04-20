@@ -163,7 +163,7 @@ public class Controls : MonoBehaviour {
 				
 
 				else if (hitInfo.transform.tag == "GameOverClick")	{
-					GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Loading...";
+					GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="\nLoading...";
 					Application.LoadLevel(Application.loadedLevel);
 				}
 				else{
