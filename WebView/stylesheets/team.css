@@ -1,0 +1,91 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+
+body {
+	font-family: 'Open Sans', Helvetica, Verdana, Arial, sans-serif;
+	margin: 0;
+}
+
+h1 {
+	font-family: 'Open Sans';
+	font-weight: 300;
+	font-size: 4em;
+	color: #555;
+	margin-bottom: -10px;
+	margin-top: -10px;
+}
+
+.header {
+	padding: 30px;
+	text-align: center;
+}
+
+.back {
+	font-size: 1em;
+	font-weight: 100;
+	text-align: center;
+	margin-top: 70px;
+	margin-bottom: 40px;
+}
+
+.back a {
+	text-decoration: none;
+	color: #555;
+}
+
+.back a:hover {
+	font-weight: 400;
+	color: #205AA7;
+}
+
+.profile {
+	font-size: 1.5em;
+	font-weight: 100;
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 60px;
+}
+
+.socialmedia a {
+	color: #555;
+}
+
+.socialmedia a:hover {
+	color: #205AA7;
+}
+
+.circular {
+	width: 200px;
+	height: 200px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	display: block;
+	margin: 10px auto;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+
+}
+
+#rb {
+	background: url(../images/team/rbettridge.jpg) no-repeat;
+	background-position: left center;
+}
+
+#ch {
+	background: url(../images/team/cholloway.jpg) no-repeat;
+	background-position: center;
+	background-size: 200px 200px;
+}
+
+#jr {
+	background: url(../images/team/jrock.jpg) no-repeat;
+	background-position: center;
+	background-size: 300px 200px;
+}
+
+#os {
+	background: url(../images/team/osidat.jpg) no-repeat;
+	background-position: center;
+	background-size: 200px 200px;
+}

@@ -21,6 +21,17 @@ a:active, a:hover {
 	font-size: small;
 }
 
+.header a {
+	color: #555;
+	font-weight: 100;
+	font-size: small;
+	text-decoration: none;
+}
+
+.header a:hover {
+	color: #205AA7;
+}
+
 .webplayer-placeholder p {
 	color: #dddddd;
 	font-size: x-small;
