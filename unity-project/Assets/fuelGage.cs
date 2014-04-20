@@ -55,7 +55,10 @@ public class fuelGage : MonoBehaviour {
 					commonresource="Most common resource mined was "+mostCommonValue;
 				}
 
-				GameObject.Find ("HighScoreText").GetComponent<TextMesh>().text=commonresource+"\n\nHigh Scores\n" + highscores;
+				GameObject.Find ("MostMinedText").GetComponent<TextMesh>().text=commonresource;
+				GameObject.Find ("MostMinedText").renderer.enabled=true;
+				
+				GameObject.Find ("HighScoreText").GetComponent<TextMesh>().text="High Scores\n" + highscores;
 				GameObject.Find ("HighScoreText").renderer.enabled=true;
 				gameover = 1;	
 			}
