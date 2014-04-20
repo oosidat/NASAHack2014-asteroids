@@ -80,11 +80,11 @@ div.description {
 }
 
 div.game {
-	background-image: url(../images/groovilicious-animated-stars-night.gif);
+	background-image: url(../images/asteroids.jpg);
+	background-origin: content-box;
+	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-color: black;
-	background-repeat: repeat;
-	background-attachment: fixed;
 	padding: 50px;
 	text-align: center;
 	color: white;
