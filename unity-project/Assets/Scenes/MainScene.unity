@@ -13256,6 +13256,38 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 10200016, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Text
+      value: "Congratulations!\r\n\r\nYou mined $2000"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300036, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200016, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200016, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_CharacterSize
+      value: .0450000018
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .0209222957
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .195961609
+      objectReference: {fileID: 0}
+    - target: {fileID: 400040, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.02979469
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200016, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dce262807684cf6409f82f9af308b216, type: 2}
   m_RootGameObject: {fileID: 1309775489}
@@ -13589,7 +13621,7 @@ Transform:
   m_PrefabInternal: {fileID: 2077531815}
   m_GameObject: {fileID: 2141477648}
   m_LocalRotation: {x: 3.09086232e-08, y: -.707106829, z: .707106829, w: -3.09086232e-08}
-  m_LocalPosition: {x: -.0233682506, y: .0444152132, z: -.224832311}
+  m_LocalPosition: {x: .0209222957, y: .195961609, z: -1.02979469}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 382543884}
@@ -13601,14 +13633,14 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 2077531815}
   m_GameObject: {fileID: 2141477648}
-  m_Text: Game Over
+  m_Text: "Congratulations!\r\n\r\nYou mined $2000"
   m_OffsetZ: 0
-  m_CharacterSize: .0700000003
+  m_CharacterSize: .0450000018
   m_LineSpacing: 1
   m_Anchor: 1
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 60
+  m_FontSize: 40
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
