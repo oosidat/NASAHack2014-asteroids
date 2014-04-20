@@ -1836,7 +1836,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 1887739548}
   m_GameObject: {fileID: 240305458}
-  m_Text: 'Last Mined:'
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: .0199999996
   m_LineSpacing: 1
@@ -12639,6 +12639,10 @@ Prefab:
     - target: {fileID: 10200000, guid: dce262807684cf6409f82f9af308b216, type: 2}
       propertyPath: m_Text
       value: Mine
+      objectReference: {fileID: 0}
+    - target: {fileID: 10200012, guid: dce262807684cf6409f82f9af308b216, type: 2}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dce262807684cf6409f82f9af308b216, type: 2}
