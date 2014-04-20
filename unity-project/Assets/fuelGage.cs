@@ -50,8 +50,12 @@ public class fuelGage : MonoBehaviour {
 					//Debug.Log ("Score" + i + " " + PlayerPrefs.GetInt("highscorePos"+i));
 					highscores += i+1 + ":  $" + PlayerPrefs.GetInt("highscorePos"+i) + "\n";
 				}
+				string commonresource="";
+				if (mostCommonValue != null){	
+					commonresource="Most common resource mined was "+mostCommonValue;
+				}
 
-				GameObject.Find ("HighScoreText").GetComponent<TextMesh>().text="Most common resource mined was "+mostCommonValue+"\n\nHigh Scores\n" + highscores;
+				GameObject.Find ("HighScoreText").GetComponent<TextMesh>().text=commonresource+"\n\nHigh Scores\n" + highscores;
 				GameObject.Find ("HighScoreText").renderer.enabled=true;
 				gameover = 1;	
 			}
