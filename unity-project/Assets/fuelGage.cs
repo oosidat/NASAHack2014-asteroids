@@ -30,7 +30,7 @@ public class fuelGage : MonoBehaviour {
 				Debug.Log("score: " + score);
 				GameObject.Find ("GameOver").renderer.enabled=true;
 				GameObject.Find ("GameOver").collider.enabled=true;
-				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Congratulations!\n\nYou mined $"+score.ToString("0.00");;
+				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Congratulations!\n\nYou mined $"+score;
 				GameObject.Find ("GameOverText").renderer.enabled=true;
 
 				for(int i=0; i<=4; i++)
@@ -53,27 +53,6 @@ public class fuelGage : MonoBehaviour {
 
 	void HighScoreSet ()
 	{
-
-		/*for(int i=1; i<=5; i++) //for top 5 highscores
-		{
-			if(PlayerPrefs.GetInt("highscorePos"+i)<score) //if cuurent score is in top 5
-			{
-
-				temp=PlayerPrefs.GetInt("highscorePos"+i); //store the old highscore in temp varible to shift it down
-				PlayerPrefs.SetInt("highscorePos"+i,score); //store the currentscore to highscores
-				if(i<5) //do this for shifting scores down
-				{
-					int j=i+1;
-					PlayerPrefs.SetInt("highscorePos"+j,temp);
-				}
-			}
-		}*/
-	
-	//Used to force blank high scores
-		//for (int i=0; i<4; i++) {
-		//	PlayerPrefs.SetInt("highscorePos"+i,0);
-		//}
-
 
 		int newscore = score;
 		for (int i=0; i<4; i++) {
