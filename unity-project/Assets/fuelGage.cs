@@ -38,7 +38,7 @@ public class fuelGage : MonoBehaviour {
 					//GUI.Box(new Rect(100, 75*i, 150, 50), "Pos "+i+". "+PlayerPrefs.GetInt("highscorePos"+i));
 					//GUI.TextArea(new Rect(100, 75*i, 150, 50), "Pos "+i+". "+PlayerPrefs.GetInt("highscorePos"+i));
 					//Debug.Log ("Score" + i + " " + PlayerPrefs.GetInt("highscorePos"+i));
-					highscores += i + ":  $" + PlayerPrefs.GetInt("highscorePos"+i) + "\n";
+					highscores += i+1 + ":  $" + PlayerPrefs.GetInt("highscorePos"+i) + "\n";
 				}
 
 				GameObject.Find ("HighScoreText").GetComponent<TextMesh>().text="High Scores:\n" + highscores;
