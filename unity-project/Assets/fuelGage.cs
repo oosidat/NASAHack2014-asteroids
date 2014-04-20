@@ -38,7 +38,7 @@ public class fuelGage : MonoBehaviour {
 						.Select(g => g.Key)
 						.FirstOrDefault();
 
-				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Congratulations!\n\nYou mined $"+score+ "\n\nYour Most Mined Element: " + mostCommonValue;
+				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Congratulations!\n\nYou mined $"+score;
 				GameObject.Find ("GameOverText").renderer.enabled=true;
 
 				controls.minedElements.Clear();
