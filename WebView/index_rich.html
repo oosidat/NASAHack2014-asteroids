@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Rocks! Lasers! Profit!</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/web.css">
+		<script type='text/javascript' src='scripts/jquery.min.js'></script>
+		<script type='text/javascript' src='scripts/googleanalytics.js'></script>
+		<script type="text/javascript">
+		<!--
+		var unityObjectUrl = "UnityObject2.js";
+		if (document.location.protocol == 'https:')
+			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+		-->
+		</script>
+
+		<script type="text/javascript">
+		<!--
+			var config = {
+				width: 960, 
+				height: 600,
+				params: { enableDebugging:"0",	
+				
+					//backgroundcolor: "A0A0A0",
+					//bordercolor: "000000",
+					textcolor: "FFFFFF",
+					logoimage: "images/nasa4.png",
+					//progressbarimage: "MyProgressBar.png",
+					//progressframeimage: "MyProgressFrame.png"
+				}
+				
+			};
+			config.params["disableContextMenu"] = true;
+			var u = new UnityObject2(config);
+			
+			function startGame(){
+
+				$('#webplayer-placeholder').hide();
+				$('#unityPlayer').show();
+
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+
+				u.observeProgress(function (progress) {
+					switch(progress.pluginStatus) {
+						case "broken":
+							$brokenScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$brokenScreen.show();
+						break;
+						case "missing":
+							$missingScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$missingScreen.show();
+						break;
+						case "installed":
+							$missingScreen.remove();
+						break;
+						case "first":
+						break;
+					}
+				});
+				u.initPlugin(jQuery("#unityPlayer")[0], "Web.unity3d");
+			};
+		-->
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<h1>Rocks! Lasers! Profit!</h1>
+			<p>An Educational Asteroid Prospecting Game for the 2014 NASA Space Apps Challenge</p>
+		</div>
+		
+		<div class="game">
+			<div class="content">
+				<div class="webplayer-placeholder" id="webplayer-placeholder">
+					<input type="button" value="Start Game" onclick="startGame();" />
+					<p>To play this game in a browser, please install the Unity Web Player.<br> This project may take a few minutes to download and start.</p>
+				</div>
+				<div id="unityPlayer" style="display: none;">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<p class="footer">Download for <a target="_blank" href="http://rockslasersprofit.com/binaries/RocksLasersProfit_win.zip">Windows</a> | <a target="_blank" href="http://rockslasersprofit.com/binaries/RocksLasersProfit_linux.zip">Linux</a> | <a target="_blank" href="http://rockslasersprofit.com/binaries/RocksLasersProfit_osx.zip" >Mac</a></p>
+		</div>
+		<div class="description">
+			<img class="nasaimg" src="images/nasa2.png">
+			<div class="bubble">Hello Drone <span id="droneID">34659786</span>, NASA Mission Control welcomes you to your first day on the job! <br>Your task is to make as much money for our business partners as possible and saving the earth from errant asteroids before your energy runs out. 
+			</div>
+			
+			<h2>Asteroid Mining and Energy Usage</h2>
+			You will have three options when interacting with asteroids - mining them, destroying them, and moving them around for mining later. Each of these actions costs energy. You can see the current value of commoditities in your HUD. You have until your energy runs out to complete your mission, after which point your program will be shut down and only restarted pending your performance review.
+			<br>
+			
+			<a href="http://en.wikipedia.org/wiki/C-type_asteroid"></a>
+			<a href="http://en.wikipedia.org/wiki/S-type_asteroid"></a>
+			<a href="http://en.wikipedia.org/wiki/X-type_asteroid"></a>
+			<a href=""></a>
+			<a href=""></a>
+			<a href=""></a>
+			<a href=""></a>
+			<a href=""></a>
+			<a href=""></a>
+			
+			
+			
+<h2>Asteroid Classes</h2>
+Asteroids are categorized into different classes depending on colors of light reflecting off of them. 
+Depending on the colors reflected, it is possible to guess their composition. Asteroids fall into three 
+large categories - <a href="http://en.wikipedia.org/wiki/C-type_asteroid" target="_blank">C (for carbonaceous objects)</a>, 
+<a href="http://en.wikipedia.org/wiki/S-type_asteroid" target="_blank">S (for silicaceous objects)</a>, 
+and <a href="http://en.wikipedia.org/wiki/X-type_asteroid" target="_blank">X (for metallic objects)</a>. 
+The ingredients needed for life, for example water and carbon, are more likely to be found on C-type asteroids, 
+whereas S-type objects are like rocks you would find on Earth, and X-type asteroids contain more metals like iron, 
+or more precious metals like gold, copper, and zinc.
+<br><br>
+Under these broad categories, asteroids are classified into smaller categories. There are also smaller categories 
+of asteroids that aren't classified in any of the three main categories. 
+<br><br>
+In order to figure out what asteroids will be profitable to mine, you will need to look at the ultraviolet, visible 
+and infrared spectrums coming off of the asteroids. You can then activate various filters to guess at 
+the classification of the asteroids in view. You can see the relative reflectance 
+spectrum of the various asteroid classes in the graph in the HUD. 
+<br><br>			
+Certain classes of asteroids are more common at certain distances from the sun. For example, C-type asteroids are more 
+abundant further from the sun, while S-type asteroids are more abundant closer to the sun. You can check the 
+abundance of each type with relation to its distance from the sun in the graph in the HUD.
+
+		</div>
+<!--<iframe width="320" height="240" src="http://www.youtube.com/embed/qKry86YspJA" frameborder="0" allowfullscreen></iframe>-->
+
+		<footer>
+			<a href="https://github.com/oosidat/NASAHack2014-asteroids" target="_blank"><img src="images/github-icon.png" title="Visit project on GitHub"></a>
+			<p>Hosting Space donated by <a target="_blank" href="http://bvisualdesign.ca">Bvisual Design</a></p>
+			<p>Email: <a href="mailto:support@rockslasersprofit.com" target="_top">support@rockslasersprofit.com</a></p>
+		</footer>
+	</body>
+
+
+ <script type="application/javascript">
+       function getip(json) {
+        //   alert(json.ip);
+		   
+		var id = json.ip.split('.').join("");
+        document.getElementById("droneID").innerHTML = id;
+      
+       }  
+</script>
+<script type="application/javascript" src="http://www.bvisualdesign.ca/nasachallenge/ip.php?callback=getip"></script>
+
+</html>
