@@ -187,7 +187,7 @@ div.links {
 .links a {
 	color: #555;
 	font-weight: 100;
-	color: #555;
+	text-decoration: none;
 }
 
 .links a:hover {
