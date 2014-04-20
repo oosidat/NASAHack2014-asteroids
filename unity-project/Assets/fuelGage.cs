@@ -43,7 +43,7 @@ public class fuelGage : MonoBehaviour {
 
 				controls.minedElements.Clear();
 
-				for(int i=0; i<=4; i++)
+				for(int i=0; i<5; i++)
 				{
 					//GUI.Box(new Rect(100, 75*i, 150, 50), "Pos "+i+". "+PlayerPrefs.GetInt("highscorePos"+i));
 					//GUI.TextArea(new Rect(100, 75*i, 150, 50), "Pos "+i+". "+PlayerPrefs.GetInt("highscorePos"+i));
@@ -67,6 +67,12 @@ public class fuelGage : MonoBehaviour {
 
 	void HighScoreSet ()
 	{
+		//Blank Scores
+		//for (int i=0; i<5; i++) {
+		//		PlayerPrefs.SetInt("highscorePos"+i,0);
+		//}
+
+
 
 		int newscore = score;
 		for (int i=0; i<5; i++) {
@@ -88,19 +94,4 @@ public class fuelGage : MonoBehaviour {
 		}
 
 	}
-
-	/*void OnGUI()
-	{
-		if(levelComplete)
-		{
-			for(int i=1; i<=5; i++)
-			{
-				//GUI.Box(new Rect(100, 75*i, 150, 50), "Pos "+i+". "+PlayerPrefs.GetInt("highscorePos"+i));
-				GUI.TextArea(new Rect(100, 75*i, 150, 50), "Pos "+i+". "+PlayerPrefs.GetInt("highscorePos"+i));
-			}
-		}
-	}*/
-
-
-
 }
