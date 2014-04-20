@@ -55,7 +55,7 @@ public class fuelGage : MonoBehaviour {
 	{
 
 		int newscore = score;
-		for (int i=0; i<4; i++) {
+		for (int i=0; i<5; i++) {
 			if (PlayerPrefs.HasKey("highscorePos"+i)) {
 				if (PlayerPrefs.GetInt("highscorePos"+i) < newscore) {
 					// new Score is higher than the stored score
