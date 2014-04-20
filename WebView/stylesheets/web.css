@@ -176,3 +176,20 @@ input[type=button]:hover
 	font-weight: 600;
 	background-color: #205AA7;
 }
+
+div.links {
+	margin: 30px auto;
+	width: 960px;
+	color: black;
+	text-align: justify;
+}
+
+.links a {
+	color: #555;
+	font-weight: 100;
+	color: #555;
+}
+
+.links a:hover {
+	font-weight: 400;
+}
