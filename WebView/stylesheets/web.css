@@ -191,7 +191,7 @@ div.links {
 }
 
 .links a:hover {
-	color: black;
+	color: #205AA7;
 	font-weight: 400;
 }
 
@@ -202,6 +202,5 @@ div.links {
 }
 
 .description a:hover {
-	color: black;
-	font-weight: 400;
+	color: #205AA7;
 }
