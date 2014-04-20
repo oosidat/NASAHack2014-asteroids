@@ -871,7 +871,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100040}
   m_LocalRotation: {x: 3.09086232e-08, y: -.707106829, z: .707106829, w: -3.09086232e-08}
-  m_LocalPosition: {x: -.00394413993, y: .195961699, z: -.333565384}
+  m_LocalPosition: {x: -.00394414179, y: .195961684, z: -.416570097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400042}
@@ -1438,7 +1438,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100040}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -1711,7 +1711,7 @@ Renderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100066}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_LightmapIndex: 255
@@ -2206,7 +2206,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 495.0495
   MaxDistance: 500
   Pan2D: 0
@@ -2669,7 +2669,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Text: Mine?
+  m_Text: Mine
   m_OffsetZ: 0
   m_CharacterSize: .0299999993
   m_LineSpacing: 1
@@ -2797,7 +2797,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100032}
-  m_Text: 'Last Mined:'
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: .0199999996
   m_LineSpacing: 1
@@ -2844,7 +2844,7 @@ TextMesh:
   m_CharacterSize: .0199999996
   m_LineSpacing: 1
   m_Anchor: 1
-  m_Alignment: 0
+  m_Alignment: 1
   m_TabSize: 4
   m_FontSize: 40
   m_FontStyle: 0
@@ -2986,6 +2986,7 @@ MonoBehaviour:
   noselect: {fileID: 8300000, guid: 651f79fcd284a1c4384cb7c51f098d90, type: 3}
   select: {fileID: 8300000, guid: 51560e758cc93bf468c034536310fc5d, type: 3}
   click_range: 150
+  minedElements: []
   lastMined: 
 --- !u!114 &11400006
 MonoBehaviour:
