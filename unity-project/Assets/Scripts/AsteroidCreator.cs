@@ -147,7 +147,7 @@ public class AsteroidCreator : MonoBehaviour {
 
 	public void SpawnGameObjects(int number, int radius, int au) {
 		for (int i = 0; i < number; i++) {
-			GameObject asteroidGameObj = GameObject.Instantiate(Asteroids [Random.Range (0, 19)]) as GameObject;
+			GameObject asteroidGameObj = GameObject.Instantiate(Asteroids [Random.Range (0, 6)]) as GameObject;
 			
 			// create a new asteroid from the template
 			GameObject newAsteroid = GameObject.Instantiate (AsteroidTemplate) as GameObject;
@@ -224,7 +224,8 @@ public class AsteroidCreator : MonoBehaviour {
 		#if UNITY_EDITOR || UNITY_STANDALONE_LINUX ||UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN || UNITY_WEBPLAYER
 		SpawnGameObjects (150,450, 13);
 		#endif
-		SpawnGameObjects (10,500, 14);
+
+		SpawnGameObjects (10, 500, 14);
 
 
 		// apply default (vis) filter

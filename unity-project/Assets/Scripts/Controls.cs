@@ -18,9 +18,9 @@ public class Controls : MonoBehaviour {
 	public float fuelBurnRate;
 	public float currentMoney;
 	public float lastAstVal;
-	public Shader shader1 = Shader.Find("Bumped Specular");
-	public Shader shader2 = Shader.Find("Outlined/Gem");
-	public Shader shader3 = Shader.Find("Transparent Effects/CheapForcefield");
+	public Shader shader1;// = Shader.Find("Bumped Specular");
+	public Shader shader2;// = Shader.Find("Outlined/Gem");
+	public Shader shader3;// = Shader.Find("Transparent Effects/CheapForcefield");
 	private GameObject last_asteroid;
 	private GameObject last_asteroid_go;
 	public AudioClip mine;
@@ -36,6 +36,11 @@ public class Controls : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		shader1 = Shader.Find("Bumped Specular");
+		shader2 = Shader.Find("Outlined/Gem");
+		shader3 = Shader.Find("Transparent Effects/CheapForcefield");
+
 		//Lasers
 		lineRenderer = gameObject.AddComponent<LineRenderer>();
 		//lineRenderer.material = new Material (Shader.Find("Particles/Additive"));

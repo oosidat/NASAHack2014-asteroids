@@ -76,6 +76,8 @@ public class filterButtons : MonoBehaviour {
 		float color = 1.0f;
 		float shininess = 1.0f;
 
+		Debug.Log (numAsteroids.ToString () + " asteroids found.");
+
 		for (int i = 0; i < numAsteroids; i++) {
 
 			Asteroid asteroidtmp = asteroids[i].GetComponent<Asteroid>();
