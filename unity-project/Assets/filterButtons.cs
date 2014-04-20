@@ -9,7 +9,7 @@ public class filterButtons : MonoBehaviour {
 	public float k;
 	public bool changeColor = true;
 	public bool changeShininess = true;
-
+	int filter_position = 1;
 	public enum spectra {
 		uv,
 		vis,
@@ -27,18 +27,46 @@ public class filterButtons : MonoBehaviour {
 				applyFilter((int) spectra.uv);
 				renderer.material.mainTexture = images[0];
 				audio.PlayOneShot(filter_apply);
+				filter_position = 0;
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "visbutton") {
 				applyFilter((int) spectra.vis);
 				renderer.material.mainTexture = images[1];
 				audio.PlayOneShot(filter_apply);
+				filter_position = 1;
 			}
 			if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo) && hitInfo.transform.tag == "infrabutton") {
 				applyFilter ((int) spectra.ir);
 				renderer.material.mainTexture = images[2];
 				audio.PlayOneShot(filter_apply);
+				filter_position = 2;
 			}
 		}
+
+		if (Input.GetMouseButtonDown(1)) {
+
+			if (filter_position == 0) {
+				applyFilter((int) spectra.vis);
+				renderer.material.mainTexture = images[1];
+				audio.PlayOneShot(filter_apply);
+				filter_position = 1;
+			}
+			else if (filter_position == 1) {
+				applyFilter ((int) spectra.ir);
+				renderer.material.mainTexture = images[2];
+				audio.PlayOneShot(filter_apply);
+				filter_position = 2;
+			}
+			else if (filter_position == 2) {
+				applyFilter((int) spectra.uv);
+				renderer.material.mainTexture = images[0];
+				audio.PlayOneShot(filter_apply);
+				filter_position = 0;
+			}
+
+		}
+
+
 	}
 
 	public void applyFilter(int mask) {
