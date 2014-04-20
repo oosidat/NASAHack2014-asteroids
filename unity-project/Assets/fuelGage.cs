@@ -33,15 +33,15 @@ public class fuelGage : MonoBehaviour {
 				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Congratulations!\n\nYou mined $"+score.ToString("0.00");;
 				GameObject.Find ("GameOverText").renderer.enabled=true;
 
-				for(int i=1; i<=5; i++)
+				for(int i=0; i<=4; i++)
 				{
 					//GUI.Box(new Rect(100, 75*i, 150, 50), "Pos "+i+". "+PlayerPrefs.GetInt("highscorePos"+i));
 					//GUI.TextArea(new Rect(100, 75*i, 150, 50), "Pos "+i+". "+PlayerPrefs.GetInt("highscorePos"+i));
-
-					highscores += i + ":  " + PlayerPrefs.GetInt("highscorePos"+i) + "\n";
+					//Debug.Log ("Score" + i + " " + PlayerPrefs.GetInt("highscorePos"+i));
+					highscores += i + ":  $" + PlayerPrefs.GetInt("highscorePos"+i) + "\n";
 				}
 
-				GameObject.Find ("HighScoreText").GetComponent<TextMesh>().text="High Score:\n" + highscores;
+				GameObject.Find ("HighScoreText").GetComponent<TextMesh>().text="High Scores:\n" + highscores;
 				GameObject.Find ("HighScoreText").renderer.enabled=true;
 				gameover = 1;	
 			}
@@ -54,7 +54,7 @@ public class fuelGage : MonoBehaviour {
 	void HighScoreSet ()
 	{
 
-		for(int i=1; i<=5; i++) //for top 5 highscores
+		/*for(int i=1; i<=5; i++) //for top 5 highscores
 		{
 			if(PlayerPrefs.GetInt("highscorePos"+i)<score) //if cuurent score is in top 5
 			{
@@ -67,8 +67,33 @@ public class fuelGage : MonoBehaviour {
 					PlayerPrefs.SetInt("highscorePos"+j,temp);
 				}
 			}
+		}*/
+	
+	//Used to force blank high scores
+	//	for (int i=0; i<4; i++) {
+	//		PlayerPrefs.SetInt("highscorePos"+i,0);
+	//	}
+
+
+		int newscore = score;
+		for (int i=0; i<4; i++) {
+			if (PlayerPrefs.HasKey("highscorePos"+i)) {
+				if (PlayerPrefs.GetInt("highscorePos"+i) < newscore) {
+					// new Score is higher than the stored score
+					temp= PlayerPrefs.GetInt("highscorePos"+i);
+					PlayerPrefs.SetInt("highscorePos"+i,newscore);
+					newscore = temp;
+
+				}
+			}
+			else {
+				PlayerPrefs.SetInt("highscorePos"+i,score);
+				newscore = 0;
+				///newName = "";
+			}
 		}
-	}	
+
+	}
 
 	/*void OnGUI()
 	{
@@ -81,5 +106,7 @@ public class fuelGage : MonoBehaviour {
 			}
 		}
 	}*/
+
+
 
 }
