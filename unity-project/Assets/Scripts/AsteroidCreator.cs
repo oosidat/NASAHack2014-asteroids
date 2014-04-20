@@ -199,6 +199,8 @@ public class AsteroidCreator : MonoBehaviour {
 		SpawnGameObjects(numAsteroidsToSpawn, 500, 12);
 		SpawnGameObjects (numAsteroidsToSpawn, 600, 13);
 		SpawnGameObjects (numAsteroidsToSpawn, 700, 14);*/
+
+		//Richards tweaks for practical gameplay
 		/*
 		SpawnGameObjects(numAsteroidsToSpawn, 200, 8);
 		SpawnGameObjects(numAsteroidsToSpawn, 225, 10);
@@ -207,12 +209,21 @@ public class AsteroidCreator : MonoBehaviour {
 		SpawnGameObjects (numAsteroidsToSpawn, 500, 13);
 		SpawnGameObjects (numAsteroidsToSpawn, 600, 14);
 		*/
+
+
+
 		SpawnGameObjects( 10,200, 8);
+		#if UNITY_EDITOR || UNITY_STANDALONE_LINUX ||UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN
 		SpawnGameObjects( 300,250, 9);
+		#endif
 		SpawnGameObjects(50,300, 10);
+		#if UNITY_EDITOR || UNITY_STANDALONE_LINUX ||UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN
 		SpawnGameObjects(340,350, 11);
+		#endif
 		SpawnGameObjects(50, 400,12);
+		#if UNITY_EDITOR || UNITY_STANDALONE_LINUX ||UNITY_STANDALONE_OSX || UNITY_STANDALONE_WIN
 		SpawnGameObjects (150,450, 13);
+		#endif
 		SpawnGameObjects (10,500, 14);
 
 

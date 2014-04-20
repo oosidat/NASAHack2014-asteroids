@@ -5,7 +5,7 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   AndroidProfiler: 0
-  defaultScreenOrientation: 3
+  defaultScreenOrientation: 2
   targetDevice: 2
   targetGlesGraphics: 1
   targetResolution: 0
@@ -191,7 +191,7 @@ PlayerSettings:
   blackberryMicrophonePermissions: 0
   blackberryGamepadSupport: 0
   blackberryBuildId: 0
-  blackberryLandscapeSplashScreen: {fileID: 2800000, guid: adb26c69d7234134d9de042a3c74a38a,
+  blackberryLandscapeSplashScreen: {fileID: 2800000, guid: 5af73b705218c764d8a892e156801df6,
     type: 3}
   blackberryPortraitSplashScreen: {fileID: 0}
   blackberrySquareSplashScreen: {fileID: 0}
