@@ -70,9 +70,9 @@ public class fuelGage : MonoBehaviour {
 		}*/
 	
 	//Used to force blank high scores
-	//	for (int i=0; i<4; i++) {
-	//		PlayerPrefs.SetInt("highscorePos"+i,0);
-	//	}
+		//for (int i=0; i<4; i++) {
+		//	PlayerPrefs.SetInt("highscorePos"+i,0);
+		//}
 
 
 		int newscore = score;
