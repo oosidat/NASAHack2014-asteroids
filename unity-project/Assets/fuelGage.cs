@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Linq;
+using System.Collections.Generic;
 
 public class fuelGage : MonoBehaviour {
 	public Texture2D[] images;
@@ -30,8 +32,16 @@ public class fuelGage : MonoBehaviour {
 				Debug.Log("score: " + score);
 				GameObject.Find ("GameOver").renderer.enabled=true;
 				GameObject.Find ("GameOver").collider.enabled=true;
+
+				var mostCommonValue = controls.minedElements.GroupBy(v => v)
+					.OrderByDescending(g => g.Count())
+						.Select(g => g.Key)
+						.FirstOrDefault();
+
 				GameObject.Find ("GameOverText").GetComponent<TextMesh>().text="Congratulations!\n\nYou mined $"+score;
 				GameObject.Find ("GameOverText").renderer.enabled=true;
+
+				controls.minedElements.Clear();
 
 				for(int i=0; i<=4; i++)
 				{
