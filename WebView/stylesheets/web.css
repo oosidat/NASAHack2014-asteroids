@@ -105,6 +105,8 @@ img.nasaimg {
 	margin: 0 auto;
 	display: block;
 	padding: 50px;
+	height: 300px;
+	width: 300px;
 }
 
 div.bubble {
