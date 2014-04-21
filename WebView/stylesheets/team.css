@@ -89,3 +89,22 @@ h1 {
 	background-position: center;
 	background-size: 200px 200px;
 }
+
+.warning {
+	font-family: 'Open Sans';
+	text-align: center;
+	background-color: black;
+	color: white;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 200px;
+}
+
+.warning h3 {
+	font-family: 'Open Sans';
+	font-weight: 100;
+	margin: 0;
+	padding: 80px;
+
+}
